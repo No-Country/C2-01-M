@@ -21,12 +21,14 @@ Nuestra organizacion se ve reflejada en [Trello](https://trello.com/b/2ikhLP8K/n
 
 ## Integrantes del Equipo:
 
-Luis Miguel Urbina *(Team Leader)* 
+Luis Miguel Urbina (Team Leader) 
 
 [Alejandra Dib-Ashur](https://www.linkedin.com/in/alejandra-dib-ashur/) *(Frontend Developer)* 
 
-Fernando Romero *(Frontend Developer)*
+[Fernando Romero](https://www.linkedin.com/in/fernando-romero-1bb3a0198/) *(Frontend Developer)*
 
-Fidel Parabacuto *(Frontend Developer)*
+[Fidel Parabacuto](http://linkedin.com/in/fidel-parabacuto) *(Frontend Developer)*
+
+[Edis Mercado Ruiz](https://www.linkedin.com/in/edismr) *(Frontend Developer)*
 
 [Brahian Pereyra](https://www.linkedin.com/in/brahianpdev/) *(Backend Developer)*
