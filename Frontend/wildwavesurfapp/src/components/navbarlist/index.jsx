@@ -4,7 +4,7 @@ import { getItemsList } from "../../constants/get-items-list-navbar"
 //styles
 import { Wrapper } from "./NavbarList.Styles"
 
-const NavbarList = ({ open, setOpen, type }) => {
+const NavbarList = ({ type }) => {
   const dataList = type ? getItemsList(type) : null
 
   return (
