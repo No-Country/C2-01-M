@@ -32,9 +32,9 @@ const Header = () => {
             <li onMouseOver={() => setType("woman")}>MUJER</li>
             <li onMouseOver={() => setType("children")}>NIÑOS</li>
             <li onMouseOver={() => setType("snow")}>SNOW</li>
-            <li>ADN SURF</li>
-            <li>CONTACTO</li>
-            <li>SALE</li>
+            <li onMouseOver={() => setType(null)}>ADN SURF</li>
+            <li onMouseOver={() => setType(null)}>CONTACTO</li>
+            <li onMouseOver={() => setType(null)}>SALE</li>
           </Ul>
         </div>
 
