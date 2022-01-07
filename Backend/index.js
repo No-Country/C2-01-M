@@ -1,31 +1,39 @@
-const cors = require('cors');
-const helmet = require('helmet');
-const morgan = require('morgan');
-const express = require('express');
-const mongoose = require('mongoose');
+const cors = require("cors");
+const helmet = require("helmet");
+const morgan = require("morgan");
+const express = require("express");
+const mongoose = require("mongoose");
 
-const { config } = require('./config');
+const { config } = require("./config");
+
+const authRoutes = require('./routes/auth.route');
+const userRoutes = require('./routes/users.route');
+const productRoutes = require('./routes/products.route');
 
 mongoose
-	.connect(config.db.mongo)
-	.then((res) => {
-		const app = express();
-		app.use(
-			express.urlencoded({
-				extended: true,
-			}),
-		);
+  .connect(config.db.mongo)
+  .then((res) => {
+    const app = express();
+    app.use(
+      express.urlencoded({
+        extended: true,
+      })
+    );
 
-		app.use(express.json());
+    app.use(express.json());
 
-		app.use(helmet());
-		app.use(morgan('dev'));
-		app.use(cors());
+    app.use(helmet());
+    app.use(morgan("dev"));
+    app.use(cors());
 
-		app.listen(config.app.port, () => {
-			console.log(`🔥 Server is running at port ${config.app.port}`);
-		});
+    app.use('/', authRoutes);
+    app.use('/', userRoutes);
+    app.use('/', productRoutes);
 
-		console.log('Connected to MongoDB');
-	})
-	.catch((error) => console.log(error));
+    app.listen(config.app.port, () => {
+      console.log(`🔥 Server is running at port ${config.app.port}`);
+    });
+
+    console.log("Connected to MongoDB");
+  })
+  .catch((error) => console.log(error));
