@@ -1,3 +1,6 @@
+import styled from "styled-components"
+
+export const CardStyle=styled.div`
 .card-product-info{
 	width: 100%;
 	height: auto;
@@ -51,4 +54,4 @@
 	display: flex;
 	justify-content: center;
 	width: 100%;
-}
+}`

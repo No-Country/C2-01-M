@@ -1,4 +1,6 @@
-import "./Card.css"
+import React from "react"
+import { CardStyle } from "./Card.styles"
+import megusta from "../../assets/me-gusta.png"
 
 function Card(props) {
 	/* props:
@@ -7,14 +9,13 @@ function Card(props) {
 			title
 	 */
 	return (
-		<div className='card-product-info'>
+		<CardStyle className='card-product-info'>
 			<div className="image-container">
 				<img src={props.imagePath} alt="product"></img>
 			</div>
 			<div className="card-like-container">
 				<div>
-					{/* Corregir ruta del icono, se encuentra en /public/me-gusta.png */}
-					<img src="https://e7.pngegg.com/pngimages/507/757/png-clipart-computer-icons-heart-like-button-like-share-comment-love-logo.png" alt="Like"></img>
+					<img src={megusta} alt="Like"></img>
 				</div>
 			</div>
 			<div className="card-title">
@@ -23,7 +24,7 @@ function Card(props) {
 			<div className="card-price-detail">
 				<span>${props.price}</span>
 			</div>
-		</div>
+		</CardStyle>
 	)
 }
 
