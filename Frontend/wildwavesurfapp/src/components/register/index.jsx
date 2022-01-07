@@ -6,9 +6,25 @@ import FormControl from "../form/FormControl"
 
 // styles
 import { WrapperSignup, WrapperButton } from "./Register.Styles"
+import axiosHttp from "../helpers/axisHTTP"
 
 const Register = () => {
   const onSubmit = async (values) => {
+    try {
+      let api = axiosHttp()
+      const url = `http://localhost:4000/register`
+      const options = {
+        data: {
+          name: values.name,
+          email: values.email,
+          password: values.password,
+        },
+      }
+      const info = await api.post(url, options)
+      console.log(info)
+    } catch (error) {
+      console.log(error)
+    }
     console.log("Formik data", values)
   }
 
@@ -19,7 +35,6 @@ const Register = () => {
       onSubmit={onSubmit}
     >
       {(formik) => {
-        /* console.log("Formik props", formik) */
         return (
           <>
             {formik.isSubmitting ? (
