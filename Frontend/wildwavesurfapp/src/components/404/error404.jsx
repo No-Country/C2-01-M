@@ -1,12 +1,12 @@
 import React from "react"
-import Style404 from "./error404.styles"
+import {Style404} from "./error404.styles"
+import image404 from "../../assets/page404.svg"
 
 function Error404(){
-
 	return (
 		<Style404>
 			<div className="404-image-container">
-				<img src="/public/page404.svg" alt="error de página" />
+				<img src={image404} alt="error de página" />
 			</div>
 		</Style404>
 	)
