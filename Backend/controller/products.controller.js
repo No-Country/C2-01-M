@@ -1,6 +1,6 @@
 const Product = require("../models/product.model");
 
-class postController {
+class productController {
 	async createProduct(req, res) {
 		try {
 			const { state, user, ...body } = req.body;
@@ -9,7 +9,7 @@ class postController {
 
 			if (productDB) {
 				return res.status(400).json({
-					message: `The post ${productDB.title}, already exist`,
+					message: `The product ${productDB.title}, already exist`,
 				});
 			}
 
@@ -36,8 +36,6 @@ class postController {
 	async getProduct(req, res) {
 		try {
 			const product = await Product.findById(req.params.id);
-			// .populate('User', 'nickname')
-      // .populate('Category', 'name'); 
 
 			res.json(product);
 		} catch (error) {
@@ -54,8 +52,7 @@ class postController {
 			const [total, products] = await Promise.all([
 				Product.countDocuments(query),
 				Product.find(query)
-					// .populate('User', 'nickname')  //
-					// .populate('Category', 'name')  //
+
 					.skip(Number(from))
 					.limit(Number(limit)),
 			]);
@@ -97,7 +94,7 @@ class postController {
 		const product = await Product.findByIdAndUpdate(id, { state: false }, { new: true });
 
 		res.status(200).json({
-			message: 'Post deleted successfully',
+			message: 'Product deleted successfully',
 			product
 		});
 		} catch (error) {
@@ -106,4 +103,4 @@ class postController {
 	}
 }
 
-module.exports = new postController();
+module.exports = new productController();
