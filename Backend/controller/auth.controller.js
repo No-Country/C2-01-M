@@ -6,9 +6,9 @@ const generateJWT = require('../middelwares/generateJWT');
 class authController {
   async register(req, res) {
     try {
-      const { name, email, password } = req.body;
+      const { name, email, password, role } = req.body;
 
-      const user = new User({ name, email, password });
+      const user = new User({ name, email, password, role });
 
       const salt = bcrypt.genSaltSync();
       user.password = bcrypt.hashSync(password, salt);
