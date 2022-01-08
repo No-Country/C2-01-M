@@ -1,0 +1,11 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+.img-container{
+    width: 100vw;
+    height: 80vh;
+}
+.img-container img{
+    width: 100vw;
+    height: 80vh;
+}
