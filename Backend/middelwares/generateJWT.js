@@ -10,7 +10,7 @@ const generateJWt = (uid = '') => {
 			payload,
 			config.jwt.key,
 			{
-				expiresIn: '4h',
+				expiresIn: '24h',
 			},
 			(error, token) => {
 				if (error) {

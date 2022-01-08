@@ -1,5 +1,7 @@
 const User = require("../models/user.model");
 const Product = require("../models/product.model");
+const Category = require('../models/category.model');
+const Role = require('../models/role.mode');
 
 const validEmail = async (email = "") => {
   const emailExists = await User.findOne({ email });
@@ -16,10 +18,17 @@ const validUserByID = async (id) => {
 };
 
 const existsCategoryById = async (id) => {
-  const categoryExits = await User.findById(id);
+  const categoryExits = await Category.findById(id);
   if (!categoryExits) {
     throw new Error(`This id: ${id} is already in use`);
   }
+};
+
+const validRole = async (role = '') => {
+	const roleExists = await Role.findOne({ role });
+	if (!roleExists) {
+		throw new Error(`This role: ${role} does not exist`);
+	}
 };
 
 const existProductById = async (id) => {
@@ -33,5 +42,6 @@ module.exports = {
   validEmail,
   validUserByID,
   existProductById,
-  existsCategoryById
+  existsCategoryById,
+  validRole
 };
