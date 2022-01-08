@@ -7,8 +7,9 @@ const mongoose = require("mongoose");
 const { config } = require("./config");
 
 const authRoutes = require('./routes/auth.route');
-const userRoutes = require('./routes/users.route');
-const productRoutes = require('./routes/products.route');
+const usersRoutes = require('./routes/users.route');
+const producstRoutes = require('./routes/products.route');
+const categoriesRoutes = require('./routes/categories.route');
 
 mongoose
   .connect(config.db.mongo)
@@ -27,8 +28,9 @@ mongoose
     app.use(cors());
 
     app.use('/', authRoutes);
-    app.use('/', userRoutes);
-    app.use('/', productRoutes);
+    app.use('/users', usersRoutes);
+    app.use('/products', producstRoutes);
+    app.use('/categories', categoriesRoutes);
 
     app.listen(config.app.port, () => {
       console.log(`🔥 Server is running at port ${config.app.port}`);
