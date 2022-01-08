@@ -23,4 +23,7 @@ export const Wrapper = styled.div`
       }
     }
   }
+  @media (max-width: 991px) {
+    top: 40px;
+  }
 `

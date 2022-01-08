@@ -8,7 +8,31 @@ export const Content = styled.div`
 
   margin-top: 10px;
   margin-bottom: 10px;
+  @media (max-width: 1200px) {
+    img {
+      margin: 0 !important;
+    }
+  }
+  @media (max-width: 991px) {
+    justify-content: baseline !important;
+  }
+  @media (max-width: 450px) {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 `
+export const WrapperNavbar = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: baseline;
+  @media (max-width: 991px) {
+    justify-content: space-between;
+  }
+  @media (max-width: 601px) {
+    width: auto;
+  }
+`
+
 export const Ul = styled.ul`
   display: flex;
   list-style: none;
@@ -17,9 +41,21 @@ export const Ul = styled.ul`
   li {
     margin-left: 40px;
     min-width: max-content;
+    font-size: 14px;
     :hover {
       border-bottom: 2px solid black !important;
     }
+  }
+  @media (max-width: 1200px) {
+    padding-left: 0px;
+    li {
+      margin-left: 20px;
+    }
+  }
+  @media (max-width: 991px) {
+    position: absolute;
+    top: 120px;
+    left: ${({ showNavbar }) => (showNavbar ? "0" : "-500px")};
   }
 `
 export const DisplayOverlay = styled.div`
@@ -37,6 +73,9 @@ export const WrapperIMG = styled.div`
   padding: 5px;
   border-radius: 50%;
   height: 50px;
+  @media (max-width: 451px) {
+    display: none;
+  }
 `
 export const NoLogin = styled.span`
   color: #fff;
@@ -51,4 +90,31 @@ export const WrapperUserLogin = styled.div`
   justify-content: flex-end;
   align-items: flex-end;
   margin-right: 10px;
+  @media (max-width: 1200px) {
+    margin: 5px;
+  }
+`
+export const WrapperTrolley = styled.div`
+  margin-right: 20px;
+  @media (max-width: 1200px) {
+    margin: 5px;
+  }
+`
+export const WrapperMenu = styled.div`
+  display: none;
+  @media (max-width: 990px) {
+    display: block;
+    cursor: pointer;
+    margin-left: 10px !important;
+    margin-top: 4px;
+  }
+`
+export const WrapperSearch = styled.div`
+  @media (max-width: 450px) {
+    order: 4;
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 `

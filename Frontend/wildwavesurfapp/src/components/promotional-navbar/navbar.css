@@ -1,0 +1,19 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+@media only screen and (max-width: 991px) {
+  .promotion {
+    font-size: 16px;
+    min-width: max-content;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .promotion {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .slider {
+    display: none;
+  }
+}
