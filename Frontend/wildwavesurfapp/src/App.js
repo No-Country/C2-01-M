@@ -1,12 +1,10 @@
 import "./App.css"
-import Footer from "./components/footer"
-import Header from "./components/header"
+import ManagementRoute from "./components/management-route"
 
 function App() {
   return (
     <div className='App'>
-      <Header />
-      <Footer />
+      <ManagementRoute />
     </div>
   )
 }
