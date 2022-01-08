@@ -1,10 +1,11 @@
 import React, { useState } from "react"
-import PromotionalBar from "../promotional-bar"
+import PromotionalBar from "../promotional-navbar"
 import surf from "../../assets/surf.png"
 import NavbarList from "../navbarlist"
 import Search from "../search"
 import userLogin from "../../assets/user-login.svg"
 import trolley from "../../assets/trolley.svg"
+import menu from "../../assets/menu.svg"
 
 // styles
 import {
@@ -14,20 +15,34 @@ import {
   WrapperIMG,
   NoLogin,
   WrapperUserLogin,
+  WrapperTrolley,
+  WrapperMenu,
+  WrapperNavbar,
+  WrapperSearch,
 } from "./Header.styles"
 
 const Header = () => {
   const [type, setType] = useState(null)
+  const [showNavbar, setShowNavbar] = useState(false)
   const [login, setLogin] = useState(false)
+  console.log(showNavbar)
   return (
     <div>
       <PromotionalBar />
       <Content>
-        <div style={{ display: "flex" }}>
+        <WrapperNavbar>
+          <WrapperMenu>
+            <img
+              src={menu}
+              alt='menu'
+              width={50}
+              onClick={() => setShowNavbar(!showNavbar)}
+            />
+          </WrapperMenu>
           <WrapperIMG>
             <img src={surf} alt='surf' width={50} />
           </WrapperIMG>
-          <Ul>
+          <Ul showNavbar={showNavbar}>
             <li onMouseOver={() => setType("men")}>HOMBRE</li>
             <li onMouseOver={() => setType("woman")}>MUJER</li>
             <li onMouseOver={() => setType("children")}>NIÑOS</li>
@@ -36,17 +51,20 @@ const Header = () => {
             <li onMouseOver={() => setType(null)}>CONTACTO</li>
             <li onMouseOver={() => setType(null)}>SALE</li>
           </Ul>
-        </div>
+        </WrapperNavbar>
+        <WrapperSearch>
+          <Search />
+        </WrapperSearch>
 
-        <Search />
         <WrapperUserLogin>
           <img src={userLogin} alt='user-login' width={40} />
           {!login ? <NoLogin>X</NoLogin> : null}
         </WrapperUserLogin>
-        <div style={{ marginRight: "20px" }}>
+        <WrapperTrolley>
           <img src={trolley} alt='trolley' width={50} />
-        </div>
+        </WrapperTrolley>
       </Content>
+
       <div>
         <NavbarList type={type} />
 

@@ -2,7 +2,7 @@ import React from "react"
 import Slider from "react-slick"
 
 // styles
-import "./bar.css"
+import "./navbar.css"
 
 const PromotionalBar = () => {
   const settings = {
@@ -22,13 +22,15 @@ const PromotionalBar = () => {
     "¡3 Y 6 CUOTAS SIN INTERES!",
   ]
   return (
-    <div style={{ background: "black" }}>
+    <div className='slider' style={{ background: "black" }}>
       <Slider {...settings}>
         {info &&
           info.map((item, index) => {
             return (
               <div key={index} style={{ background: "black" }}>
-                <h3 style={{ color: "#fff" }}>{item}</h3>
+                <h3 className='promotion' style={{ color: "#fff" }}>
+                  {item}
+                </h3>
               </div>
             )
           })}
