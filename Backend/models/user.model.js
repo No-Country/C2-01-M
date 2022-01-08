@@ -20,7 +20,7 @@ const UserSchema = new Schema({
 	},
 	role: {
 		type: String,
-		required: false,
+		required: true,
 		default: 'USER_ROLE',
 		emun: ['ADMIN_ROLE', 'USER_ROLE'],
 	},
@@ -30,4 +30,10 @@ const UserSchema = new Schema({
 	},
 });
 
-module.exports = mongoose.model("user", UserSchema);
+UserSchema.methods.toJSON = function () {
+	const { __v, password, _id, ...user } = this.toObject();
+	user.uid = _id;
+	return user;
+};
+
+module.exports = mongoose.model("User", UserSchema);

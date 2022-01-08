@@ -1,29 +1,41 @@
 const mongoose = require("mongoose");
-const schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const ProductSchema = new schema({
+const ProductSchema = new Schema({
   title: {
     type: String,
     required: [true, "The title is required"],
+    unique: true,
   },
   price: {
     type: String,
     required: [true, "The price is required"],
   },
-  description: String,
-  image: {
-    type: String,
-    required: [true, "The image of this product is required"],
-  },
-  // category: {
-  //   type: String,
-  //   required: false,
-  // },
   state: {
     type: Boolean,
     default: true,
     required: true,
   },
+  name: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
+  category: {
+    type: Schema.Types.ObjectId,
+    ref: "Category",
+    required: true,
+  },
+  description: {
+    type: String,
+    required: [true, "The description is required"],
+  },
+  img: { type: String },
 });
 
-module.exports = mongoose.model("product", ProductSchema);
+ProductSchema.methods.toJSON = function () {
+  const { __v, state, ...data } = this.toObject();
+  return data;
+};
+
+module.exports = mongoose.model("Product", ProductSchema);
