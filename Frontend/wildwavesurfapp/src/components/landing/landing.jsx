@@ -28,7 +28,7 @@ const PromotionalBar = () => {
           info.map((item, index) => {
             return (
               <div key={index} className="img-container">
-                <img src={item} className={"img"+index} alt={"img"+index} />
+                <img src={item} className={"img"+index} alt={"img-"+index} />
               </div>
             )
           })}
