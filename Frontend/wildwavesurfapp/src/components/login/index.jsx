@@ -3,12 +3,15 @@ import { Formik, Form } from "formik"
 import { validationSchema } from "./validation-schema"
 import { initialValuesLogin } from "../../constants/initial-values-login"
 import FormControl from "../form/FormControl"
-import axiosHttp from "../helpers/axiosHTTP"
+import axiosHttp from "../../helpers/axiosHTTP"
+import { useNavigate } from "react-router-dom"
 
 // styles
 import { WrapperSignin, WrapperButton } from "./Login.Styles"
 
 const Login = () => {
+  const navigate = useNavigate()
+
   const onSubmit = async (values) => {
     try {
       let api = axiosHttp()
@@ -24,7 +27,13 @@ const Login = () => {
     } catch (error) {
       console.log(error)
     }
-    console.log("Formik data", values)
+    // todo solo para simular la el login
+    if (values.name !== "" && values.email !== "") {
+      setTimeout(() => {
+        navigate("/home")
+      }, 2000)
+    }
+    /* console.log("Formik data", values) */
   }
 
   return (
@@ -59,7 +68,7 @@ const Login = () => {
                     <a href='#' className='forgot'>
                       ¿Perdiste tu contraseña?
                     </a>
-                    <a href='#' className='forgot'>
+                    <a href='/register' className='forgot'>
                       ¿No tienes Cuenta? Registrate
                     </a>
                   </WrapperButton>
