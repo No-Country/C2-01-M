@@ -3,7 +3,7 @@ import { Formik, Form } from "formik"
 import { validationSchema } from "./validation-schema"
 import { initialValuesLogin } from "../../constants/initial-values-login"
 import FormControl from "../form/FormControl"
-import axiosHttp from "../helpers/axisHTTP"
+import axiosHttp from "../helpers/axiosHTTP"
 
 // styles
 import { WrapperSignin, WrapperButton } from "./Login.Styles"

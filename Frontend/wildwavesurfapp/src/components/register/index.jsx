@@ -3,10 +3,10 @@ import { Formik, Form } from "formik"
 import { validationSchema } from "./validation-schema"
 import { initialValuesRegister } from "../../constants/initial-values-register"
 import FormControl from "../form/FormControl"
+import axiosHttp from "../helpers/axiosHTTP"
 
 // styles
 import { WrapperSignup, WrapperButton } from "./Register.Styles"
-import axiosHttp from "../helpers/axisHTTP"
 
 const Register = () => {
   const onSubmit = async (values) => {
