@@ -7,7 +7,7 @@ const Item=({product})=>{
         image, 
         price, 
         title, 
-        id
+        _id
     } = product
 
     const addToCart = useAddToCart()
@@ -17,10 +17,10 @@ const Item=({product})=>{
                 <img src="https://i.imgur.com/Rhy22Tn.png" alt="like" onClick={()=>addToCart(product)}/>
             </div>
             <div className="img-card">
-                <img src={image} alt={title + "-" + id} />
+                <img src={image} alt={title + "-" + _id} />
             </div>
             <div className="info-card">
-                <p>{title} - {id} </p>
+                <p>{title} - {_id} </p>
                 <span> ${price} </span>
             </div>
         </div>

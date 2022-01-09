@@ -16,10 +16,10 @@ const Cart =()=>{
             {
                 cartItem?.map((item)=>{
 
-                    const{image, title, price, id, cantidad} = item
+                    const{image, title, price, _id, cantidad} = item
 
                     return(
-                        <div key={id}>
+                        <div key={_id}>
                             <div className="card-container-cart">
                                 <img src={image} alt={title} />
                                 <p>{title} </p>

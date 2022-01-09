@@ -11,7 +11,7 @@ export function ProductsProvider({children}){
 
     const isOnCart =(product)=>{
         /* Ubica si en el carrito ya existe un producto con el mismo id */
-        return cartItem?.findIndex(item => item.id === product.id)
+        return cartItem?.findIndex(item => item._id === product._id)
     }
     
     const addToCart=(product, cantidad=1)=>{
@@ -24,7 +24,7 @@ export function ProductsProvider({children}){
             setCartItem([...cartItem, {...product, cantidad}])            
         }else{
             const oldQuantity = cartItem[isOnCart(product)].cantidad
-            const newCart = cartItem.filter((p) => p.id !== product.id)
+            const newCart = cartItem.filter((p) => p._id !== product._id)
             setCartItem([...newCart, { ...product, cantidad: oldQuantity + cantidad }])
         }
         
@@ -36,7 +36,7 @@ export function ProductsProvider({children}){
     
     const deleteFromCart = (product)=>{
         /* filtra por los productos que no coincidan con el id del producto seleccionado */
-        setCartItem(cartItem.filter(item => item.id !== product.id))
+        setCartItem(cartItem.filter(item => item._id !== product._id))
         /* Cambia la cantidad de productos */
         setItemQty(itemQty - product.cantidad)
         /* Cambia el total del carrito */
@@ -44,14 +44,12 @@ export function ProductsProvider({children}){
     }
 
     useEffect(()=>{
-        fetch('https://fakestoreapi.com/products')
+        fetch('https://polar-everglades-71081.herokuapp.com/products')
         .then((res)=>res.json())
-        .then((data)=> setProducts(data))
+        .then((data)=> setProducts(data.products))
     }, [])
 
-    console.log(cartItem);
-    console.log(itemQty);
-    console.log(totalCart);
+        console.log(products);
     return(
         <Products.Provider value={{products, addToCart, cartItem, deleteFromCart, totalCart}}>
             {children}

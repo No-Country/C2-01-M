@@ -11,7 +11,7 @@ const ItemList=()=>{
             {
                 products?.map((item)=>{
                     return(
-                        <Item key={item.id} product={item} />
+                        <Item key={item._id} product={item} />
                     )
                 })
             }
