@@ -1,8 +1,5 @@
 .cart-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    display: block
 }
 .cart-title{
     width: 100%;

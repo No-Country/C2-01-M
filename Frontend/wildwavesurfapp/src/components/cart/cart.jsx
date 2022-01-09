@@ -1,11 +1,12 @@
 import React from "react";
-import { useCartItem, useDeleteFromCart } from "../../context/ProductContext";
+import { useCartItem, useDeleteFromCart, useTotalCart } from "../../context/ProductContext";
 import "./cart.css"
 
 const Cart =()=>{
 
     const cartItem = useCartItem()  
     const deleteFromCart = useDeleteFromCart()
+    const totalCart = useTotalCart()
 
     return(
         <div className="cart-container">
@@ -15,18 +16,25 @@ const Cart =()=>{
             {
                 cartItem?.map((item)=>{
 
-                    const{image, title, price, id} = item
+                    const{image, title, price, id, cantidad} = item
 
                     return(
-                        <div key={id} className="card-container-cart">
-                            <img src={image} alt={title} />
-                            <p>{title} </p>
-                            <span>${price} </span>
-                            <button type="button" onClick={()=> deleteFromCart(item)}>Eliminar</button>
+                        <div key={id}>
+                            <div className="card-container-cart">
+                                <img src={image} alt={title} />
+                                <p>{title} </p>
+                                <span>${price} </span>
+                                <span>{cantidad} </span>
+                                <button type="button" onClick={()=> deleteFromCart(item)}>Eliminar</button>
+                            </div>
                         </div>
                     )
                 })
             }
+            <div className="total-cart">
+                <h3> Ttoal Compra: ${totalCart} </h3>
+            </div>
+
         </div>
     
     )
