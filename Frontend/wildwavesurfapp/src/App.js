@@ -1,10 +1,14 @@
 import "./App.css"
-import ManagementRoute from "./components/management-route"
+import ItemList from "./components/item/itemList"
+import Header from "./components/header/index"
+import Cart from "./components/cart/cart"
 
 function App() {
   return (
     <div className='App'>
-      <ManagementRoute />
+      <Header />
+      <ItemList />
+      <Cart />
     </div>
   )
 }
