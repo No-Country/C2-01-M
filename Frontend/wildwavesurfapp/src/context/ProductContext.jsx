@@ -1,75 +1,76 @@
-import React, {useEffect, useState, useContext} from "react";
+import React, { useEffect, useState, useContext } from "react"
 
 const Products = React.createContext()
 
-export function ProductsProvider({children}){
+export function ProductsProvider({ children }) {
+  const [products, setProducts] = useState([])
+  const [cartItem, setCartItem] = useState([])
+  const [itemQty, setItemQty] = useState(0)
+  const [totalCart, setTotalCart] = useState(0)
 
-    const[products, setProducts] = useState([])
-    const[cartItem, setCartItem] = useState([])
-    const[itemQty, setItemQty] = useState(0)
-    const[totalCart, setTotalCart] = useState(0)
+  const isOnCart = (product) => {
+    /* Ubica si en el carrito ya existe un producto con el mismo id */
+    return cartItem?.findIndex((item) => item._id === product._id)
+  }
 
-    const isOnCart =(product)=>{
-        /* Ubica si en el carrito ya existe un producto con el mismo id */
-        return cartItem?.findIndex(item => item._id === product._id)
-    }
-    
-    const addToCart=(product, cantidad=1)=>{
+  const addToCart = (product, cantidad = 1) => {
+    let total = 0
+    cartItem.map((p) => (total += p.cantidad * p.price))
 
-        let total = 0
-        cartItem.map((p) => (total += p.cantidad * p.price))
-
-        
-        if(isOnCart(product) === -1){
-            setCartItem([...cartItem, {...product, cantidad}])            
-        }else{
-            const oldQuantity = cartItem[isOnCart(product)].cantidad
-            const newCart = cartItem.filter((p) => p._id !== product._id)
-            setCartItem([...newCart, { ...product, cantidad: oldQuantity + cantidad }])
-        }
-        
-        setItemQty(itemQty + cantidad)
-        total += product.price * cantidad
-
-        setTotalCart(total)
-    }
-    
-    const deleteFromCart = (product)=>{
-        /* filtra por los productos que no coincidan con el id del producto seleccionado */
-        setCartItem(cartItem.filter(item => item._id !== product._id))
-        /* Cambia la cantidad de productos */
-        setItemQty(itemQty - product.cantidad)
-        /* Cambia el total del carrito */
-        setTotalCart(totalCart - product.price * product.cantidad)
+    if (isOnCart(product) === -1) {
+      setCartItem([...cartItem, { ...product, cantidad }])
+    } else {
+      const oldQuantity = cartItem[isOnCart(product)].cantidad
+      const newCart = cartItem.filter((p) => p._id !== product._id)
+      setCartItem([
+        ...newCart,
+        { ...product, cantidad: oldQuantity + cantidad },
+      ])
     }
 
-    useEffect(()=>{
-        fetch('https://polar-everglades-71081.herokuapp.com/products')
-        .then((res)=>res.json())
-        .then((data)=> setProducts(data.products))
-    }, [])
+    setItemQty(itemQty + cantidad)
+    total += product.price * cantidad
 
-        console.log(products);
-    return(
-        <Products.Provider value={{products, addToCart, cartItem, deleteFromCart, totalCart}}>
-            {children}
-        </Products.Provider>
-    )
+    setTotalCart(total)
+  }
 
+  const deleteFromCart = (product) => {
+    /* filtra por los productos que no coincidan con el id del producto seleccionado */
+    setCartItem(cartItem.filter((item) => item._id !== product._id))
+    /* Cambia la cantidad de productos */
+    setItemQty(itemQty - product.cantidad)
+    /* Cambia el total del carrito */
+    setTotalCart(totalCart - product.price * product.cantidad)
+  }
+
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_SERVER_URI}/products`)
+      .then((res) => res.json())
+      .then((data) => setProducts(data.products))
+  }, [])
+
+  console.log(products)
+  return (
+    <Products.Provider
+      value={{ products, addToCart, cartItem, deleteFromCart, totalCart }}
+    >
+      {children}
+    </Products.Provider>
+  )
 }
-export function useAddToCart(){
-    return useContext(Products).addToCart
+export function useAddToCart() {
+  return useContext(Products).addToCart
 }
 
-export function useCartItem(){
-    return useContext(Products).cartItem
+export function useCartItem() {
+  return useContext(Products).cartItem
 }
 
-export function useDeleteFromCart(){
-    return useContext(Products).deleteFromCart
+export function useDeleteFromCart() {
+  return useContext(Products).deleteFromCart
 }
 
-export function useTotalCart(){
-    return useContext(Products).totalCart
+export function useTotalCart() {
+  return useContext(Products).totalCart
 }
 export default Products
