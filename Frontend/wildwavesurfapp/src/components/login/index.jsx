@@ -5,6 +5,7 @@ import { initialValuesLogin } from "../../constants/initial-values-login"
 import FormControl from "../form/FormControl"
 import axiosHttp from "../../helpers/axiosHTTP"
 import { useNavigate } from "react-router-dom"
+import { useGetInfoUser } from "../../context/ProductContext"
 
 // styles
 import { WrapperSignin, WrapperButton } from "./Login.Styles"
@@ -13,6 +14,7 @@ import TextError from "../form/text-error/TextError"
 const Login = () => {
   const navigate = useNavigate()
   const [messageError, setMessageError] = useState(false)
+  const getInfoUser = useGetInfoUser()
 
   const onSubmit = async (values) => {
     try {
@@ -26,6 +28,7 @@ const Login = () => {
       }
       const info = await api.post(url, options)
       if (info.user.state) {
+        getInfoUser(info)
         return navigate("/home")
       }
     } catch (error) {
