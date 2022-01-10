@@ -1,14 +1,14 @@
 const dotenv = require("dotenv");
 dotenv.config();
 
-const { APP_PORT, MONGO_URL, SECRETOPRIVATEKEY } = process.env;
+const { PORT, MONGO_URL, SECRETOPRIVATEKEY } = process.env;
 
 const config = {
   db: {
     mongo: MONGO_URL,
   },
   app: {
-    port: APP_PORT,
+    port: PORT || 3000,
   },
   jwt: {
     key: SECRETOPRIVATEKEY,
