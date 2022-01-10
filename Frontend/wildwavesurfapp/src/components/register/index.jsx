@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Formik, Form } from "formik"
 import { validationSchema } from "./validation-schema"
 import { initialValuesRegister } from "../../constants/initial-values-register"
@@ -8,13 +8,15 @@ import { useNavigate } from "react-router-dom"
 
 // styles
 import { WrapperSignup, WrapperButton } from "./Register.Styles"
+import TextError from "../form/text-error/TextError"
 
 const Register = () => {
   const navigate = useNavigate()
+  const [messageError, setMessageError] = useState(false)
   const onSubmit = async (values) => {
     try {
       let api = axiosHttp()
-      const url = `http://localhost:4000/register`
+      const url = `${process.env.REACT_APP_SERVER_URI}/register`
       const options = {
         data: {
           name: values.name,
@@ -22,21 +24,16 @@ const Register = () => {
           password: values.password,
         },
       }
+
       const info = await api.post(url, options)
-      console.log(info)
+      if (info.user.state) navigate("/login")
     } catch (error) {
-      console.log(error)
-    }
-    // todo solo para simular la el register
-    if (
-      values.name !== "" &&
-      values.email !== "" &&
-      values.password !== "" &&
-      values.confirmPassword !== ""
-    ) {
-      setTimeout(() => {
-        navigate("/login")
-      }, 2000)
+      if (error) {
+        setMessageError(true)
+        setTimeout(() => {
+          setMessageError(false)
+        }, 2000)
+      }
     }
   }
 
@@ -79,6 +76,13 @@ const Register = () => {
                     name='confirmPassword'
                     placeholder='Confirma tu Contraseña'
                   />
+                  {messageError && (
+                    <TextError
+                      styles={{ marginBottom: "30px", padding: "15px" }}
+                    >
+                      <span>usuario o contraseña</span>
+                    </TextError>
+                  )}
                   <WrapperButton>
                     <button type={"onSubmit"}>Registrar</button>
                     <a href='#' className='forgot'>
