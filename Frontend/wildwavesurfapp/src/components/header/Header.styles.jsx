@@ -118,3 +118,17 @@ export const WrapperSearch = styled.div`
     width: 100%;
   }
 `
+export const WrapperName = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  padding: 10px;
+  color: #fff;
+  font-weight: 800;
+  background: blue;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+`

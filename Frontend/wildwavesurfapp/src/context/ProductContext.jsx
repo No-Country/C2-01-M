@@ -7,6 +7,7 @@ export function ProductsProvider({ children }) {
   const [cartItem, setCartItem] = useState([])
   const [itemQty, setItemQty] = useState(0)
   const [totalCart, setTotalCart] = useState(0)
+  const [infoUser, setInfoUser] = useState()
 
   const isOnCart = (product) => {
     /* Ubica si en el carrito ya existe un producto con el mismo id */
@@ -33,7 +34,9 @@ export function ProductsProvider({ children }) {
 
     setTotalCart(total)
   }
-
+  const getInfoUser = (user) => {
+    setInfoUser(user)
+  }
   const deleteFromCart = (product) => {
     /* filtra por los productos que no coincidan con el id del producto seleccionado */
     setCartItem(cartItem.filter((item) => item._id !== product._id))
@@ -52,7 +55,15 @@ export function ProductsProvider({ children }) {
   console.log(products)
   return (
     <Products.Provider
-      value={{ products, addToCart, cartItem, deleteFromCart, totalCart }}
+      value={{
+        products,
+        addToCart,
+        cartItem,
+        deleteFromCart,
+        totalCart,
+        getInfoUser,
+        infoUser,
+      }}
     >
       {children}
     </Products.Provider>
@@ -72,5 +83,9 @@ export function useDeleteFromCart() {
 
 export function useTotalCart() {
   return useContext(Products).totalCart
+}
+
+export function useGetInfoUser() {
+  return useContext(Products).getInfoUser
 }
 export default Products

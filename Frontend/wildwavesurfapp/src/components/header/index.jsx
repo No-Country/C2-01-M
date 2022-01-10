@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import PromotionalBar from "../promotional-navbar"
 import surf from "../../assets/surf.png"
 import NavbarList from "../navbarlist"
@@ -6,6 +6,8 @@ import Search from "../search"
 import userLogin from "../../assets/user-login.svg"
 import trolley from "../../assets/trolley.svg"
 import menu from "../../assets/menu.svg"
+import Products from "../../context/ProductContext"
+import { useNavigate } from "react-router-dom"
 
 // styles
 import {
@@ -19,14 +21,20 @@ import {
   WrapperMenu,
   WrapperNavbar,
   WrapperSearch,
+  WrapperName,
 } from "./Header.styles"
-import { useNavigate } from "react-router-dom"
 
 const Header = () => {
   const [type, setType] = useState(null)
   const [showNavbar, setShowNavbar] = useState(false)
-  const [login, setLogin] = useState(false)
+  const [login, setLogin] = useState("")
   const navigate = useNavigate()
+  const { infoUser } = useContext(Products)
+
+  useEffect(() => {
+    if (infoUser) setLogin(infoUser?.user?.name)
+  }, [infoUser])
+
   return (
     <div>
       <PromotionalBar />
@@ -64,8 +72,22 @@ const Header = () => {
         </WrapperSearch>
 
         <WrapperUserLogin>
-          <img src={userLogin} alt='user-login' width={40} />
-          {!login ? <NoLogin>X</NoLogin> : null}
+          {!login ? (
+            <div
+              style={{
+                display: "flex",
+                alignItems: "flex-end",
+                marginLeft: "10px",
+                cursor: "pointer",
+              }}
+              onClick={() => navigate("/login")}
+            >
+              <img src={userLogin} alt='user-login' width={40} />
+              <NoLogin>X</NoLogin>
+            </div>
+          ) : (
+            <WrapperName>{login.charAt(0).toUpperCase()}</WrapperName>
+          )}
         </WrapperUserLogin>
         <WrapperTrolley>
           <img
