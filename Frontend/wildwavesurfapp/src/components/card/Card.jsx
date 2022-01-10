@@ -1,5 +1,5 @@
 import React from "react"
-import { CardStyle } from "./Card.styles"
+import CardStyle from "./Card.styles"
 import megusta from "../../assets/me-gusta.png"
 
 function Card(props) {
