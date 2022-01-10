@@ -30,7 +30,10 @@ const ProductSchema = new Schema({
     type: String,
     required: [true, "The description is required"],
   },
-  img: { type: String },
+  image: {
+    type: String,
+    required: true,
+  },
 });
 
 ProductSchema.methods.toJSON = function () {
