@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Formik, Form } from "formik"
 import { validationSchema } from "./validation-schema"
 import { initialValuesLogin } from "../../constants/initial-values-login"
@@ -8,14 +8,16 @@ import { useNavigate } from "react-router-dom"
 
 // styles
 import { WrapperSignin, WrapperButton } from "./Login.Styles"
+import TextError from "../form/text-error/TextError"
 
 const Login = () => {
   const navigate = useNavigate()
+  const [messageError, setMessageError] = useState(false)
 
   const onSubmit = async (values) => {
     try {
       let api = axiosHttp()
-      const url = `http://localhost:4000/login`
+      const url = await `${process.env.REACT_APP_SERVER_URI}/login`
       const options = {
         data: {
           email: values.email,
@@ -23,17 +25,17 @@ const Login = () => {
         },
       }
       const info = await api.post(url, options)
-      console.log(info)
+      if (info.user.state) {
+        return navigate("/home")
+      }
     } catch (error) {
-      console.log(error)
+      if (error) {
+        setMessageError(true)
+        setTimeout(() => {
+          setMessageError(false)
+        }, 2000)
+      }
     }
-    // todo solo para simular la el login
-    if (values.name !== "" && values.email !== "") {
-      setTimeout(() => {
-        navigate("/home")
-      }, 2000)
-    }
-    /* console.log("Formik data", values) */
   }
 
   return (
@@ -63,6 +65,13 @@ const Login = () => {
                     name='password'
                     placeholder='Contraseña'
                   />
+                  {messageError && (
+                    <TextError
+                      styles={{ marginBottom: "30px", padding: "15px" }}
+                    >
+                      <span>usuario o contraseña</span>
+                    </TextError>
+                  )}
                   <WrapperButton>
                     <button type={"onSubmit"}>Login</button>
                     <a href='#' className='forgot'>

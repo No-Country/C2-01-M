@@ -25,7 +25,7 @@ const axiosHttp = () => {
       const res = await axios(endpoint, options)
       return res.data
     } catch (error) {
-      return console.log(error)
+      return error
     }
   }
   const get = (url, options = {}) => customAxios(url, options)

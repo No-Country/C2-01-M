@@ -5,7 +5,7 @@ import PropTypes from "prop-types"
 import { WrapperError } from "./TextError.Styles"
 
 const TextError = (props) => {
-  return <WrapperError>{props.children}</WrapperError>
+  return <WrapperError $bsStyle={props.styles}>{props.children}</WrapperError>
 }
 TextError.propTypes = {
   children: PropTypes.string.isRequired,

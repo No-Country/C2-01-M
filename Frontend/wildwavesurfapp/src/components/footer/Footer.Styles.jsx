@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const WrapperFooter = styled.div`
-  position: absolute;
+  position: sticky;
   width: 100%;
   display: flex;
   justify-content: space-between;

@@ -20,12 +20,13 @@ import {
   WrapperNavbar,
   WrapperSearch,
 } from "./Header.styles"
+import { useNavigate } from "react-router-dom"
 
 const Header = () => {
   const [type, setType] = useState(null)
   const [showNavbar, setShowNavbar] = useState(false)
   const [login, setLogin] = useState(false)
-  console.log(showNavbar)
+  const navigate = useNavigate()
   return (
     <div>
       <PromotionalBar />
@@ -43,7 +44,13 @@ const Header = () => {
             <img src={surf} alt='surf' width={50} />
           </WrapperIMG>
           <Ul showNavbar={showNavbar}>
-            <li onMouseOver={() => setType("men")}>HOMBRE</li>
+            <li
+              onMouseOver={() => {
+                setType("men")
+              }}
+            >
+              HOMBRE
+            </li>
             <li onMouseOver={() => setType("woman")}>MUJER</li>
             <li onMouseOver={() => setType("children")}>NIÑOS</li>
             <li onMouseOver={() => setType("snow")}>SNOW</li>
@@ -61,7 +68,12 @@ const Header = () => {
           {!login ? <NoLogin>X</NoLogin> : null}
         </WrapperUserLogin>
         <WrapperTrolley>
-          <img src={trolley} alt='trolley' width={50} />
+          <img
+            src={trolley}
+            alt='trolley'
+            width={50}
+            onClick={() => navigate("/itemList")}
+          />
         </WrapperTrolley>
       </Content>
 

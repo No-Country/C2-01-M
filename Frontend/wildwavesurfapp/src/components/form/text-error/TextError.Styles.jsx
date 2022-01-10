@@ -7,4 +7,5 @@ export const WrapperError = styled.div`
   border-radius: 5px;
   padding: 10px;
   margin-top: 20px;
+  ${({ $bsStyle }) => $bsStyle || ""};
 `
