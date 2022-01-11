@@ -4,11 +4,12 @@ import { validationSchema } from "./validation-schema"
 import { initialValuesRegister } from "../../constants/initial-values-register"
 import FormControl from "../form/FormControl"
 import axiosHttp from "../../helpers/axiosHTTP"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import TextError from "../form/text-error/TextError"
+import Loader from "../loader/loader"
 
 // styles
 import { WrapperSignup, WrapperButton } from "./Register.Styles"
-import TextError from "../form/text-error/TextError"
 
 const Register = () => {
   const navigate = useNavigate()
@@ -47,7 +48,7 @@ const Register = () => {
         return (
           <>
             {formik.isSubmitting ? (
-              <h1>cargando......</h1>
+              <Loader />
             ) : (
               <WrapperSignup>
                 <Form className='form'>
@@ -85,13 +86,11 @@ const Register = () => {
                   )}
                   <WrapperButton>
                     <button type={"onSubmit"}>Registrar</button>
-                    <a href='#' className='forgot'>
+                    <Link to={"#"}>
                       Al registrate, aceptas nuestras condiciones de uso y
                       politica de privasidad
-                    </a>
-                    <a href='/login' className='forgot'>
-                      ¿Ya tienes Cuenta? Iniciar Sesion
-                    </a>
+                    </Link>
+                    <Link to={"/login"}>¿Ya tienes Cuenta? Iniciar Sesion</Link>
                   </WrapperButton>
                 </Form>
               </WrapperSignup>

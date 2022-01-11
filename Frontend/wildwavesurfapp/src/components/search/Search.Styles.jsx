@@ -32,11 +32,4 @@ export const WrapperInput = styled.div`
       max-width: 210px;
     }
   }
-  @media (max-width: 600px) {
-    input {
-      /*    position: absolute;
-      top: 112px;
-      border: 1px solid black; */
-    }
-  }
 `

@@ -15,11 +15,16 @@ const Welcome = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        width: "100%",
-        height: "100Vh",
+        height: "100vh",
+        backgroundImage:
+          "url(https://www.ecostinger.com/product_images/uploaded_images/shutterstock-54425062.jpg)",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "100% auto, cover",
       }}
     >
-      <h1>Welcome to Wild Ware Surf</h1>
+      <h1 style={{ color: "#915454", fontSize: "80px" }}>
+        Welcome to Wild Wave Surf
+      </h1>
     </div>
   )
 }

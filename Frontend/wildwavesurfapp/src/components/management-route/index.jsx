@@ -9,26 +9,25 @@ import Landing from "../landing/landing"
 import Error404 from "../404/error404"
 import ItemList from "../item/itemList"
 import Header from "../header"
+import ItemDetails from "../item-details/ItemDetails"
 
-const ManagementRoute = () => {
-  return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route exact path='/header' element={<Header />} />
-          <Route exact path='/' element={<Welcome />} />
-          <Route exact path='/login' element={<Login />} />
-          <Route exact path='/register' element={<Register />} />
-          <Route exact path='/home' element={<Home />} />
-          <Route exact path='/cart' element={<Cart />} />
-          <Route exact path='/landing' element={<Landing />} />
-          <Route exact path='/itemList' element={<ItemList />} />
-
-          <Route path='*' element={<Error404 />} />
-        </Routes>
-      </BrowserRouter>
-    </>
-  )
-}
+const ManagementRoute = () => (
+  <>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path='/header' element={<Header />} />
+        <Route exact path='/' element={<Welcome />} />
+        <Route exact path='/login' element={<Login />} />
+        <Route exact path='/register' element={<Register />} />
+        <Route exact path='/home' element={<Home />} />
+        <Route exact path='/cart' element={<Cart />} />
+        <Route exact path='/landing' element={<Landing />} />
+        <Route exact path='/itemList' element={<ItemList />} />
+        <Route exact path='/item-details' element={<ItemDetails />} />
+        <Route path='*' element={<Error404 />} />
+      </Routes>
+    </BrowserRouter>
+  </>
+)
 
 export default ManagementRoute

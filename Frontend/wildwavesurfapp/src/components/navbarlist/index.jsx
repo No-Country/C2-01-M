@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import { getItemsList } from "../../constants/get-items-list-navbar"
 
 //styles
@@ -14,7 +15,7 @@ const NavbarList = ({ type }) => {
           dataList.map((item, index) => {
             return (
               <li key={index}>
-                <a href='#'>{item}</a>{" "}
+                <Link to={"#"}>{item}</Link>
               </li>
             )
           })}

@@ -5,7 +5,7 @@ import search from "../../assets/search.svg"
 import { WrapperSearch, WrapperInput } from "./Search.Styles"
 const Search = () => {
   const [value, setValue] = useState("")
-  console.log(value)
+
   return (
     <WrapperSearch>
       <WrapperInput>
