@@ -4,8 +4,9 @@ import { validationSchema } from "./validation-schema"
 import { initialValuesLogin } from "../../constants/initial-values-login"
 import FormControl from "../form/FormControl"
 import axiosHttp from "../../helpers/axiosHTTP"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useGetInfoUser } from "../../context/ProductContext"
+import Loader from "../loader/loader"
 
 // styles
 import { WrapperSignin, WrapperButton } from "./Login.Styles"
@@ -51,7 +52,7 @@ const Login = () => {
         return (
           <>
             {formik.isSubmitting ? (
-              <h1>cargando......</h1>
+              <Loader />
             ) : (
               <WrapperSignin>
                 <Form className='form'>
@@ -77,12 +78,9 @@ const Login = () => {
                   )}
                   <WrapperButton>
                     <button type={"onSubmit"}>Login</button>
-                    <a href='#' className='forgot'>
-                      ¿Perdiste tu contraseña?
-                    </a>
-                    <a href='/register' className='forgot'>
-                      ¿No tienes Cuenta? Registrate
-                    </a>
+                    <Link to={"#"}>¿Perdiste tu contraseña?</Link>
+                    <Link to={"/register"}>¿No tienes Cuenta? Registrate</Link>
+                    <Link to={"/home"}>Igresar como invitado</Link>
                   </WrapperButton>
                 </Form>
               </WrapperSignin>
