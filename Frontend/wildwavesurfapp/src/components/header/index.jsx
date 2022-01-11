@@ -1,19 +1,25 @@
 import React, { useContext, useEffect, useState } from "react"
 import PromotionalBar from "../promotional-navbar"
 import surf from "../../assets/surf.png"
-import NavbarList from "../navbarlist"
+// import NavbarList from "../navbarlist"
 import Search from "../search"
 import userLogin from "../../assets/user-login.svg"
 import trolley from "../../assets/trolley.svg"
 import menu from "../../assets/menu.svg"
 import Products from "../../context/ProductContext"
 import { useNavigate } from "react-router-dom"
+import Cart from "../cart/cart"
+import {
+  useCartItem,
+  /* useDeleteFromCart,
+  useTotalCart, */
+} from "../../context/ProductContext"
 
 // styles
 import {
   Content,
   Ul,
-  DisplayOverlay,
+  // DisplayOverlay,
   WrapperIMG,
   NoLogin,
   WrapperUserLogin,
@@ -22,14 +28,17 @@ import {
   WrapperNavbar,
   WrapperSearch,
   WrapperName,
+  WrapperCart,
+  QuantityItems,
 } from "./Header.styles"
 
-const Header = () => {
-  const [type, setType] = useState(null)
+const Header = ({ setShowItemList, showItemList }) => {
   const [showNavbar, setShowNavbar] = useState(false)
   const [login, setLogin] = useState("")
+  const [showCart, setShowCart] = useState(false)
   const navigate = useNavigate()
   const { infoUser } = useContext(Products)
+  const cartItem = useCartItem()
 
   useEffect(() => {
     if (infoUser) setLogin(infoUser?.user?.name)
@@ -53,18 +62,18 @@ const Header = () => {
           </WrapperIMG>
           <Ul showNavbar={showNavbar}>
             <li
-              onMouseOver={() => {
-                setType("men")
+              onClick={() => {
+                setShowItemList(!showItemList)
               }}
             >
               HOMBRE
             </li>
-            <li onMouseOver={() => setType("woman")}>MUJER</li>
-            <li onMouseOver={() => setType("children")}>NIÑOS</li>
-            <li onMouseOver={() => setType("snow")}>SNOW</li>
-            <li onMouseOver={() => setType(null)}>ADN SURF</li>
-            <li onMouseOver={() => setType(null)}>CONTACTO</li>
-            <li onMouseOver={() => setType(null)}>SALE</li>
+            <li>MUJER</li>
+            <li>NIÑOS</li>
+            <li>SNOW</li>
+            <li>ADN SURF</li>
+            <li>CONTACTO</li>
+            <li>SALE</li>
           </Ul>
         </WrapperNavbar>
         <WrapperSearch>
@@ -94,23 +103,18 @@ const Header = () => {
             src={trolley}
             alt='trolley'
             width={50}
-            onClick={() => navigate("/itemList")}
+            onClick={() => setShowCart(!showCart)}
           />
+          {cartItem.length > 0 ? (
+            <QuantityItems>{cartItem.length}</QuantityItems>
+          ) : null}
+          {showCart && (
+            <WrapperCart>
+              <Cart />
+            </WrapperCart>
+          )}
         </WrapperTrolley>
       </Content>
-
-      <div>
-        <NavbarList type={type} />
-
-        {type && (
-          <DisplayOverlay
-            onClick={(e) => {
-              e.stopPropagation()
-              setType(null)
-            }}
-          />
-        )}
-      </div>
     </div>
   )
 }

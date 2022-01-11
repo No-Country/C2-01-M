@@ -17,9 +17,8 @@ const Landing = () => {
   }
   const info = [
     "https://i.imgur.com/oh7CSuX.jpg",
-    "https://i.imgur.com/uTZanWT.jpg",  
-    "https://i.imgur.com/tvUL9LX.jpg",   
-
+    "https://i.imgur.com/uTZanWT.jpg",
+    "https://i.imgur.com/tvUL9LX.jpg",
   ]
   return (
     <div>
@@ -27,8 +26,8 @@ const Landing = () => {
         {info &&
           info.map((item, index) => {
             return (
-              <div key={index} className="img-container">
-                <img src={item} alt={"img"+index} className="img-slide"/>
+              <div key={index} className='img-container'>
+                <img src={item} alt={"img" + index} className='img-slide' />
               </div>
             )
           })}

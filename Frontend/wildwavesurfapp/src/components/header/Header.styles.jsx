@@ -95,10 +95,27 @@ export const WrapperUserLogin = styled.div`
   }
 `
 export const WrapperTrolley = styled.div`
+  display: flex;
+  align-items: flex-end;
   margin-right: 20px;
   @media (max-width: 1200px) {
     margin: 5px;
   }
+`
+
+export const QuantityItems = styled.span`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 10px;
+  bottom: 5px;
+  color: #fff;
+  border-radius: 50px;
+  background: green;
+  padding: 3px;
+  width: 14px;
+  height: 16px;
 `
 export const WrapperMenu = styled.div`
   display: none;
@@ -131,4 +148,10 @@ export const WrapperName = styled.span`
   width: 24px;
   height: 24px;
   margin-left: 10px;
+`
+export const WrapperCart = styled.div`
+  display: flex;
+  position: absolute;
+  right: 20px;
+  top: 150px;
 `

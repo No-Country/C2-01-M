@@ -22,11 +22,16 @@ const Cart = () => {
         return (
           <div key={_id}>
             <div className='card-container-cart'>
-              <img src={image} alt={title} />
+              {/* <img src={image} alt={title} /> */}
               <p>{title} </p>
-              <span>{price} </span>
-              <span>{cantidad} </span>
-              <button type='button' onClick={() => deleteFromCart(item)}>
+              <span>precio: {price} </span>
+              <span>unidades: {cantidad} </span>
+
+              <button
+                type='button'
+                className='delete-item'
+                onClick={() => deleteFromCart(item)}
+              >
                 Eliminar
               </button>
             </div>
@@ -34,7 +39,7 @@ const Cart = () => {
         )
       })}
       <div className='total-cart'>
-        <h3> Ttoal Compra: {totalCart} </h3>
+        <h3> Total Compra: {totalCart} </h3>
       </div>
     </div>
   )

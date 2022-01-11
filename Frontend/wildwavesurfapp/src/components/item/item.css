@@ -1,44 +1,42 @@
-.item-list-container{
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 1rem 2rem;
-    
+.item-list-container {
+  width: 90%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem 2rem;
 }
 
-.card-container{
-    width: 200px;
-    height: 330px;
-    text-align: center;
-    margin: 1rem;
-    border-radius: .5rem;
-    box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.28);
-    -webkit-box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.28);
-    -moz-box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.28);
+.card-container {
+  width: 200px;
+  height: 330px;
+  text-align: center;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.28);
+  -webkit-box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.28);
+  -moz-box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.28);
 }
-.like-container{
-    display: flex;
-    justify-content: end;
+.like-container {
+  display: flex;
+  justify-content: end;
 }
-.like-container img{
-    margin: .3rem;
-    width: 24px;
-    height: 24px;
-}
-
-.card-container .img-card img{
-    width: 150px;
-    height: 150px;
-
-    
+.like-container img {
+  margin: 0.3rem;
+  width: 24px;
+  height: 24px;
 }
 
-.card-container .info-card{
-    width: 90%;
-    margin: 0 auto;
-    padding: .5rem;
+.card-container .img-card img {
+  width: 150px;
+  height: 150px;
 }
-.card-container .info-card p{
-    font-size: .8rem;
+
+.card-container .info-card {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+.card-container .info-card p {
+  font-size: 0.8rem;
 }
