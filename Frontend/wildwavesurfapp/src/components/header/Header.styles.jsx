@@ -40,6 +40,7 @@ export const Ul = styled.ul`
   align-items: flex-end;
   li {
     margin-left: 40px;
+    cursor: pointer;
     min-width: max-content;
     font-size: 14px;
     :hover {
