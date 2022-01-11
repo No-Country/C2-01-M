@@ -7,7 +7,7 @@ import userLogin from "../../assets/user-login.svg"
 import trolley from "../../assets/trolley.svg"
 import menu from "../../assets/menu.svg"
 import Products from "../../context/ProductContext"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Cart from "../cart/cart"
 import {
   useCartItem,
@@ -66,14 +66,16 @@ const Header = ({ setShowItemList, showItemList }) => {
                 setShowItemList(!showItemList)
               }}
             >
-              HOMBRE
+              PRODUCTOS
             </li>
-            <li>MUJER</li>
-            <li>NIÑOS</li>
-            <li>SNOW</li>
-            <li>ADN SURF</li>
-            <li>CONTACTO</li>
-            <li>SALE</li>
+            <li>
+              <Link
+                to={"/home"}
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                HOME
+              </Link>
+            </li>
           </Ul>
         </WrapperNavbar>
         <WrapperSearch>
