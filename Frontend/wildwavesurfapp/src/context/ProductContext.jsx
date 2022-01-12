@@ -88,4 +88,9 @@ export function useTotalCart() {
 export function useGetInfoUser() {
   return useContext(Products).getInfoUser
 }
+export function useProducts() {
+  return useContext(Products).products
+}
+
+
 export default Products

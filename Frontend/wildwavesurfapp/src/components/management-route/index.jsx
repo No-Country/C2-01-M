@@ -9,7 +9,7 @@ import Landing from "../landing/landing"
 import Error404 from "../404/error404"
 import ItemList from "../item/itemList"
 import Header from "../header"
-import ItemDetails from "../item-details/ItemDetails"
+import ItemDetailContainer from "../item-details/itemDetailContainer"
 
 const ManagementRoute = () => (
   <>
@@ -23,7 +23,7 @@ const ManagementRoute = () => (
         <Route exact path='/cart' element={<Cart />} />
         <Route exact path='/landing' element={<Landing />} />
         <Route exact path='/itemList' element={<ItemList />} />
-        <Route exact path='/item-details' element={<ItemDetails />} />
+        <Route path="/product/:prodId" element={<ItemDetailContainer />}></Route>
         <Route path='*' element={<Error404 />} />
       </Routes>
     </BrowserRouter>
