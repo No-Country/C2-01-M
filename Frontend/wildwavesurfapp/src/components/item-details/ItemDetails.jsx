@@ -1,18 +1,24 @@
 import React from "react"
 import { ItemDetailsStyle } from "./ItemDetails.styles"
 import imageAddToCart from "../../assets/trolley.svg"
+import { useAddToCart } from "../../context/ProductContext"
 
-function ItemDetails(){
+function ItemDetails({product}){
+
+	const {image,price,title,_id} = product
+
+	const addToCart=useAddToCart()
+
 	return (
 		<ItemDetailsStyle>
 			<section className="itemDetailsContainer">
 				<div className="imageContainer">
-					<img src="https://i2.wp.com/imagenesparapeques.com/wp-content/uploads/2021/01/Imagenes-PNG-de-among-us.png?ssl=1" alt="imagen del producto" />
+					<img src={image} alt={title + "-" + _id} />
 				</div>
 
 				<div className="detailsItems">
 					<div className="block">
-						<span className="title">Título ‼</span>
+						<span className="title">{title}</span>
 					</div>
 
 					<div className="block">
@@ -20,18 +26,18 @@ function ItemDetails(){
 					</div>
 
 					<div className="block">
-						<span>Precio: $300 ‼</span>
+						<span>Precio: ${price}</span>
 					</div>
 
-					<div className="block">
+					{/* <div className="block">
 						<span>Cantidad: </span>‼‼
 					</div>
 
 					<div className="block">
 						<span>Talla:</span>
-					</div>
+					</div> */}
 
-					<div className="block">
+					{/* <div className="block">
 						<div className="tallasContainer">
 							<div><span>XS</span></div>
 							<div><span>S</span></div>
@@ -40,11 +46,13 @@ function ItemDetails(){
 							<div><span>XL</span></div>
 							<div><span>XXL</span></div>
 						</div>
-					</div>
+					</div> */}
 
 					<div className="block">
 						<div className="buttonAddToCart">
-							<button>
+							<button
+							onClick={()=>addToCart(product)}
+							>
 								<img src={imageAddToCart} alt="add to cart icon" />
 								<span>Añadir</span>
 							</button>
