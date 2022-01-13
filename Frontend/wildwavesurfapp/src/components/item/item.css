@@ -1,15 +1,16 @@
 .item-list-container {
   width: 90%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin: 1rem 2rem;
+  margin-bottom: 150px;
 }
 
 .card-container {
   width: 250px;
-  height: 350px;
+  min-height: 350px;
   text-align: center;
   margin: 1rem;
   border-radius: 0.5rem;
