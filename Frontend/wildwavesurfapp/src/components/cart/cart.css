@@ -1,9 +1,9 @@
 .cart-container {
   display: flex;
-  width: 100%;
   padding: 10px;
   margin: 2rem 3rem;
   border-radius: 0.5rem;  
+  box-sizing: border-box;
 }
 .cart-container .shop-detail{
   width: 60%;
