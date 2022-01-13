@@ -5,8 +5,7 @@ const Welcome = () => {
   const navigate = useNavigate()
 
   setTimeout(() => {
-    console.log("test")
-    navigate("/login")
+    navigate("/home")
   }, 4000)
 
   return (
@@ -15,7 +14,7 @@ const Welcome = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
+        minHeight: "100vh",
         backgroundImage:
           "url(https://www.ecostinger.com/product_images/uploaded_images/shutterstock-54425062.jpg)",
         backgroundRepeat: "no-repeat",

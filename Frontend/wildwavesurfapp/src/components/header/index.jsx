@@ -1,14 +1,12 @@
 import React, { useContext, useEffect, useState } from "react"
 import PromotionalBar from "../promotional-navbar"
 import surf from "../../assets/surf.png"
-// import NavbarList from "../navbarlist"
 import Search from "../search"
 import userLogin from "../../assets/user-login.svg"
 import trolley from "../../assets/trolley.svg"
 import menu from "../../assets/menu.svg"
 import Products from "../../context/ProductContext"
 import { useNavigate } from "react-router-dom"
-import Cart from "../cart/cart"
 import {
   useCartItem,
   useItemQty,
@@ -20,7 +18,6 @@ import { Link } from "react-router-dom"
 import {
   Content,
   Ul,
-  // DisplayOverlay,
   WrapperIMG,
   NoLogin,
   WrapperUserLogin,
@@ -29,11 +26,10 @@ import {
   WrapperNavbar,
   WrapperSearch,
   WrapperName,
-  WrapperCart,
   QuantityItems,
 } from "./Header.styles"
 
-const Header = ({ setShowItemList, showItemList }) => {
+const Header = () => {
   const [showNavbar, setShowNavbar] = useState(false)
   const [login, setLogin] = useState("")
   const [showCart, setShowCart] = useState(false)
@@ -60,16 +56,19 @@ const Header = ({ setShowItemList, showItemList }) => {
             />
           </WrapperMenu>
           <WrapperIMG>
-            <Link to="/">
+            <Link to='/home' style={{ textDecoration: "none", color: "black" }}>
               <img src={surf} alt='surf' width={50} />
             </Link>
           </WrapperIMG>
           <Ul showNavbar={showNavbar}>
-            <Link to="/">
-            <li>HOME</li>
+            <Link to='/home' style={{ textDecoration: "none", color: "black" }}>
+              <li>HOME</li>
             </Link>
-            <Link to="/products">
-            <li>PRODUCTOS</li>
+            <Link
+              to='/products'
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <li>PRODUCTOS</li>
             </Link>
           </Ul>
         </WrapperNavbar>
@@ -96,7 +95,7 @@ const Header = ({ setShowItemList, showItemList }) => {
           )}
         </WrapperUserLogin>
         <WrapperTrolley>
-          <Link to="/cart">
+          <Link to='/cart' style={{ textDecoration: "none", color: "black" }}>
             <img
               src={trolley}
               alt='trolley'
@@ -107,11 +106,6 @@ const Header = ({ setShowItemList, showItemList }) => {
           {cartItem.length > 0 ? (
             <QuantityItems>{itemQty}</QuantityItems>
           ) : null}
-          {showCart && (
-            <WrapperCart>
-              <Cart />
-            </WrapperCart>
-          )}
         </WrapperTrolley>
       </Content>
     </div>
