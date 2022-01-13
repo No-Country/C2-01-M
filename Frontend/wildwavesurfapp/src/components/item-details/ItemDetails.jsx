@@ -6,7 +6,7 @@ import { useAddToCart } from "../../context/ProductContext"
 import { useNavigate } from "react-router-dom"
 
 function ItemDetails({ product }) {
-  const { image, price, title, _id } = product
+  const { image, details, price, title, _id } = product
   const addToCart = useAddToCart()
   const navigate = useNavigate()
 
@@ -17,29 +17,41 @@ function ItemDetails({ product }) {
         <span onClick={() => navigate("/products")}>Back</span>
       </div>
 
-      <section className='itemDetailsContainer'>
-        <div className='imageContainer'>
-          <img src={image} alt={title + "-" + _id} />
-        </div>
+      {/* Para centrar el contenedor de los detalles */}
+      <div className="grid-centrador">
 
-        <div className='detailsItems'>
-          <div className='block'>
-            <span className='title'>{title}</span>
+        {/* Este es el grid que contiene el contenedor de la imagen y el contenedor de los detalles */}
+        <section className='itemDetailsContainer'>
+
+          {/* Lado izquierdo del grid, muestra la imagen del producto */}
+          <div className='imageContainer'>
+            <img src={image} alt={title + "-" + _id} />
           </div>
 
-          <div className='block'>
-            <img
-              className='imageTarjetas'
-              src='https://www.volcom.com.ar//images/ico-tarjcredito2.png'
-              alt='formas de pago aceptadas'
-            />
-          </div>
+          {/* Lado derecho del grid, muestra los detalles del producto */}
+          <div className='detailsItems'>
 
-          <div className='block'>
-            <span>Precio: ${price}</span>
-          </div>
+            <div className='block'>
+              <span className='title'>{title}</span>
+            </div>
 
-          {/* <div className="block">
+            <div className='block'>
+              <span>{details}</span>
+            </div>
+
+            <div className='block'>
+              <img
+                className='imageTarjetas'
+                src='https://www.volcom.com.ar//images/ico-tarjcredito2.png'
+                alt='formas de pago aceptadas'
+              />
+            </div>
+
+            <div className='block'>
+              <span>Precio: ${price}</span>
+            </div>
+
+            {/* <div className="block">
 						<span>Cantidad: </span>‼‼
 					</div>
 
@@ -47,7 +59,7 @@ function ItemDetails({ product }) {
 						<span>Talla:</span>
 					</div> */}
 
-          {/* <div className="block">
+            {/* <div className="block">
 						<div className="tallasContainer">
 							<div><span>XS</span></div>
 							<div><span>S</span></div>
@@ -58,16 +70,19 @@ function ItemDetails({ product }) {
 						</div>
 					</div> */}
 
-          <div className='block'>
-            <div className='buttonAddToCart'>
-              <button onClick={() => addToCart(product)}>
-                <img src={imageAddToCart} alt='add to cart icon' />
-                <span>Añadir</span>
-              </button>
+            <div className='block'>
+              <div className='buttonAddToCart'>
+                <button onClick={() => addToCart(product)}>
+                  <img src={imageAddToCart} alt='add to cart icon' />
+                  <span>Añadir</span>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+      </div>{/* Cerrar grid-centrador */}
+
     </ItemDetailsStyle>
   )
 }
