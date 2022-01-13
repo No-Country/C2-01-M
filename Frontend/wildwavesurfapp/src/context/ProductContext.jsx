@@ -45,14 +45,15 @@ export function ProductsProvider({ children }) {
     /* Cambia el total del carrito */
     setTotalCart(totalCart - product.price * product.cantidad)
   }
-
+  /* ${process.env.REACT_APP_SERVER_URI}/products */
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER_URI}/products`)
+    fetch(`https://polar-everglades-71081.herokuapp.com/products`)
       .then((res) => res.json())
       .then((data) => setProducts(data.products))
   }, [])
 
   console.log(products)
+  console.log(itemQty);
   return (
     <Products.Provider
       value={{
@@ -63,6 +64,7 @@ export function ProductsProvider({ children }) {
         totalCart,
         getInfoUser,
         infoUser,
+        itemQty
       }}
     >
       {children}
@@ -90,6 +92,9 @@ export function useGetInfoUser() {
 }
 export function useProducts() {
   return useContext(Products).products
+}
+export function useItemQty() {
+  return useContext(Products).itemQty
 }
 
 

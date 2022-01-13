@@ -9,18 +9,19 @@ const Item = ({ product }) => {
   const addToCart = useAddToCart()
   return (
     <div className='card-container'>
-      <Link to={`/product/${_id}`}>
+      
         <div className='like-container'>
           <img
-            src='https://i.imgur.com/Rhy22Tn.png'
+            src='https://i.imgur.com/Wst88e8.png'
             alt='like'
             onClick={() => addToCart(product)}
           />
         </div>
+      <Link to={`/product/${_id}`}>
+        <div className='img-card'>
+          <img src={image} alt={title + "-" + _id} />
+        </div>
       </Link>
-      <div className='img-card'>
-        <img src={image} alt={title + "-" + _id} />
-      </div>
       <div className='info-card'>
         <p>{title}</p>
         <span> {price} </span>

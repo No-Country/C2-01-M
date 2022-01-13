@@ -9,7 +9,7 @@
 
 .card-container {
   width: 200px;
-  height: 330px;
+  height: 290px;
   text-align: center;
   margin: 1rem;
   border-radius: 0.5rem;
@@ -25,6 +25,9 @@
   margin: 0.3rem;
   width: 24px;
   height: 24px;
+}
+.like-container img:hover{
+  cursor: pointer;
 }
 
 .card-container .img-card img {
