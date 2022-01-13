@@ -1,4 +1,4 @@
-const Category  = require("../models/category.model");
+const Category = require("../models/category.model");
 
 class categoriesController {
   async createCategory(req, res) {
@@ -30,7 +30,7 @@ class categoriesController {
   async getCategory(req, res) {
     try {
       const { id } = req.params;
-      const category = await Category.findById(id);
+      const category = await Category.findById(id).populate("name");
 
       res.json(category);
     } catch (error) {
