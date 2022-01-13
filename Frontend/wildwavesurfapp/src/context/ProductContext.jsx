@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react"
 
+
 const Products = React.createContext()
 
 export function ProductsProvider({ children }) {
@@ -45,7 +46,7 @@ export function ProductsProvider({ children }) {
     /* Cambia el total del carrito */
     setTotalCart(totalCart - product.price * product.cantidad)
   }
-
+  /* */
   useEffect(() => {
     fetch(`${process.env.REACT_APP_SERVER_URI}/products`)
       .then((res) => res.json())
@@ -53,6 +54,7 @@ export function ProductsProvider({ children }) {
   }, [])
 
   console.log(products)
+  console.log(itemQty);
   return (
     <Products.Provider
       value={{
@@ -63,6 +65,7 @@ export function ProductsProvider({ children }) {
         totalCart,
         getInfoUser,
         infoUser,
+        itemQty
       }}
     >
       {children}
@@ -88,4 +91,12 @@ export function useTotalCart() {
 export function useGetInfoUser() {
   return useContext(Products).getInfoUser
 }
+export function useProducts() {
+  return useContext(Products).products
+}
+export function useItemQty() {
+  return useContext(Products).itemQty
+}
+
+
 export default Products

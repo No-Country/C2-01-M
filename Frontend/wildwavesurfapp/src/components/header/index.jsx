@@ -11,10 +11,11 @@ import { useNavigate } from "react-router-dom"
 import Cart from "../cart/cart"
 import {
   useCartItem,
+  useItemQty,
   /* useDeleteFromCart,
   useTotalCart, */
 } from "../../context/ProductContext"
-
+import { Link } from "react-router-dom"
 // styles
 import {
   Content,
@@ -39,6 +40,7 @@ const Header = ({ setShowItemList, showItemList }) => {
   const navigate = useNavigate()
   const { infoUser } = useContext(Products)
   const cartItem = useCartItem()
+  const itemQty = useItemQty()
 
   useEffect(() => {
     if (infoUser) setLogin(infoUser?.user?.name)
@@ -58,23 +60,17 @@ const Header = ({ setShowItemList, showItemList }) => {
             />
           </WrapperMenu>
           <WrapperIMG>
-            <img src={surf} alt='surf' width={50} />
+            <Link to="/">
+              <img src={surf} alt='surf' width={50} />
+            </Link>
           </WrapperIMG>
           <Ul showNavbar={showNavbar}>
-            <li
-              onClick={() => {
-                setShowItemList(false)
-              }}
-            >
-              HOME
-            </li>
-            <li
-              onClick={() => {
-                setShowItemList(true)
-              }}
-            >
-              PRODUCTOS
-            </li>
+            <Link to="/">
+            <li>HOME</li>
+            </Link>
+            <Link to="/products">
+            <li>PRODUCTOS</li>
+            </Link>
           </Ul>
         </WrapperNavbar>
         <WrapperSearch>
@@ -100,14 +96,16 @@ const Header = ({ setShowItemList, showItemList }) => {
           )}
         </WrapperUserLogin>
         <WrapperTrolley>
-          <img
-            src={trolley}
-            alt='trolley'
-            width={50}
-            onClick={() => setShowCart(!showCart)}
-          />
+          <Link to="/cart">
+            <img
+              src={trolley}
+              alt='trolley'
+              width={50}
+              onClick={() => setShowCart(!showCart)}
+            />
+          </Link>
           {cartItem.length > 0 ? (
-            <QuantityItems>{cartItem.length}</QuantityItems>
+            <QuantityItems>{itemQty}</QuantityItems>
           ) : null}
           {showCart && (
             <WrapperCart>

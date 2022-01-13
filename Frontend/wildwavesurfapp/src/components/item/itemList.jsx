@@ -1,15 +1,12 @@
-import React, {useContext} from "react";
+import React from "react";
 import Item from "./item";
-import Products from "../../context/ProductContext";
 
-const ItemList=()=>{
-
-    const {products} = useContext(Products)    
+const ItemList=({items})=>{       
  
     return(
         <div className="item-list-container">
             {
-                products?.map((item)=>{
+                items?.map((item)=>{
                     return(
                         <Item key={item._id} product={item} />
                     )

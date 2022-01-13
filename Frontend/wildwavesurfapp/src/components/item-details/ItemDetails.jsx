@@ -6,7 +6,6 @@ import { useAddToCart } from "../../context/ProductContext"
 function ItemDetails({product}){
 
 	const {image,price,title,_id} = product
-
 	const addToCart=useAddToCart()
 
 	return (
