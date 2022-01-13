@@ -45,9 +45,9 @@ export function ProductsProvider({ children }) {
     /* Cambia el total del carrito */
     setTotalCart(totalCart - product.price * product.cantidad)
   }
-  /* ${process.env.REACT_APP_SERVER_URI}/products */
+  
   useEffect(() => {
-    fetch(`https://polar-everglades-71081.herokuapp.com/products`)
+    fetch(`${process.env.REACT_APP_SERVER_URI}/products`)
       .then((res) => res.json())
       .then((data) => setProducts(data.products))
   }, [])
