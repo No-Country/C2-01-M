@@ -15,4 +15,10 @@ export const Wrapper = styled.div`
       font-size: 18px;
     }
   }
+
+  @media (max-width: 600px) {
+    .input {
+      padding: 8px;
+    }
+  }
 `
