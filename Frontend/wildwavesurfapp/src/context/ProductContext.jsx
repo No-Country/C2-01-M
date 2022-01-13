@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react"
 
+
 const Products = React.createContext()
 
 export function ProductsProvider({ children }) {
@@ -45,7 +46,7 @@ export function ProductsProvider({ children }) {
     /* Cambia el total del carrito */
     setTotalCart(totalCart - product.price * product.cantidad)
   }
-  
+  /* */
   useEffect(() => {
     fetch(`${process.env.REACT_APP_SERVER_URI}/products`)
       .then((res) => res.json())

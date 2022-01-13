@@ -60,7 +60,9 @@ const Header = ({ setShowItemList, showItemList }) => {
             />
           </WrapperMenu>
           <WrapperIMG>
-            <img src={surf} alt='surf' width={50} />
+            <Link to="/">
+              <img src={surf} alt='surf' width={50} />
+            </Link>
           </WrapperIMG>
           <Ul showNavbar={showNavbar}>
             <Link to="/">
@@ -94,12 +96,14 @@ const Header = ({ setShowItemList, showItemList }) => {
           )}
         </WrapperUserLogin>
         <WrapperTrolley>
-          <img
-            src={trolley}
-            alt='trolley'
-            width={50}
-            onClick={() => setShowCart(!showCart)}
-          />
+          <Link to="/cart">
+            <img
+              src={trolley}
+              alt='trolley'
+              width={50}
+              onClick={() => setShowCart(!showCart)}
+            />
+          </Link>
           {cartItem.length > 0 ? (
             <QuantityItems>{itemQty}</QuantityItems>
           ) : null}

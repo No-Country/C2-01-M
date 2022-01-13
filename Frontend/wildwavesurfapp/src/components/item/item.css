@@ -8,8 +8,8 @@
 }
 
 .card-container {
-  width: 200px;
-  height: 290px;
+  width: 250px;
+  height: 350px;
   text-align: center;
   margin: 1rem;
   border-radius: 0.5rem;
@@ -22,7 +22,7 @@
   justify-content: end;
 }
 .like-container img {
-  margin: 0.3rem;
+  margin: 0.5rem;
   width: 24px;
   height: 24px;
 }
@@ -31,8 +31,8 @@
 }
 
 .card-container .img-card img {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 220px;
 }
 
 .card-container .info-card {
