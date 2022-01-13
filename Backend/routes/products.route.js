@@ -13,7 +13,7 @@ const productsController = require("../controller/products.controller");
 router
   .post("/", 
   [
-    validateJWT,
+    // validateJWT,
     check('title', 'The title is required').not().isEmpty(),
     check('price', 'The price is required').not().isEmpty(),
     check('image', 'The image is required').not().isEmpty(),
@@ -37,14 +37,15 @@ router
   
   .get("/", 
   [	
-    validateJWT,
+    // validateJWT,
     validateFields
   ], 
   productsController.getAllProducts)
 
   
   .put("/:id", 
-  [ validateJWT,
+  [ 
+    // validateJWT,
     check('id').custom( existProductById ),
     validateFields
   ],
@@ -53,7 +54,7 @@ router
   
   .delete("/:id", 
   [
-    validateJWT,
+    // validateJWT,
     check('id', 'This is not a valid Mongo ID').isMongoId(),
     check('id').custom( existProductById ),
     validateFields,

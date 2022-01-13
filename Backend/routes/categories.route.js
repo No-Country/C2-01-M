@@ -15,7 +15,7 @@ router
 	.post(
 		'/',
 		[
-			validateJWT, 
+			// validateJWT, 
 			check('name', 'The name is required').not().isEmpty(), 
 			validateFields
 		],
@@ -40,7 +40,7 @@ router
 	.put(
 		'/:id',
 		[
-			validateJWT,
+			// validateJWT,
 			check('name', 'The name is required').not().isEmpty(),
 			check('id').custom(existsCategoryById),
 			validateFields,
@@ -50,7 +50,7 @@ router
 	.delete(
 		'/:id',
 		[
-			validateJWT,
+			// validateJWT,
 			isAdmin,
 			check('id', 'Not a valid Mongo ID').isMongoId(),
 			check('id').custom(existsCategoryById),
