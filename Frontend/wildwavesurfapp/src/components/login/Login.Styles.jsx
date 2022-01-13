@@ -9,6 +9,7 @@ export const WrapperSignin = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
+  box-sizing: border-box;
   > .form {
     width: 400px;
     display: flex;
