@@ -95,7 +95,10 @@ const Header = () => {
           )}
         </WrapperUserLogin>
         <WrapperTrolley>
-          <Link to='/cart' style={{ textDecoration: "none", color: "black" }}>
+          <Link
+            to={cartItem.length > 0 && "/cart"}
+            style={{ textDecoration: "none", color: "black" }}
+          >
             <img
               src={trolley}
               alt='trolley'

@@ -25,7 +25,12 @@ export const WrapperSignin = styled.div`
     color: #333;
   }
 
-  @media (max-width: 991px) {
+  @media (max-width: 600px) {
+    margin-top: 0;
+    width: auto;
+    .form {
+      width: 300px;
+    }
   }
 `
 export const WrapperButton = styled.div`

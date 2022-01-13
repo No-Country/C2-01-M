@@ -25,7 +25,17 @@ export const WrapperSignup = styled.div`
     color: #333;
   }
 
-  @media (max-width: 991px) {
+  @media (max-width: 600px) {
+    width: auto;
+    margin-top: 0;
+    .form {
+      width: 300px;
+    }
+    h3 {
+      font-size: 28px;
+      margin: 0;
+      margin-bottom: 10px;
+    }
   }
 `
 export const WrapperButton = styled.div`
