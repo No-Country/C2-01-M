@@ -14,6 +14,7 @@ const Landing = () => {
     speed: 2000,
     autoplaySpeed: 5000,
     cssEase: "linear",
+    arrows: false,
   }
   const info = [
     "https://i.imgur.com/oh7CSuX.jpg",

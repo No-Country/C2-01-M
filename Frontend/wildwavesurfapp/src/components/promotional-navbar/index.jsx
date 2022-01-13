@@ -14,6 +14,7 @@ const PromotionalBar = () => {
     speed: 4000,
     autoplaySpeed: 4000,
     cssEase: "linear",
+    arrows: false,
   }
   const info = [
     "ENVIOS GRATIS A TODO EL PAIS",
