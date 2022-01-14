@@ -22,7 +22,7 @@ const ItemListContainer = ({ featured }) => {
         setLoader(false)
       })
   }, [products])
-  console.log(loader)
+
   return loader ? (
     <div className='preloader-container'>
       <img

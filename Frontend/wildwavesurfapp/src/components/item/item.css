@@ -43,7 +43,7 @@
 .card-container .info-card p {
   font-size: 0.8rem;
 }
-.preloader-container{
+.preloader-container {
   width: 100%;
   height: 80vh;
   display: flex;
@@ -52,4 +52,9 @@
 }
 .preloader-container img {
   height: 90%;
+}
+.heart {
+  position: absolute;
+  left: 10p;
+  margin: 10px;
 }
