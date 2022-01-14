@@ -16,7 +16,7 @@ const Welcome = () => {
         alignItems: "center",
         minHeight: "100vh",
         backgroundImage:
-          "url(https://www.ecostinger.com/product_images/uploaded_images/shutterstock-54425062.jpg)",
+          "url(https://cdn.pixabay.com/photo/2016/11/18/18/45/surfer-1836366_960_720.jpg",
         backgroundRepeat: "no-repeat",
         backgroundSize: "100% auto, cover",
       }}
