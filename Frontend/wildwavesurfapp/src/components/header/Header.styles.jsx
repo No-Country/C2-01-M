@@ -79,10 +79,13 @@ export const WrapperIMG = styled.div`
   }
 `
 export const NoLogin = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
   border-radius: 50px;
   background: red;
-  padding: 2px;
+  padding: 9px;
   width: 14px;
   height: 16px;
 `
@@ -110,11 +113,11 @@ export const QuantityItems = styled.span`
   justify-content: center;
   align-items: center;
   right: 10px;
-  bottom: 5px;
+  bottom: 8px;
   color: #fff;
   border-radius: 50px;
   background: green;
-  padding: 3px;
+  padding: 9px;
   width: 14px;
   height: 16px;
 `
