@@ -55,11 +55,11 @@ const Header = () => {
               onClick={() => setShowNavbar(!showNavbar)}
             />
           </WrapperMenu>
-          <WrapperIMG>
-            <Link to='/home' style={{ textDecoration: "none", color: "black" }}>
+          <Link to='/home' style={{ textDecoration: "none", color: "black" }}>
+            <WrapperIMG>
               <img src={surf} alt='surf' width={50} />
-            </Link>
-          </WrapperIMG>
+            </WrapperIMG>
+          </Link>
           <Ul showNavbar={showNavbar}>
             <Link to='/home' style={{ textDecoration: "none", color: "black" }}>
               <li>HOME</li>
