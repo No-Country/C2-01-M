@@ -3,6 +3,7 @@ import {Link} from "react-router-dom"
 import {
   useCartItem,
   useDeleteFromCart,
+  useItemQty,
   useTotalCart,
 } from "../../context/ProductContext"
 import "./cart.css"
@@ -11,6 +12,7 @@ const Cart = () => {
   const cartItem = useCartItem()
   const deleteFromCart = useDeleteFromCart()
   const totalCart = useTotalCart()
+  const ItemQty = useItemQty()
 
   return (
     <div className='cart-container'>
@@ -40,9 +42,12 @@ const Cart = () => {
         <div className="check-title">
           <h2>Resumen</h2>
         </div>
-        <h3> Total Compra: {totalCart} </h3>
-        <button>Iniciar Compra</button>
-        {<Link to="/products">Seguir comprando</Link>}
+        <div className="check-data">
+          <h3>Total Items: {ItemQty} </h3>
+          <h3> Total Compra: ${totalCart} </h3>
+          <button>Iniciar Compra</button>
+          {<Link to="/products">Seguir comprando</Link>}
+        </div>
       </div>
     </div>
   )

@@ -44,3 +44,13 @@
 .card-container .info-card p {
   font-size: 0.8rem;
 }
+.preloader-container{
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.preloader-container img{
+  height: 90%;
+}

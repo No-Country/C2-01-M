@@ -7,10 +7,14 @@ const ItemDetailContainer = () => {
   const [product, setProduct] = useState([])
   const { prodId } = useParams()
   const products = useProducts()
+  const[loader, setLoader] = useState(true)
 
   useEffect(() => {
+    setLoader(true)
     const getProduct = new Promise((resolve) => {
-      resolve(products)
+      setTimeout(()=>{
+        resolve(products)
+      },1000)      
     })
 
     getProduct.then((res) => {
@@ -18,9 +22,14 @@ const ItemDetailContainer = () => {
         ? setProduct(res.find((item) => item._id === prodId))
         : setProduct(res)
     })
+    .finally(()=>{
+      setLoader(false)
+    })
   }, [prodId, products])
 
-  return (
+  return (loader ? <div className="preloader-container">
+            <img className="preloader" src="https://i.imgur.com/NTByPHS.gif" alt="gif"/>
+          </div> :
     <div
       style={{
         minHeight: "100vh",
