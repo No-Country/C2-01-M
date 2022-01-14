@@ -92,3 +92,11 @@
   background-color: crimson;
   border-radius: 0 0 .5rem .5rem;
 }
+.empty-cart{
+  height: 60vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

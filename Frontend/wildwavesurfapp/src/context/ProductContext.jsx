@@ -28,7 +28,6 @@ export function ProductsProvider({ children }) {
         { ...product, cantidad: oldQuantity + cantidad },
       ])
     }
-
     setItemQty(itemQty + cantidad)
     total += product.price * cantidad
 
@@ -37,6 +36,8 @@ export function ProductsProvider({ children }) {
   const getInfoUser = (user) => {
     setInfoUser(user)
   }
+
+
   const deleteFromCart = (product) => {
     /* filtra por los productos que no coincidan con el id del producto seleccionado */
     setCartItem(cartItem.filter((item) => item._id !== product._id))
@@ -64,6 +65,7 @@ export function ProductsProvider({ children }) {
         getInfoUser,
         infoUser,
         itemQty,
+        setItemQty,
       }}
     >
       {children}
@@ -94,6 +96,15 @@ export function useProducts() {
 }
 export function useItemQty() {
   return useContext(Products).itemQty
+}
+export function useSetItemQty() {
+  return useContext(Products).setItemQty
+}
+export function useSumNumber() {
+  return useContext(Products).sumNumber
+}
+export function useSubsNumber() {
+  return useContext(Products).subsNumber
 }
 
 export default Products

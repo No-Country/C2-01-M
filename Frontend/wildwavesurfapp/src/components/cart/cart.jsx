@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 import {
   useCartItem,
   useDeleteFromCart,
-  useItemQty,
+  useItemQty, 
   useTotalCart,
 } from "../../context/ProductContext"
 import "./cart.css"
@@ -13,8 +13,14 @@ const Cart = () => {
   const deleteFromCart = useDeleteFromCart()
   const totalCart = useTotalCart()
   const ItemQty = useItemQty()
-
-  return (
+ 
+  return ( cartItem.length === 0 ? 
+          <div className="empty-cart">
+            <h3>No has agregado productos a tu carrito</h3>
+            <Link to="/products"> Productos </Link>
+          </div>
+          :
+          
     <div className='cart-container'>
       <div className="shop-detail">
       <div className='cart-title'>
@@ -23,14 +29,13 @@ const Cart = () => {
       {cartItem?.map((item) => {
         const { image, title, price, _id, cantidad } = item
 
-        return (
+        return ( 
           <div key={_id} className='card-container-cart'>
             
               <img src={image} alt={title} />
               <p>{title} </p>
-              <span>Precio: {price} </span>
+              <span>Precio: ${price} </span>
               <span>Unidades: {cantidad} </span>
-
               <img src="https://i.imgur.com/h67XBJJ.png" alt="garbage" className="icon-delete" onClick={() => deleteFromCart(item)}/>
               
             </div>
