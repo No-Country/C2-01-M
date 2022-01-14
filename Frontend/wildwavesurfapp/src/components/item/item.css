@@ -43,8 +43,8 @@
 .card-container .info-card p {
   font-size: 0.8rem;
 }
-.preloader-container {
-  width: 100vw;
+.preloader-container{
+  width: 100%;
   height: 80vh;
   display: flex;
   justify-content: center;
