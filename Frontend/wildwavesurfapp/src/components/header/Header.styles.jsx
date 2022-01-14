@@ -73,7 +73,7 @@ export const WrapperIMG = styled.div`
   border: 2px solid black;
   padding: 5px;
   border-radius: 50%;
-  height: 50px;
+  height: 63px;
   @media (max-width: 451px) {
     display: none;
   }
