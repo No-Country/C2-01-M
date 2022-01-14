@@ -1,12 +1,12 @@
-import './App.css';
+import "./App.css"
+import ManagementRoute from "./components/management-route"
 
 function App() {
   return (
-    <div>
-      Componentes
+    <div className='App'>
+      <ManagementRoute />
     </div>
   )
-        
 }
 
-export default App;
+export default App
