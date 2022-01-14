@@ -52,8 +52,7 @@ export function ProductsProvider({ children }) {
       .then((data) => setProducts(data.products))
   }, [])
 
-  console.log(products)
-  console.log(itemQty)
+
   return (
     <Products.Provider
       value={{
