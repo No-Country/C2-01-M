@@ -37,7 +37,6 @@ export function ProductsProvider({ children }) {
     setInfoUser(user)
   }
 
-
   const deleteFromCart = (product) => {
     /* filtra por los productos que no coincidan con el id del producto seleccionado */
     setCartItem(cartItem.filter((item) => item._id !== product._id))
@@ -46,13 +45,17 @@ export function ProductsProvider({ children }) {
     /* Cambia el total del carrito */
     setTotalCart(totalCart - product.price * product.cantidad)
   }
+
+  const deleteAllItems = () => {
+    setCartItem([])
+    setItemQty(0)
+  }
   /* */
   useEffect(() => {
     fetch(`${process.env.REACT_APP_SERVER_URI}/products?limit=50`)
       .then((res) => res.json())
       .then((data) => setProducts(data.products))
   }, [])
-
 
   return (
     <Products.Provider
@@ -66,6 +69,7 @@ export function ProductsProvider({ children }) {
         infoUser,
         itemQty,
         setItemQty,
+        deleteAllItems,
       }}
     >
       {children}
@@ -105,6 +109,9 @@ export function useSumNumber() {
 }
 export function useSubsNumber() {
   return useContext(Products).subsNumber
+}
+export function useDeleteAllItems() {
+  return useContext(Products).deleteAllItems
 }
 
 export default Products
