@@ -50,6 +50,23 @@ export function ProductsProvider({ children }) {
     setCartItem([])
     setItemQty(0)
   }
+
+  const counterItems = (product, descSum) => {
+    const oldQuantity = cartItem[isOnCart(product)].cantidad
+
+    if (descSum === "sum") {
+      let myObj = cartItem.find((el) => el._id === product._id)
+      myObj.cantidad = oldQuantity + 1
+      setTotalCart(totalCart + parseInt(product.price))
+      setItemQty(itemQty + 1)
+    }
+    if (descSum === "desc") {
+      let myObj = cartItem.find((el) => el._id === product._id)
+      myObj.cantidad = oldQuantity - 1
+      setTotalCart(totalCart - parseInt(product.price))
+      setItemQty(itemQty - 1)
+    }
+  }
   /* */
   useEffect(() => {
     fetch(`${process.env.REACT_APP_SERVER_URI}/products?limit=50`)
@@ -70,6 +87,7 @@ export function ProductsProvider({ children }) {
         itemQty,
         setItemQty,
         deleteAllItems,
+        counterItems,
       }}
     >
       {children}
@@ -113,5 +131,7 @@ export function useSubsNumber() {
 export function useDeleteAllItems() {
   return useContext(Products).deleteAllItems
 }
-
+export function useCounterItems() {
+  return useContext(Products).counterItems
+}
 export default Products

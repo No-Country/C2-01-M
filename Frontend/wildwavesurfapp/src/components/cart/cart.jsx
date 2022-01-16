@@ -6,7 +6,10 @@ import {
   useItemQty,
   useTotalCart,
   useDeleteAllItems,
+  useCounterItems,
 } from "../../context/ProductContext"
+import add from "../../assets/add.svg"
+import desc from "../../assets/desc.svg"
 import "./cart.css"
 
 const Cart = () => {
@@ -15,6 +18,7 @@ const Cart = () => {
   const totalCart = useTotalCart()
   const ItemQty = useItemQty()
   const deleteAllItems = useDeleteAllItems()
+  const counterItems = useCounterItems()
 
   const deleteItems = () => {
     const confirm = window.confirm(
@@ -36,13 +40,46 @@ const Cart = () => {
         </div>
         {cartItem?.map((item) => {
           const { image, title, price, _id, cantidad } = item
-
+          console.log(item)
           return (
-            <div key={_id} className='card-container-cart'>
+            <div key={_id} className='card-container-cart' aria-current={true}>
               <img src={image} alt={title} />
               <p>{title} </p>
               <span>Precio: ${price} </span>
-              <span>Unidades: {cantidad} </span>
+              <span
+                style={{
+                  cursor: "pointer",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                Unidades:{" "}
+                {cantidad > 1 && (
+                  <img
+                    src={desc}
+                    alt='add'
+                    style={{
+                      width: "12px",
+                      display: "inline",
+                      marginLeft: "5px",
+                      marginRight: "5px",
+                    }}
+                    onClick={() => counterItems(item, "desc")}
+                  />
+                )}
+                {cantidad}
+                <img
+                  src={add}
+                  alt='add'
+                  style={{
+                    width: "12px",
+                    display: "inline",
+                    marginLeft: "5px",
+                  }}
+                  onClick={() => counterItems(item, "sum")}
+                />
+              </span>
               <img
                 src='https://i.imgur.com/h67XBJJ.png'
                 alt='garbage'
