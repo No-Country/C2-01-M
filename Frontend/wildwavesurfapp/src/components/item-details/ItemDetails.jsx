@@ -71,13 +71,18 @@ function ItemDetails({ product, onAdd, goCart }) {
 					</div> */}
             {
         
-        goCart ? <Link to="/cart" className="finish-shop">Terminar compra</Link> : 
-                
-            <div className='block'>
+        goCart ? 
               <div className='buttonAddToCart'>
-                <Counter onAdd ={onAdd} />                  
+                <Link to="/cart" className="finish-shop">Terminar compra</Link>         
+                <Link to="/products">Seguir comprando</Link>                  
               </div>
-            </div>
+        : 
+               
+              <div className='block'>
+                <div className='buttonAddToCart'>
+                  <Counter onAdd ={onAdd} />                  
+                </div>              
+              </div>
         }    
           </div>
         </section>
