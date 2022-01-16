@@ -18,7 +18,7 @@ const Item = ({ product }) => {
     }
     if (likesArray.includes(id)) {
       const newArray = likesArray.filter((item) => item !== id)
-      localStorage.setItem("itemsLikes", JSON.stringify(likesStorage))
+      localStorage.setItem("itemsLikes", JSON.stringify(newArray))
       setLikesArray(newArray)
     }
     if (likes && !likesArray.includes(id)) {
