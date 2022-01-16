@@ -52,9 +52,9 @@ class productController {
       const [total, products] = await Promise.all([
         Product.countDocuments(query),
         Product.find(query)
-
           .skip(Number(from))
-          .limit(Number(limit)),
+          .limit(Number(limit))
+          .populate('category')
       ]);
 
       res.json({
