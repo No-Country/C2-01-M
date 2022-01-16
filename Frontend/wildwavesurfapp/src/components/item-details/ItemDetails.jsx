@@ -2,12 +2,12 @@ import React from "react"
 import { ItemDetailsStyle } from "./ItemDetails.styles"
 import imageAddToCart from "../../assets/trolley.svg"
 import back from "../../assets/back.svg"
-import { useAddToCart } from "../../context/ProductContext"
 import { useNavigate } from "react-router-dom"
+import Counter from "../counter/counter"
+import { Link } from "react-router-dom"
 
-function ItemDetails({ product }) {
+function ItemDetails({ product, onAdd, goCart }) {
   const { image, details, price, title, _id } = product
-  const addToCart = useAddToCart()
   const navigate = useNavigate()
 
   return (
@@ -69,15 +69,16 @@ function ItemDetails({ product }) {
 							<div><span>XXL</span></div>
 						</div>
 					</div> */}
-
+            {
+        
+        goCart ? <Link to="/cart" className="finish-shop">Terminar compra</Link> : 
+                
             <div className='block'>
               <div className='buttonAddToCart'>
-                <button onClick={() => addToCart(product)}>
-                  <img src={imageAddToCart} alt='add to cart icon' />
-                  <span>Añadir</span>
-                </button>
+                <Counter onAdd ={onAdd} />                  
               </div>
             </div>
+        }    
           </div>
         </section>
 

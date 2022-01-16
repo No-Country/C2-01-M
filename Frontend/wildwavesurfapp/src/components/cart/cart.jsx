@@ -16,6 +16,8 @@ const Cart = () => {
   const ItemQty = useItemQty()
   const deleteAllItems = useDeleteAllItems()
 
+  
+
   const deleteItems = () => {
     const confirm = window.confirm(
       "Are you sure you want to delete everything? This action has no turning back "

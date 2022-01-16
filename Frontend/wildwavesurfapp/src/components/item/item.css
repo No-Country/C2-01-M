@@ -19,16 +19,9 @@
 }
 .like-container {
   display: flex;
-  justify-content: end;
+  justify-content: end;  
 }
-.like-container img {
-  margin: 0.5rem;
-  width: 24px;
-  height: 24px;
-}
-.like-container img:hover {
-  cursor: pointer;
-}
+
 
 .card-container .img-card img {
   width: 200px;
@@ -54,7 +47,5 @@
   height: 90%;
 }
 .heart {
-  position: absolute;
-  left: 10p;
   margin: 10px;
 }

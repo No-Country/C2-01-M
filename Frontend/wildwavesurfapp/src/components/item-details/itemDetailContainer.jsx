@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { useProducts } from "../../context/ProductContext"
+import { useAddToCart, useProducts } from "../../context/ProductContext"
 import ItemDetails from "./ItemDetails"
 
 const ItemDetailContainer = () => {
@@ -8,6 +8,8 @@ const ItemDetailContainer = () => {
   const { prodId } = useParams()
   const products = useProducts()
   const[loader, setLoader] = useState(true)
+  const[goCart, setGoCart] = useState(false)
+  const addToCart = useAddToCart()
 
   useEffect(() => {
     setLoader(true)
@@ -27,6 +29,11 @@ const ItemDetailContainer = () => {
     })
   }, [prodId, products])
 
+    const onAdd=(cantidad)=>{
+      addToCart(product, cantidad);
+      setGoCart(true)
+    }
+
   return (loader ? <div className="preloader-container">
             <img className="preloader" src="https://i.imgur.com/NTByPHS.gif" alt="gif"/>
           </div> :
@@ -38,7 +45,7 @@ const ItemDetailContainer = () => {
         marginTop: "40px",
       }}
     >
-      <ItemDetails product={product} />
+      <ItemDetails product={product} onAdd={onAdd} goCart={goCart}/>
     </div>
   )
 }
