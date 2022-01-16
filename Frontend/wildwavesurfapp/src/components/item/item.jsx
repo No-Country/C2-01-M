@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
-import { useAddToCart } from "../../context/ProductContext"
-import "./item.css"
 import { Link } from "react-router-dom"
+
+//styles
+import "./item.css"
 
 const Item = ({ product }) => {
   const { image, price, title, _id } = product

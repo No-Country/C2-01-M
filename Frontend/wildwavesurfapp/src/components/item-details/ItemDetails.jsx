@@ -1,6 +1,5 @@
 import React from "react"
 import { ItemDetailsStyle } from "./ItemDetails.styles"
-import imageAddToCart from "../../assets/trolley.svg"
 import back from "../../assets/back.svg"
 import { useNavigate } from "react-router-dom"
 import Counter from "../counter/counter"
