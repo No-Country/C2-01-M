@@ -56,7 +56,7 @@ const Login = () => {
             ) : (
               <WrapperSignin>
                 <Form className='form'>
-                  <h3>Bienvenido</h3>
+                  <h3>Welcome</h3>
                   <FormControl
                     control='input'
                     type='email'
@@ -73,14 +73,16 @@ const Login = () => {
                     <TextError
                       styles={{ marginBottom: "30px", padding: "15px" }}
                     >
-                      <span>usuario o contraseña</span>
+                      <span>user or password</span>
                     </TextError>
                   )}
                   <WrapperButton>
                     <button type={"onSubmit"}>Login</button>
-                    <Link to={"#"}>¿Perdiste tu contraseña?</Link>
-                    <Link to={"/register"}>¿No tienes Cuenta? Registrate</Link>
-                    <Link to={"/home"}>Igresar como invitado</Link>
+                    <Link to={"#"}>Lost your password? </Link>
+                    <Link to={"/register"}>
+                      You do not have an account? Sign up{" "}
+                    </Link>
+                    <Link to={"/home"}>Sign in as a guest </Link>
                   </WrapperButton>
                 </Form>
               </WrapperSignin>

@@ -31,8 +31,6 @@ const Item = ({ product }) => {
     }
   }
 
-  const addToCart = useAddToCart()
-
   useEffect(() => {
     const likeArray = localStorage.getItem("itemsLikes")
     if (!likeArray) {
@@ -44,7 +42,6 @@ const Item = ({ product }) => {
   }, [])
   return (
     <div className='card-container'>
-      
       <div className='like-container'>
         <div className='like-container heart' onClick={() => addLikes(_id)}>
           <svg
@@ -55,7 +52,9 @@ const Item = ({ product }) => {
           >
             <path
               d='M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z'
-              fill={likesArray && likesArray.includes(_id) ? "red" : "grey" || ""}
+              fill={
+                likesArray && likesArray.includes(_id) ? "red" : "grey" || ""
+              }
             />
           </svg>
         </div>

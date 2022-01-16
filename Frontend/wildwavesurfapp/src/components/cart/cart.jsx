@@ -20,8 +20,6 @@ const Cart = () => {
   const deleteAllItems = useDeleteAllItems()
   const counterItems = useCounterItems()
 
-  
-
   const deleteItems = () => {
     const confirm = window.confirm(
       "Are you sure you want to delete everything? This action has no turning back "
@@ -31,14 +29,14 @@ const Cart = () => {
 
   return cartItem.length === 0 ? (
     <div className='empty-cart'>
-      <h3>No has agregado productos a tu carrito</h3>
-      <Link to='/products'> Productos </Link>
+      <h3>You have not added products to your cart </h3>
+      <Link to='/products'> Products </Link>
     </div>
   ) : (
     <div className='cart-container'>
       <div className='shop-detail'>
         <div className='cart-title'>
-          <h2>Detalle del pedido</h2>
+          <h2>Order detail </h2>
         </div>
         {cartItem?.map((item) => {
           const { image, title, price, _id, cantidad } = item
@@ -47,7 +45,7 @@ const Cart = () => {
             <div key={_id} className='card-container-cart' aria-current={true}>
               <img src={image} alt={title} />
               <p>{title} </p>
-              <span>Precio: ${price} </span>
+              <span>Price: ${price} </span>
               <span
                 style={{
                   cursor: "pointer",
@@ -56,7 +54,7 @@ const Cart = () => {
                   alignItems: "center",
                 }}
               >
-                Unidades:{" "}
+                Units :{" "}
                 {cantidad > 1 && (
                   <img
                     src={desc}
@@ -94,13 +92,13 @@ const Cart = () => {
       </div>
       <div className='check-container'>
         <div className='check-title'>
-          <h2>Resumen</h2>
+          <h2>Summary </h2>
         </div>
         <div className='check-data'>
           <h3>Total Items: {ItemQty} </h3>
-          <h3> Total Compra: ${totalCart} </h3>
-          <button>Iniciar Compra</button>
-          {<Link to='/products'>Seguir comprando</Link>}
+          <h3> Total Buy: ${totalCart} </h3>
+          <button>Initial Buy</button>
+          {<Link to='/products'>Keep buying</Link>}
         </div>
         <div className='button-delete-all'>
           <button onClick={() => deleteItems()}>CLEAN CART</button>

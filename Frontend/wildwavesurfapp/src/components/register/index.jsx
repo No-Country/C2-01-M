@@ -52,7 +52,7 @@ const Register = () => {
             ) : (
               <WrapperSignup>
                 <Form className='form'>
-                  <h3>Registrate</h3>
+                  <h3>Sign Up</h3>
                   <FormControl
                     control='input'
                     type='text'
@@ -81,16 +81,18 @@ const Register = () => {
                     <TextError
                       styles={{ marginBottom: "30px", padding: "15px" }}
                     >
-                      <span>usuario o contraseña</span>
+                      <span>user or password</span>
                     </TextError>
                   )}
                   <WrapperButton>
                     <button type={"onSubmit"}>Registrar</button>
                     <Link to={"#"}>
-                      Al registrate, aceptas nuestras condiciones de uso y
-                      politica de privasidad
+                      By registering, you accept our conditions of use and
+                      privacy policy
                     </Link>
-                    <Link to={"/login"}>¿Ya tienes Cuenta? Iniciar Sesion</Link>
+                    <Link to={"/login"}>
+                      Do you already have an account? Log in
+                    </Link>
                   </WrapperButton>
                 </Form>
               </WrapperSignup>

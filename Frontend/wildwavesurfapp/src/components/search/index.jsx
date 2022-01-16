@@ -14,7 +14,7 @@ const Search = () => {
           onKeyDown={(e) => {
             if (e.code === "Enter") setValue("")
           }}
-          placeholder='Buscar...'
+          placeholder='Search...'
           value={value}
           onChange={(e) => {
             setValue(e.target.value)
