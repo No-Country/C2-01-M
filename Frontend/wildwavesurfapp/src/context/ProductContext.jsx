@@ -49,6 +49,7 @@ export function ProductsProvider({ children }) {
   const deleteAllItems = () => {
     setCartItem([])
     setItemQty(0)
+    setTotalCart(0)
   }
 
   const counterItems = (product, descSum) => {
