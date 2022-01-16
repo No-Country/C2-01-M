@@ -18,11 +18,9 @@ function ItemDetails({ product, onAdd, goCart }) {
       </div>
 
       {/* Para centrar el contenedor de los detalles */}
-      <div className="grid-centrador">
-
+      <div className='grid-centrador'>
         {/* Este es el grid que contiene el contenedor de la imagen y el contenedor de los detalles */}
         <section className='itemDetailsContainer'>
-
           {/* Lado izquierdo del grid, muestra la imagen del producto */}
           <div className='imageContainer'>
             <img src={image} alt={title + "-" + _id} />
@@ -30,7 +28,6 @@ function ItemDetails({ product, onAdd, goCart }) {
 
           {/* Lado derecho del grid, muestra los detalles del producto */}
           <div className='detailsItems'>
-
             <div className='block'>
               <span className='title'>{title}</span>
             </div>
@@ -48,42 +45,22 @@ function ItemDetails({ product, onAdd, goCart }) {
             </div>
 
             <div className='block'>
-              <span>Precio: ${price}</span>
+              <span>Price: ${price}</span>
             </div>
-
-            {/* <div className="block">
-						<span>Cantidad: </span>‼‼
-					</div>
-
-					<div className="block">
-						<span>Talla:</span>
-					</div> */}
-
-            {/* <div className="block">
-						<div className="tallasContainer">
-							<div><span>XS</span></div>
-							<div><span>S</span></div>
-							<div><span>M</span></div>
-							<div><span>L</span></div>
-							<div><span>XL</span></div>
-							<div><span>XXL</span></div>
-						</div>
-					</div> */}
-            {
-        
-        goCart ? <Link to="/cart" className="finish-shop">Terminar compra</Link> : 
-                
-            <div className='block'>
-              <div className='buttonAddToCart'>
-                <Counter onAdd ={onAdd} />                  
+            {goCart ? (
+              <Link to='/cart' className='finish-shop'>
+                Finish buying
+              </Link>
+            ) : (
+              <div className='block'>
+                <div className='buttonAddToCart'>
+                  <Counter onAdd={onAdd} />
+                </div>
               </div>
-            </div>
-        }    
+            )}
           </div>
         </section>
-
-      </div>{/* Cerrar grid-centrador */}
-
+      </div>
     </ItemDetailsStyle>
   )
 }
