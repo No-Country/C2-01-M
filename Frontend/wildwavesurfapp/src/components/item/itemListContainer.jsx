@@ -2,9 +2,14 @@ import React, { useState, useEffect } from "react";
 import ItemList from "./itemList";
 import { useProducts } from "../../context/ProductContext";
 import Sort from "../sort/sort";
+<<<<<<< Updated upstream
 import Filter from "../filter/filter";
 
 const ItemListContainer = ({ featured, list, option }) => {
+=======
+
+const ItemListContainer = ({ featured }) => {
+>>>>>>> Stashed changes
   const [items, setItems] = useState([]);
   const products = useProducts();
   const [loader, setLoader] = useState(true);
@@ -35,6 +40,7 @@ const ItemListContainer = ({ featured, list, option }) => {
     </div>
   ) : (
     <>
+<<<<<<< Updated upstream
       <div className="sort-container">
         <Sort setItems={setItems} />
       </div>
@@ -42,6 +48,10 @@ const ItemListContainer = ({ featured, list, option }) => {
         <Filter />
         <ItemList items={items} featured={featured} />
       </div>
+=======
+      <Sort />
+      <ItemList items={items} featured={featured} />
+>>>>>>> Stashed changes
     </>
   );
 };

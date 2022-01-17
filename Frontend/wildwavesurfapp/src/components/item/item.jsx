@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./item.css";
 import { Link } from "react-router-dom";
+import "./item.css";
 
 const Item = ({ product }) => {
   const { image, price, title, _id } = product;
