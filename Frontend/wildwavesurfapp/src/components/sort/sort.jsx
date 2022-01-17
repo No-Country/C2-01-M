@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useProducts } from "../../context/ProductContext";
 import Select from "react-select";
+import "./sort.css";
 
 const Sort = ({ setItems }) => {
   const options = [
@@ -20,48 +21,58 @@ const Sort = ({ setItems }) => {
 
   const sortProducts = () => {
     let sortedList;
-    if (option === "LowPrice") {
-      sortedList = products.sort((a, b) =>
-        parseInt(a.price) > parseInt(b.price)
-          ? 1
-          : parseInt(a.price) < parseInt(b.price)
-          ? -1
-          : 0
-      );
-    } else if (option === "HighPrice") {
-      sortedList = products.sort((a, b) =>
-        parseInt(a.price) > parseInt(b.price)
-          ? -1
-          : parseInt(a.price) < parseInt(b.price)
-          ? 1
-          : 0
-      );
-    } else if (option === "A-Z" || option === "") {
-      sortedList = products.sort((a, b) =>
-        a.title > b.title ? 1 : a.title < b.title ? -1 : 0
-      );
-    } else if (option === "Z-A") {
-      sortedList = products.sort((a, b) =>
-        a.title > b.title ? -1 : a.title < b.title ? 1 : 0
-      );
+    switch (option) {
+      case "LowPrice":
+        sortedList = products.sort((a, b) =>
+          parseInt(a.price) > parseInt(b.price)
+            ? 1
+            : parseInt(a.price) < parseInt(b.price)
+            ? -1
+            : 0
+        );
+        break;
+      case "HighPrice":
+        sortedList = products.sort((a, b) =>
+          parseInt(a.price) > parseInt(b.price)
+            ? -1
+            : parseInt(a.price) < parseInt(b.price)
+            ? 1
+            : 0
+        );
+        break;
+      case "A-Z":
+        sortedList = products.sort((a, b) =>
+          a.title > b.title ? 1 : a.title < b.title ? -1 : 0
+        );
+        break;
+      case "Z-A":
+        sortedList = products.sort((a, b) =>
+          a.title > b.title ? -1 : a.title < b.title ? 1 : 0
+        );
+        break;
+      default:
+        sortedList = products;
     }
     setList(sortedList);
   };
 
+  setItems(list);
+
   useEffect(() => {
     sortProducts();
   }, [option]);
+
+  console.log(option);
   console.log(list);
 
   return (
-    <div>
+    <div className="sort-container">
       <Select
         options={options}
         onChange={changeOption}
         list={list}
         option={option}
       />
-      ;
     </div>
   );
 };
