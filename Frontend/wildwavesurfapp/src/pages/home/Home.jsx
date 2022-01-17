@@ -1,7 +1,7 @@
 import React from "react"
-import FeaturedProducts from "../components/featured-products"
-import HeroImage from "../components/hero-imgen"
-import Landing from "../components/landing/landing"
+import FeaturedProducts from "../../components/featured-products"
+import HeroImage from "../../components/hero-imgen"
+import Landing from "../../components/landing/landing"
 
 // styles
 import { WrapperHeroImage, SurfboardsTitle } from "./Home.styles"

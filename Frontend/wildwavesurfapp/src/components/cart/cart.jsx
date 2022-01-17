@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import {
   useCartItem,
   useDeleteFromCart,
@@ -19,6 +19,7 @@ const Cart = () => {
   const ItemQty = useItemQty()
   const deleteAllItems = useDeleteAllItems()
   const counterItems = useCounterItems()
+  const navigate = useNavigate()
 
   const deleteItems = () => {
     const confirm = window.confirm(
@@ -99,7 +100,10 @@ const Cart = () => {
           <h3>Total Items: {ItemQty} </h3>
 
           <h3> Total Buy: ${totalCart} </h3>
-          <button>Initial Buy</button>
+
+          <button onClick={() => navigate("/purchaseCircuit")}>
+            Initial Buy
+          </button>
           {<Link to='/products'>Keep buying</Link>}
         </div>
         <div className='button-delete-all'>

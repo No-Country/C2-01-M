@@ -12,7 +12,7 @@ import Loader from "../loader/loader"
 import { WrapperSignin, WrapperButton } from "./Login.Styles"
 import TextError from "../form/text-error/TextError"
 
-const Login = () => {
+const Login = ({ buy }) => {
   const navigate = useNavigate()
   const [messageError, setMessageError] = useState(false)
   const getInfoUser = useGetInfoUser()
@@ -54,7 +54,7 @@ const Login = () => {
             {formik.isSubmitting ? (
               <Loader />
             ) : (
-              <WrapperSignin>
+              <WrapperSignin buy={buy}>
                 <Form className='form'>
                   <h3>Welcome</h3>
                   <FormControl
@@ -62,12 +62,20 @@ const Login = () => {
                     type='email'
                     placeholder='Email'
                     name='email'
+                    style={{
+                      border: buy ? "none" : "",
+                      borderBottom: buy && "1px solid black",
+                    }}
                   />
                   <FormControl
                     control='input'
                     type='password'
                     name='password'
-                    placeholder='Contraseña'
+                    placeholder='Password'
+                    style={{
+                      border: buy ? "none" : "",
+                      borderBottom: buy && "1px solid black",
+                    }}
                   />
                   {messageError && (
                     <TextError
@@ -76,13 +84,15 @@ const Login = () => {
                       <span>user or password</span>
                     </TextError>
                   )}
-                  <WrapperButton>
+                  <WrapperButton buy={buy}>
                     <button type={"onSubmit"}>Login</button>
                     <Link to={"#"}>Lost your password? </Link>
-                    <Link to={"/register"}>
-                      You do not have an account? Sign up{" "}
+                    <Link to={"/register"} style={{ display: buy && "none" }}>
+                      You do not have an account? Sign up
                     </Link>
-                    <Link to={"/home"}>Sign in as a guest </Link>
+                    <Link to={"/home"} style={{ display: buy && "none" }}>
+                      Sign in as a guest
+                    </Link>
                   </WrapperButton>
                 </Form>
               </WrapperSignin>
