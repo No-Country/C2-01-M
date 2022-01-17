@@ -3,24 +3,25 @@ import styled from "styled-components"
 export const WrapperSignin = styled.div`
   margin-top: 6%;
   width: 100%;
-  padding: 50px;
+  padding: ${({ buy }) => (buy ? "0" : "50px")};
   transition: 0.5;
   transition-delay: 0.25s;
   display: flex;
-  justify-content: center;
+  justify-content: ${({ buy }) => (buy ? "flex-start" : "center")};
   flex-wrap: nowrap;
   box-sizing: border-box;
   > .form {
     width: 400px;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    border: ${({ buy }) => (buy ? "none" : "1px solid black")};
     padding: 20px;
     border-radius: 10px;
   }
   h3 {
     font-size: 34px;
     text-align: center;
+    display: ${({ buy }) => (buy ? "none" : "")};
   }
   .forgot {
     color: #333;
@@ -38,12 +39,12 @@ export const WrapperButton = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: ${({ buy }) => (buy ? "flex-start" : "center")};
   button {
     position: relative;
     padding: 10px;
-    width: 100%;
-    border-radius: 20px;
+    width: ${({ buy }) => (buy ? "100px" : "100%")};
+    border-radius: ${({ buy }) => (buy ? "5px" : "10px")};
     border: none;
     background-color: black;
     color: #fff;
