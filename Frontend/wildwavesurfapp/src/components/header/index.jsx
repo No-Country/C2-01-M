@@ -68,7 +68,7 @@ const Header = () => {
               to='/products'
               style={{ textDecoration: "none", color: "black" }}
             >
-              <li>PRODUCTOS</li>
+              <li>PRODUCTS</li>
             </Link>
           </Ul>
         </WrapperNavbar>

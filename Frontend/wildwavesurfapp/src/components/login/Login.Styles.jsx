@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const WrapperSignin = styled.div`
-  margin-top: 10%;
+  margin-top: 6%;
   width: 100%;
   padding: 50px;
   transition: 0.5;

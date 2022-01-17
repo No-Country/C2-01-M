@@ -11,10 +11,7 @@ const Footer = () => {
   const social = [facebook, instagram, linkedin, twitter]
   return (
     <WrapperFooter>
-      <h6>
-        © Copyright 2021, Wildwavesurf, open source. Todos los derechos
-        reservados.
-      </h6>
+      <h6>© Copyright 2021, Wildwavesurf, open source. All rights reserved.</h6>
       <div style={{ display: "flex" }}>
         <h4>FOLLOW US</h4>
         {social.length > 0
