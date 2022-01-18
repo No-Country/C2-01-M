@@ -1,6 +1,5 @@
 const cartRepository = require("../repositories/cart.repository");
 const productRepository = require("../repositories/product.repository");
-
 class cartController {
   async addItemToCart(req, res) {
     const { productId } = req.body;
@@ -9,13 +8,16 @@ class cartController {
 
     try {
       let cart = await cartRepository.cart();
+
       let productDetails = await productRepository.productById(productId);
+
       if (!productDetails) {
         return res.status(500).json({
           type: "Not Found",
           msg: "Invalid request",
         });
       }
+      
       //--If Cart Exists ----
       if (cart) {
         //---- check if index exists ----
