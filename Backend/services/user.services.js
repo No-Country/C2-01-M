@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt'); 
 const User = require("../models/user.model");
 
 module.exports = class UserService {
