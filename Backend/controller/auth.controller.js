@@ -36,20 +36,20 @@ class authController {
 
       if (!user) {
         return res.status(400).json({
-          message: "User and or password is incorrect: email",
+          message: "User and or password is incorrect",
         });
       }
 
       if (!user.state) {
         return res.status(400).json({
-          message: "User and or password is incorrect - state: false",
+          message: "User and or password is incorrect",
         });
       }
 
       const validPassword = bcrypt.compareSync(password, user.password);
       if (!validPassword) {
         return res.status(400).json({
-          message: "User and or password is incorrect: password",
+          message: "User and or password is incorrect",
         });
       }
 
