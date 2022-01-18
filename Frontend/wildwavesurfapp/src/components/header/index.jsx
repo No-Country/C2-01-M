@@ -70,6 +70,12 @@ const Header = () => {
             >
               <li>PRODUCTS</li>
             </Link>
+            <Link
+              to='/listFavorites'
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <li>MY FAVORITES</li>
+            </Link>
           </Ul>
         </WrapperNavbar>
         <WrapperSearch>
