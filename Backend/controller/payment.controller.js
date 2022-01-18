@@ -1,18 +1,20 @@
 const axios = require("axios");
 const { config } = require("../config");
 
+const cartRepository = require('../repositories/cart.repository');
 class Payments {
   async createOrder(req, res) {
+
+    let cart = await cartRepository.cart();
+
     try {
       const order = {
         intent: "CAPTURE",
-        
-        // TODO: Create and save data of cart in a array, and purchase this arr
         purchase_units: [
           {
             amount: {
               currency_code: "USD",
-              value: "105.70",
+              value: cart.subTotal
             },
           },
         ],
