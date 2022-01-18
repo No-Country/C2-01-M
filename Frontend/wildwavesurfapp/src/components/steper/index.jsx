@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Steps } from "./Steper.styles"
 import "antd/dist/antd.css"
 import { Popover } from "antd"
@@ -15,14 +15,16 @@ const customDot = (dot, { status, index }) => (
   </Popover>
 )
 
-const Stepper = ({ dataStep }) => {
+const Stepper = ({ dataStep, stepUser }) => {
   const { Step } = Steps
   const [curren, setCurren] = useState(0)
-  console.log(dataStep)
+  console.log(stepUser)
   const onChange = (e) => {
     setCurren(e)
   }
-
+  useEffect(() => {
+    setCurren(stepUser)
+  }, [stepUser])
   return (
     <>
       <Steps

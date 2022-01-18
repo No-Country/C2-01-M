@@ -30,7 +30,7 @@ const Login = ({ buy }) => {
       const info = await api.post(url, options)
       if (info.user.state) {
         getInfoUser(info)
-        return navigate("/home")
+        return !buy && navigate("/home")
       }
     } catch (error) {
       if (error) {
