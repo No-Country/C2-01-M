@@ -5,6 +5,9 @@ export const WrapperHeroImage = styled.div`
   justify-content: space-around;
   align-items: center;
   margin-bottom: 30px;
+  @media (max-width: 690px) {
+    flex-direction: column;
+  }
 `
 export const SurfboardsTitle = styled.span`
   font-size: 40px;

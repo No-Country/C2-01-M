@@ -8,16 +8,18 @@ export const WrapperFooter = styled.div`
   bottom: 0 !important;
 
   background: black;
-  color: #fff;
+  color: #fff !important;
   h4 {
     min-width: max-content;
     margin: 10px;
+    color: #fff !important;
   }
 
   h6 {
     font-size: 14px;
     margin: 5px;
     margin-left: 10px;
+    color: #fff !important;
   }
 
   img {

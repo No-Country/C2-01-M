@@ -144,7 +144,7 @@ export const WrapperName = styled.span`
   justify-content: center;
   align-items: center;
   font-size: 24px;
-  padding: 10px;
+  padding: 16px !important;
   color: #fff;
   font-weight: 800;
   background: blue;
