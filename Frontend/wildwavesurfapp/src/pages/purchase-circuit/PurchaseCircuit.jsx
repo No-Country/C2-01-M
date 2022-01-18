@@ -1,25 +1,25 @@
-import React, { useState } from "react"
-import Login from "../../components/login"
-import Register from "../../components/register"
+import React, { useContext, useEffect, useState } from "react"
 import Stepper from "../../components/steper"
+import StepContainer from "../../components/steps/step-container"
+import Products from "../../context/ProductContext"
 
 //styles
-import {
-  WrapperBuy,
-  WrapperSteps,
-  WrapperButtons,
-  WrapperInfoBuy,
-} from "./PurchaseCircuit.styles"
+import { WrapperBuy, WrapperInfoBuy } from "./PurchaseCircuit.styles"
 import Summary from "./Summary"
 
 const PurchaseCircuit = () => {
-  const [showRegister, setShowRegister] = useState(false)
+  const [step, setStep] = useState(0)
   const dataStep = [
     { description: "Personal information ", title: "" },
     { description: "Shipping ", title: "" },
     { description: "Pay", title: "" },
     { description: "Confirmation ", title: "" },
   ]
+  const { infoUser } = useContext(Products)
+
+  useEffect(() => {
+    if (infoUser) setStep(1)
+  }, [infoUser])
   return (
     <div>
       <h1>WILD WAVE SURF </h1>
@@ -31,36 +31,12 @@ const PurchaseCircuit = () => {
           padding: "30px 0",
         }}
       >
-        <Stepper dataStep={dataStep} />
+        <Stepper dataStep={dataStep} stepUser={step} />
       </div>
-      <WrapperBuy>
-        <WrapperSteps>
-          <WrapperButtons>
-            <button
-              onClick={() => setShowRegister(false)}
-              style={{
-                background: !showRegister && "gray",
-                color: !showRegister && "#fff",
-              }}
-            >
-              I ALREADY HAVE A USER
-            </button>
-            <button
-              onClick={() => setShowRegister(true)}
-              style={{
-                background: showRegister && "gray",
-                color: showRegister && "#fff",
-              }}
-            >
-              REGISTER
-            </button>
-          </WrapperButtons>
-          {!showRegister ? <Login buy={true} /> : <Register buy={true} />}
-        </WrapperSteps>
+      <WrapperBuy step={step}>
+        <StepContainer control={step} setStep={setStep} />
         <WrapperInfoBuy>
-          <div>
-            <Summary />
-          </div>
+          <div>{step !== 3 && <Summary />}</div>
         </WrapperInfoBuy>
       </WrapperBuy>
     </div>
