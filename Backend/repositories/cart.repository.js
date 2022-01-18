@@ -3,12 +3,11 @@ const Cart = require('../models/cart.model');
 class cartRepository { 
     async cart () {
         const carts = await Cart.find()
-        //     .populate({
-        //         path: "items.productId",
-        //         select: "name price total",
-        //   });
+            .populate({
+                path: "items.productId",
+                select: "name price total",
+          });
 
-          console.log(carts, 'Carts from cartRepository');
           return carts[0];
     }
 
