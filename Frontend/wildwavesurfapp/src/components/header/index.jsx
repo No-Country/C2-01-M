@@ -51,7 +51,7 @@ const Header = () => {
             <img
               src={menu}
               alt='menu'
-              width={50}
+              width={30}
               onClick={() => setShowNavbar(!showNavbar)}
             />
           </WrapperMenu>
@@ -93,7 +93,7 @@ const Header = () => {
               }}
               onClick={() => navigate("/login")}
             >
-              <img src={userLogin} alt='user-login' width={40} />
+              <img src={userLogin} alt='user-login' width={30} />
               <NoLogin>X</NoLogin>
             </div>
           ) : (
@@ -108,7 +108,7 @@ const Header = () => {
             <img
               src={trolley}
               alt='trolley'
-              width={50}
+              width={30}
               onClick={() => setShowCart(!showCart)}
             />
           </Link>
