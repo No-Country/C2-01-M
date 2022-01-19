@@ -18,9 +18,12 @@ export const ItemDetailsStyle = styled.div`
 	padding-top: 50px;
 	padding-bottom: 50px;
 	box-sizing:border-box;
+	margin-bottom:150px;
+	border-radius: 20px;
 }
 
 .itemDetailsContainer {
+	border:2px solid black;
 	width: 70%;
 	margin: 0;
 	padding: 0;
@@ -124,6 +127,7 @@ export const ItemDetailsStyle = styled.div`
 @media screen and (max-width: 700px) {
 	.itemDetailsContainer {
 		grid-template-columns: 1fr;
+		border: none;
 	}
 	
 	.tallasContainer {

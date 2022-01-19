@@ -10,7 +10,9 @@ import ItemDetailContainer from "../item-details/itemDetailContainer"
 import ItemListContainer from "../item/itemListContainer"
 import Footer from "../footer"
 import Welcome from "../welcome"
-import Home from "../../pages/Home"
+import Home from "../../pages/home/Home"
+import PurchaseCircuit from "../../pages/purchase-circuit/PurchaseCircuit"
+import ListFavorites from "../../pages/list-favorites"
 
 const ManagementRoute = () => {
   const [show, setShow] = useState(false)
@@ -29,10 +31,13 @@ const ManagementRoute = () => {
           <Route exact path='/cart' element={<Cart />} />
           <Route exact path='/landing' element={<Landing />} />
           <Route exact path='/products' element={<ItemListContainer />} />
+          <Route exact path='/purchaseCircuit' element={<PurchaseCircuit />} />
+          <Route exact path='/listFavorites' element={<ListFavorites />} />
           <Route
             path='/product/:prodId'
             element={<ItemDetailContainer />}
           ></Route>
+
           <Route path='*' element={<Error404 />} />
         </Routes>
         {show && <Footer />}

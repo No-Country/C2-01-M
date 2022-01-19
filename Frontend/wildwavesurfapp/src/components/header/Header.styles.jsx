@@ -18,7 +18,7 @@ export const Content = styled.div`
   }
   @media (max-width: 450px) {
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 `
 export const WrapperNavbar = styled.div`
@@ -55,8 +55,15 @@ export const Ul = styled.ul`
   }
   @media (max-width: 991px) {
     position: absolute;
-    top: 120px;
+    top: 87px;
     left: ${({ showNavbar }) => (showNavbar ? "0" : "-500px")};
+    background-color:#eee;
+    padding-top:10px;
+    padding-bottom:10px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    padding-right: 20px;
   }
 `
 export const DisplayOverlay = styled.div`
@@ -79,10 +86,13 @@ export const WrapperIMG = styled.div`
   }
 `
 export const NoLogin = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
   border-radius: 50px;
   background: red;
-  padding: 2px;
+  padding: 9px;
   width: 14px;
   height: 16px;
 `
@@ -110,11 +120,11 @@ export const QuantityItems = styled.span`
   justify-content: center;
   align-items: center;
   right: 10px;
-  bottom: 5px;
+  bottom: 8px;
   color: #fff;
   border-radius: 50px;
   background: green;
-  padding: 3px;
+  padding: 9px;
   width: 14px;
   height: 16px;
 `
@@ -131,9 +141,6 @@ export const WrapperSearch = styled.div`
   @media (max-width: 450px) {
     order: 4;
     flex: 0 0 100%;
-    display: flex;
-    justify-content: center;
-    width: 100%;
   }
 `
 export const WrapperName = styled.span`
@@ -141,7 +148,7 @@ export const WrapperName = styled.span`
   justify-content: center;
   align-items: center;
   font-size: 24px;
-  padding: 10px;
+  padding: 16px !important;
   color: #fff;
   font-weight: 800;
   background: blue;

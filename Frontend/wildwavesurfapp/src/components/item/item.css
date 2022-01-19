@@ -1,11 +1,10 @@
 .item-list-container {
-  width: 90%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin: 1rem 2rem;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
 }
 
 .card-container {
@@ -17,23 +16,28 @@
   box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.28);
   -webkit-box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.28);
   -moz-box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.28);
+
+  transition-duration: .2s;
+  transform: scale(1);
 }
+
+.card-container:hover{
+  transform: scale(1.05);
+}
+
+.card-container:active{
+  transform: scale(.95);
+}
+
 .like-container {
   display: flex;
   justify-content: end;
-}
-.like-container img {
-  margin: 0.5rem;
-  width: 24px;
-  height: 24px;
-}
-.like-container img:hover{
-  cursor: pointer;
 }
 
 .card-container .img-card img {
   width: 200px;
   height: 220px;
+  object-fit: cover;
 }
 
 .card-container .info-card {
@@ -44,13 +48,31 @@
 .card-container .info-card p {
   font-size: 0.8rem;
 }
-.preloader-container{
-  width: 100vw;
+.preloader-container {
+  width: 100%;
   height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.preloader-container img{
+.preloader-container img {
   height: 90%;
+}
+.heart {
+  margin: 10px;
+}
+.product-container {
+  display: flex;
+}
+.sort-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 95%;
+}
+
+@media (max-width:533px){
+  .product-container{
+    display: initial;
+  }
 }

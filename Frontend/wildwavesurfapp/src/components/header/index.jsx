@@ -51,15 +51,15 @@ const Header = () => {
             <img
               src={menu}
               alt='menu'
-              width={50}
+              width={30}
               onClick={() => setShowNavbar(!showNavbar)}
             />
           </WrapperMenu>
-          <WrapperIMG>
-            <Link to='/home' style={{ textDecoration: "none", color: "black" }}>
+          <Link to='/home' style={{ textDecoration: "none", color: "black" }}>
+            <WrapperIMG>
               <img src={surf} alt='surf' width={50} />
-            </Link>
-          </WrapperIMG>
+            </WrapperIMG>
+          </Link>
           <Ul showNavbar={showNavbar}>
             <Link to='/home' style={{ textDecoration: "none", color: "black" }}>
               <li>HOME</li>
@@ -68,7 +68,13 @@ const Header = () => {
               to='/products'
               style={{ textDecoration: "none", color: "black" }}
             >
-              <li>PRODUCTOS</li>
+              <li>PRODUCTS</li>
+            </Link>
+            <Link
+              to='/listFavorites'
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <li>MY FAVORITES</li>
             </Link>
           </Ul>
         </WrapperNavbar>
@@ -87,7 +93,7 @@ const Header = () => {
               }}
               onClick={() => navigate("/login")}
             >
-              <img src={userLogin} alt='user-login' width={40} />
+              <img src={userLogin} alt='user-login' width={30} />
               <NoLogin>X</NoLogin>
             </div>
           ) : (
@@ -102,7 +108,7 @@ const Header = () => {
             <img
               src={trolley}
               alt='trolley'
-              width={50}
+              width={30}
               onClick={() => setShowCart(!showCart)}
             />
           </Link>

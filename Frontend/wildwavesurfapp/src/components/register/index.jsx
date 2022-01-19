@@ -11,7 +11,7 @@ import Loader from "../loader/loader"
 // styles
 import { WrapperSignup, WrapperButton } from "./Register.Styles"
 
-const Register = () => {
+const Register = ({ buy }) => {
   const navigate = useNavigate()
   const [messageError, setMessageError] = useState(false)
   const onSubmit = async (values) => {
@@ -50,47 +50,65 @@ const Register = () => {
             {formik.isSubmitting ? (
               <Loader />
             ) : (
-              <WrapperSignup>
+              <WrapperSignup buy={buy}>
                 <Form className='form'>
-                  <h3>Registrate</h3>
+                  <h3>Sign Up</h3>
                   <FormControl
                     control='input'
                     type='text'
-                    placeholder='Nombre'
+                    placeholder='Name'
                     name='name'
+                    style={{
+                      border: buy ? "none" : "",
+                      borderBottom: buy && "1px solid black",
+                    }}
                   />
                   <FormControl
                     control='input'
                     type='email'
                     placeholder='Email'
                     name='email'
+                    style={{
+                      border: buy ? "none" : "",
+                      borderBottom: buy && "1px solid black",
+                    }}
                   />
                   <FormControl
                     control='input'
                     type='password'
                     name='password'
-                    placeholder='Contraseña'
+                    placeholder='Password'
+                    style={{
+                      border: buy ? "none" : "",
+                      borderBottom: buy && "1px solid black",
+                    }}
                   />
                   <FormControl
                     control='input'
                     type='password'
                     name='confirmPassword'
-                    placeholder='Confirma tu Contraseña'
+                    placeholder='Confirm your password'
+                    style={{
+                      border: buy ? "none" : "",
+                      borderBottom: buy && "1px solid black",
+                    }}
                   />
                   {messageError && (
                     <TextError
                       styles={{ marginBottom: "30px", padding: "15px" }}
                     >
-                      <span>usuario o contraseña</span>
+                      <span>user or password</span>
                     </TextError>
                   )}
-                  <WrapperButton>
+                  <WrapperButton buy={buy}>
                     <button type={"onSubmit"}>Registrar</button>
-                    <Link to={"#"}>
-                      Al registrate, aceptas nuestras condiciones de uso y
-                      politica de privasidad
+                    <Link to={"#"} style={{ display: buy && "none" }}>
+                      By registering, you accept our conditions of use and
+                      privacy policy
                     </Link>
-                    <Link to={"/login"}>¿Ya tienes Cuenta? Iniciar Sesion</Link>
+                    <Link to={"/login"} style={{ display: buy && "none" }}>
+                      Do you already have an account? Log in
+                    </Link>
                   </WrapperButton>
                 </Form>
               </WrapperSignup>

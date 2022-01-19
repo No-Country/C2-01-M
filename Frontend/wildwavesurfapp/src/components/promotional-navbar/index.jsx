@@ -17,19 +17,33 @@ const PromotionalBar = () => {
     arrows: false,
   }
   const info = [
-    "ENVIOS GRATIS A TODO EL PAIS",
-    "¡ESTAMOS ENTREGANDO!",
-    "ENVIOS GRATIS A TODO EL PAIS",
-    "¡3 Y 6 CUOTAS SIN INTERES!",
+    "FREE SHIPPING NATIONWIDE ",
+    "WE ARE DELIVERING! ",
+    "FREE SHIPPING NATIONWIDE",
+    "3 AND 6 INTEREST-FREE INSTALLMENTS! ",
   ]
   return (
-    <div className='slider' style={{ background: "black" }}>
+    <div
+      className='slider'
+      style={{
+        background: "black",
+        height: "50px",
+      }}
+    >
       <Slider {...settings}>
         {info &&
           info.map((item, index) => {
             return (
-              <div key={index} style={{ background: "black" }}>
-                <h3 className='promotion' style={{ color: "#fff" }}>
+              <div
+                key={index}
+                style={{
+                  background: "black",
+                }}
+              >
+                <h3
+                  className='promotion'
+                  style={{ color: "#fff", margin: "10px" }}
+                >
                   {item}
                 </h3>
               </div>
