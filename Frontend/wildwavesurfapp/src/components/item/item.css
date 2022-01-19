@@ -70,3 +70,9 @@
   align-items: center;
   width: 95%;
 }
+
+@media (max-width:533px){
+  .product-container{
+    display: initial;
+  }
+}
