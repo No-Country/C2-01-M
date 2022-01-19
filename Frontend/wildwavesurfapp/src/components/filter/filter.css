@@ -2,10 +2,10 @@
   box-sizing: border-box;
 }
 .filter-container {
-  height: 70vh;
   width: 40vw;
   display: flex;
   flex-direction: column;
+  padding-left: 20px;
 }
 .filter-container .filter-cat,
 .filter-container .filter-price,
@@ -20,4 +20,19 @@ fieldset {
 label {
   display: block;
   padding: 0.5rem 0;
+}
+
+@media (max-width:533px){
+  .filter-container{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding: 0;
+  }
+  .filter-val,.filter-price,.filter-cat{
+    margin-left: 12px;
+    margin-right: 12px;
+  }
 }
