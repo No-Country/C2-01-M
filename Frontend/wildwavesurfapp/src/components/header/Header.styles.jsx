@@ -55,11 +55,15 @@ export const Ul = styled.ul`
   }
   @media (max-width: 991px) {
     position: absolute;
-    top: 120px;
+    top: 87px;
     left: ${({ showNavbar }) => (showNavbar ? "0" : "-500px")};
     background-color:#eee;
     padding-top:10px;
     padding-bottom:10px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    padding-right: 20px;
   }
 `
 export const DisplayOverlay = styled.div`
