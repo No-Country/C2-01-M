@@ -18,7 +18,7 @@ export const Content = styled.div`
   }
   @media (max-width: 450px) {
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 `
 export const WrapperNavbar = styled.div`
@@ -57,6 +57,9 @@ export const Ul = styled.ul`
     position: absolute;
     top: 120px;
     left: ${({ showNavbar }) => (showNavbar ? "0" : "-500px")};
+    background-color:#eee;
+    padding-top:10px;
+    padding-bottom:10px;
   }
 `
 export const DisplayOverlay = styled.div`
@@ -134,9 +137,6 @@ export const WrapperSearch = styled.div`
   @media (max-width: 450px) {
     order: 4;
     flex: 0 0 100%;
-    display: flex;
-    justify-content: center;
-    width: 100%;
   }
 `
 export const WrapperName = styled.span`
