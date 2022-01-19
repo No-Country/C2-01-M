@@ -2,6 +2,10 @@
   "name": "wildwavesurfapp",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "7.7.6",
+    "node": "15.13.0"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
