@@ -13,5 +13,5 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.8.9
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "dashboard-figma"
+          heroku_app_name: "wildwavesurfapp"
           heroku_email: "fernando_0135@hotmail.com"
