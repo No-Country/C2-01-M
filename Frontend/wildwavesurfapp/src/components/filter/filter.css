@@ -6,6 +6,7 @@
   width: 40vw;
   display: flex;
   flex-direction: column;
+  padding-left: 20px;
 }
 .filter-container .filter-cat,
 .filter-container .filter-price,
