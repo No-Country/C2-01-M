@@ -17,6 +17,12 @@ fieldset {
   border: none;
   padding: 0.5rem 0;
 }
+
+input[type=number]{
+  width: 60px;
+  margin-left: 5px;
+}
+
 label {
   display: block;
   padding: 0.5rem 0;
