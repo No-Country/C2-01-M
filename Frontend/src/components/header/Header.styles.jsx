@@ -51,6 +51,7 @@ export const Ul = styled.ul`
     padding-left: 0px;
     li {
       margin-left: 20px;
+      font-size:20px;
     }
   }
   @media (max-width: 991px) {
