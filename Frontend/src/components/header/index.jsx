@@ -61,18 +61,20 @@ const Header = () => {
             </WrapperIMG>
           </Link>
           <Ul showNavbar={showNavbar}>
-            <Link to='/home' style={{ textDecoration: "none", color: "black" }}>
+            <Link to='/home' style={{ textDecoration: "none", color: "black" }} onClick={() => setShowNavbar(!showNavbar)}>
               <li>HOME</li>
             </Link>
             <Link
               to='/products'
-              style={{ textDecoration: "none", color: "black" }}
+              style={{ textDecoration: "none", color: "black" }} 
+              onClick={() => setShowNavbar(!showNavbar)}
             >
               <li>PRODUCTS</li>
             </Link>
             <Link
               to='/listFavorites'
               style={{ textDecoration: "none", color: "black" }}
+              onClick={() => setShowNavbar(!showNavbar)}
             >
               <li>MY FAVORITES</li>
             </Link>
