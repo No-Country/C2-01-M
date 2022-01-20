@@ -1,5 +1,5 @@
 const User = require("../models/user.model");
-const UserService = require("../services/user.services");
+const UserService = require("../services/user.service");
 
 class userController {
   async updateUser(req, res) {
