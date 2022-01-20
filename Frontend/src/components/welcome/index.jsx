@@ -18,7 +18,9 @@ const Welcome = () => {
         backgroundImage:
           "url(https://cdn.pixabay.com/photo/2016/11/18/18/45/surfer-1836366_960_720.jpg",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "100% auto, cover",
+        backgroundSize: "100vw 100vh, cover",
+        backgroundPosition:"center center",
+        overflow: "hidden"
       }}
     >
       <h1 style={{ color: "#915454", fontSize: "80px" }}>
