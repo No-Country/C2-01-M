@@ -22,11 +22,11 @@
 }
 
 .card-container:hover{
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .card-container:active{
-  transform: scale(.95);
+  transform: scale(.99);
 }
 
 .like-container {

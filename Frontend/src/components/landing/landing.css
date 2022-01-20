@@ -1,6 +1,10 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
+.slick-slide {
+    height: 70vh;
+}
+
 .img-container{
     width: 100%;
     max-width: 100%;
@@ -9,10 +13,24 @@
 .img-container img{
     width: 100%;
     max-width: 100%;
+    object-fit: contain;
     height: 70vh;
 }
 
 .slick-arrow, .slick-next{
     position: absolute;
     right: 50px;
+}
+
+@media (max-width:600px){
+    .slick-slide {
+        height: 30vh;
+    }
+
+    .img-container img{
+        width: 100%;
+        max-width: 100%;
+        object-fit: contain;
+        height: 30vh;
+    }
 }
