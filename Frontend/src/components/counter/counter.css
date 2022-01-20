@@ -1,0 +1,27 @@
+.btn-counter{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 55px;
+	height: 20px;
+	font-size: 20px;
+	font-weight: 700 !important;
+}
+
+.btn-counter span{
+	margin: 0 !important;
+	font-size: 50px;
+}
+
+.counter-number{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+	font-weight: 700;
+	margin: 0 !important;
+}
+
+.btn-add-to-cart{
+	margin-top: 50px !important;
+}
