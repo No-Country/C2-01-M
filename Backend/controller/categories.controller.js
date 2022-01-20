@@ -1,27 +1,17 @@
 const Category = require("../models/category.model");
+const CategoryService = require("../services/categories.service");
 
 class categoriesController {
   async createCategory(req, res) {
     try {
       const name = req.body.name.toUpperCase();
 
-      const categoryDB = await Category.findOne({ name });
+      const category = await new CategoryService().categoryCreate(name);
 
-      if (categoryDB) {
-        return res.status(400).json({
-          msg: `The category ${categoryDB.name}, already exist`,
-        });
-      }
-
-      const data = {
-        name,
-        user: req.user._id,
-      };
-
-      const category = new Category(data);
-      await category.save();
-
-      res.status(201).json(category);
+      res.status(201).json({
+        message: "Category created successfully",
+        category,
+      });
     } catch (error) {
       res.status(500).json(error);
     }
@@ -30,9 +20,12 @@ class categoriesController {
   async getCategory(req, res) {
     try {
       const { id } = req.params;
-      const category = await Category.findById(id).populate("name");
+      const category = await new CategoryService().categoryGet(id);
 
-      res.json(category);
+      res.json({
+        message: "Category obtained successfully",
+        category,
+      });
     } catch (error) {
       res.status(500).json(error);
     }
@@ -45,10 +38,7 @@ class categoriesController {
 
       const [total, categories] = await Promise.all([
         Category.countDocuments(query),
-        Category.find(query)
-          .populate("nickname")
-          .skip(Number(from))
-          .limit(Number(limit)),
+        Category.find(query).skip(Number(from)).limit(Number(limit)),
       ]);
 
       return res.json({
@@ -63,16 +53,16 @@ class categoriesController {
   async updateCategory(req, res) {
     try {
       const { id } = req.params;
-      const { state, user, ...data } = req.body;
+      const { state, ...data } = req.body;
 
       data.name = data.name.toUpperCase();
-      data.user = req.user._id;
 
-      const category = await Category.findByIdAndUpdate(id, data, {
-        new: true,
+      const category = await new CategoryService().categoryUpdate(id, data);
+
+      return res.json({
+        message: "Category updated successfully",
+        category,
       });
-
-      return res.json(category);
     } catch (error) {
       res.status(500).json(error);
     }
@@ -81,13 +71,12 @@ class categoriesController {
   async deleteCategory(req, res) {
     try {
       const { id } = req.params;
-      const deletedCategory = await Category.findByIdAndUpdate(
-        id,
-        { state: false },
-        { new: true }
-      );
 
-      return res.json(deletedCategory);
+      const category = await new CategoryService().categoryDelete(id);
+      return res.json({
+        message: "Category deleted successfully",
+        category,
+      });
     } catch (error) {
       res.status(500).json(error);
     }
