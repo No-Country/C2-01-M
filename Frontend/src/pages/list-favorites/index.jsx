@@ -38,7 +38,7 @@ const ListFavorites = () => {
   return (
     <>
       <WrapperHeader>
-        <img src={heart} alt='heart' width={100} />
+        <img src={heart} alt='heart' width={40} />
         <WrapperTitle>
           <h2>My favorites</h2>
         </WrapperTitle>
