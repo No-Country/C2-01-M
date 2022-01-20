@@ -1,7 +1,7 @@
-const bcrypt = require('bcrypt'); 
+const bcrypt = require("bcrypt");
 const User = require("../models/user.model");
 
-module.exports = class UserService {
+class UserService {
   userFiltered = (user) => {
     const { id, password, $__, ...rest } = user;
     return { ...rest };
@@ -17,7 +17,6 @@ module.exports = class UserService {
       const user = await User.findByIdAndUpdate(id, rest);
       const userUpdate = this.userFiltered(user);
       return userUpdate;
-      
     } catch (error) {
       throw Error("Failed to update User...");
     }
@@ -28,7 +27,6 @@ module.exports = class UserService {
       const user = await User.findByIdAndUpdate(id, { state: false });
       const userDeleted = this.userFiltered(user);
       return userDeleted;
-
     } catch (error) {
       throw Error("Failed to delete User...");
     }
@@ -40,9 +38,10 @@ module.exports = class UserService {
       const userFiltered = this.userFiltered(user);
 
       return userFiltered;
-
     } catch (error) {
       throw Error("Failed to get User...");
     }
   }
 }
+
+module.exports = UserService;
