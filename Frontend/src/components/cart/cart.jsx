@@ -10,6 +10,9 @@ import {
 } from "../../context/ProductContext"
 import add from "../../assets/add.svg"
 import desc from "../../assets/desc.svg"
+import trash from "../../assets/trash-black.svg"
+
+// styles
 import "./cart.css"
 
 const Cart = () => {
@@ -81,7 +84,7 @@ const Cart = () => {
                 />
               </span>
               <img
-                src='https://i.imgur.com/h67XBJJ.png'
+                src={trash}
                 alt='garbage'
                 className='icon-delete'
                 onClick={() => deleteFromCart(item)}
