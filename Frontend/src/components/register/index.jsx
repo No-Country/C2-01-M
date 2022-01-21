@@ -11,7 +11,7 @@ import Loader from "../loader/loader"
 // styles
 import { WrapperSignup, WrapperButton } from "./Register.Styles"
 
-const Register = ({ buy }) => {
+const Register = ({ buy, setShowRegister }) => {
   const navigate = useNavigate()
   const [messageError, setMessageError] = useState(false)
   const onSubmit = async (values) => {
@@ -27,7 +27,10 @@ const Register = ({ buy }) => {
       }
 
       const info = await api.post(url, options)
-      if (info.user.state) navigate("/login")
+      if (buy && info.newUser.state) {
+        setShowRegister(false)
+      }
+      if (!buy && info.newUser.state) navigate("/login")
     } catch (error) {
       if (error) {
         setMessageError(true)

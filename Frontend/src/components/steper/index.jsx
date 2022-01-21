@@ -18,7 +18,6 @@ const customDot = (dot, { status, index }) => (
 const Stepper = ({ dataStep, stepUser }) => {
   const { Step } = Steps
   const [curren, setCurren] = useState(0)
-  console.log(stepUser)
   const onChange = (e) => {
     setCurren(e)
   }

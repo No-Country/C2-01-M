@@ -1,14 +1,22 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import warning from "../../../assets/warning.svg"
+import {
+  useCartItem,
+  useDeleteAllItems,
+  useGetDataBuy,
+} from "../../../context/ProductContext"
 
 // styles
 import { Wrapper } from "./StepConfirm.styles"
-
 const StepConfirm = () => {
+  const cartItem = useCartItem()
+  const getDataBuy = useGetDataBuy()
+  const deleteAllItems = useDeleteAllItems()
   const navigate = useNavigate()
   const average = [1, 2, 3, 4, 5]
   const [state, setState] = useState(0)
+
   return (
     <Wrapper>
       <div>
@@ -49,7 +57,15 @@ const StepConfirm = () => {
         <textarea name='comments' id='comments' cols='40' rows='5'></textarea>
       </div>
       <div>
-        <button onClick={() => navigate("/products")}>Qualify</button>
+        <button
+          onClick={() => {
+            navigate("/products")
+            deleteAllItems()
+            return getDataBuy(cartItem)
+          }}
+        >
+          Qualify
+        </button>
       </div>
     </Wrapper>
   )

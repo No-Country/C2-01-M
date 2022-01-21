@@ -1,4 +1,5 @@
 import React from "react"
+import { useGetDataBuy } from "../../../context/ProductContext"
 
 import {
   WrapperSteps,
@@ -47,6 +48,8 @@ const dataBuy = [
 ]
 
 const StepShipping = ({ setStep }) => {
+  const getDataBuy = useGetDataBuy()
+
   return (
     <WrapperSteps>
       <h2>Shipments </h2>
@@ -61,7 +64,7 @@ const StepShipping = ({ setStep }) => {
                   name={item.name}
                   id={item.name}
                   value={item.value}
-                  onChange={(e) => console.log(e.target.value)}
+                  onChange={(e) => getDataBuy(e.target.value)}
                 />
               </Radio>
 

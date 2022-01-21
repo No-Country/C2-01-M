@@ -51,19 +51,19 @@ export const Ul = styled.ul`
     padding-left: 0px;
     li {
       margin-left: 20px;
-      font-size:20px;
+      font-size: 20px;
     }
   }
   @media (max-width: 991px) {
     position: absolute;
     top: 87px;
     left: ${({ showNavbar }) => (showNavbar ? "0" : "-500px")};
-    background-color:#eee;
-    padding-top:10px;
-    padding-bottom:10px;
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
+    background-color: #eee;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     padding-right: 20px;
   }
 `
@@ -110,6 +110,9 @@ export const WrapperTrolley = styled.div`
   display: flex;
   align-items: flex-end;
   margin-right: 20px;
+  img {
+    vertical-align: inherit;
+  }
   @media (max-width: 1200px) {
     margin: 5px;
   }
@@ -120,14 +123,14 @@ export const QuantityItems = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
-  right: 10px;
-  bottom: 8px;
+  right: 5px;
   color: #fff;
   border-radius: 50px;
   background: green;
   padding: 9px;
   width: 14px;
   height: 16px;
+  bottom: 3px;
 `
 export const WrapperMenu = styled.div`
   display: none;
