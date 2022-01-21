@@ -61,7 +61,7 @@ const Sort = ({ setItems }) => {
   useEffect(() => {
     sortProducts();
   }, [option]);
-
+  console.log(list);
   return (
     <div className="sort-container">
       <Select
