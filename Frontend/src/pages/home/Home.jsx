@@ -1,12 +1,22 @@
 import React from "react"
+import CardContainer from "../../components/card"
 import FeaturedProducts from "../../components/featured-products"
 import HeroImage from "../../components/hero-imgen"
 import Landing from "../../components/landing/landing"
+import quoteLeft from "../../assets/quote-left.svg"
+import quoteRight from "../../assets/quote-right.svg"
 
 // styles
-import { WrapperHeroImage, SurfboardsTitle } from "./Home.styles"
+import {
+  WrapperHeroImage,
+  SurfboardsTitle,
+  WrapperComments,
+  WrapperImg,
+} from "./Home.styles"
 
 const Home = () => {
+  const comments = localStorage.getItem("comments")
+
   return (
     <div>
       <Landing />
@@ -31,6 +41,23 @@ const Home = () => {
           <SurfboardsTitle>surfboards</SurfboardsTitle>
         </HeroImage>
       </WrapperHeroImage>
+      <WrapperComments>
+        {comments &&
+          JSON.parse(comments).map((comment, index) => {
+            return (
+              <CardContainer key={index}>
+                <WrapperImg>
+                  <img src={quoteLeft} alt='quote left' />
+                </WrapperImg>
+
+                <p>{comment}</p>
+                <WrapperImg right={true}>
+                  <img src={quoteRight} alt='quote right' />
+                </WrapperImg>
+              </CardContainer>
+            )
+          })}
+      </WrapperComments>
     </div>
   )
 }

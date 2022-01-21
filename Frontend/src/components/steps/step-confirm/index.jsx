@@ -16,13 +16,26 @@ const StepConfirm = () => {
   const navigate = useNavigate()
   const average = [1, 2, 3, 4, 5]
   const [state, setState] = useState(0)
+  const [comment, setComment] = useState([])
+
+  const getComments = () => {
+    const commentsLocalStorage = localStorage.getItem("comments")
+
+    if (commentsLocalStorage) {
+      const mes3 = JSON.parse(commentsLocalStorage)
+      const msg2 = mes3.concat(comment)
+      localStorage.setItem("comments", JSON.stringify(msg2))
+    } else {
+      const m = [comment]
+      localStorage.setItem("comments", JSON.stringify(m))
+    }
+  }
 
   return (
     <Wrapper>
       <div>
         <img src={warning} alt='warning' width={200} />
       </div>
-
       <h2>Your order will be processed when you make the payment </h2>
       <h3>
         We will confirm your order when the payment has been confirmed. Thank
@@ -54,13 +67,20 @@ const StepConfirm = () => {
       </div>
       <div className='comments'>
         <h3>Do you want to leave us your comment? </h3>
-        <textarea name='comments' id='comments' cols='40' rows='5'></textarea>
+        <textarea
+          name='comments'
+          id='comments'
+          cols='40'
+          rows='5'
+          onChange={(e) => setComment(e.target.value)}
+        ></textarea>
       </div>
       <div>
         <button
           onClick={() => {
             navigate("/products")
             deleteAllItems()
+            getComments()
             return getDataBuy(cartItem)
           }}
         >
