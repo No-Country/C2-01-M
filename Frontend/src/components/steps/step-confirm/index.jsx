@@ -1,11 +1,12 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import warning from "../../../assets/warning.svg"
-import {
+import Products, {
   useCartItem,
   useDeleteAllItems,
   useGetDataBuy,
 } from "../../../context/ProductContext"
+import axiosHttp from "../../../helpers/axiosHTTP"
 
 // styles
 import { Wrapper } from "./StepConfirm.styles"
@@ -17,17 +18,21 @@ const StepConfirm = () => {
   const average = [1, 2, 3, 4, 5]
   const [state, setState] = useState(0)
   const [comment, setComment] = useState([])
+  const { infoUser } = useContext(Products)
 
-  const getComments = () => {
-    const commentsLocalStorage = localStorage.getItem("comments")
-
-    if (commentsLocalStorage) {
-      const mes3 = JSON.parse(commentsLocalStorage)
-      const msg2 = mes3.concat(comment)
-      localStorage.setItem("comments", JSON.stringify(msg2))
-    } else {
-      const m = [comment]
-      localStorage.setItem("comments", JSON.stringify(m))
+  const saveComments = async (comment) => {
+    try {
+      let api = axiosHttp()
+      const url = await `${process.env.REACT_APP_SERVER_URI}/comments`
+      const options = {
+        data: {
+          name: infoUser.user.uid,
+          comment: comment,
+        },
+      }
+      await api.post(url, options)
+    } catch (error) {
+      console.log(error)
     }
   }
 
@@ -80,7 +85,7 @@ const StepConfirm = () => {
           onClick={() => {
             navigate("/products")
             deleteAllItems()
-            getComments()
+            saveComments(comment)
             return getDataBuy(cartItem)
           }}
         >
