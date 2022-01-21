@@ -1,9 +1,12 @@
 import React from "react"
+import { useGetDataBuy } from "../../../context/ProductContext"
 
 // styles
 import { WrapperSteps } from "./StepBuy.styles"
 
 const StepBuy = ({ setStep }) => {
+  const getDataBuy = useGetDataBuy()
+
   return (
     <WrapperSteps>
       <div className='pay'>
@@ -20,13 +23,25 @@ const StepBuy = ({ setStep }) => {
       <div>
         <h2>IS YOUR REQUEST FOR A GIFT? </h2>
         <div className='gift'>
-          <input type='radio' name='gift' id='gift' value={"gift"} />
+          <input
+            type='radio'
+            name='gift'
+            id='gift'
+            value={"gift"}
+            onChange={(e) => getDataBuy(e.target.value)}
+          />
           <label htmlFor='gift'>Yes</label>
         </div>
         <div className='gift'>
-          <input type='radio' name='someone' id='someone' value={"someone"} />
+          <input
+            type='radio'
+            name='someone'
+            id='someone'
+            value={"someone"}
+            onChange={(e) => getDataBuy(e.target.value)}
+          />
           <label htmlFor='someone'>
-            Is someone else going to pick up the order?{" "}
+            Is someone else going to pick up the order?
           </label>
         </div>
       </div>
@@ -39,7 +54,15 @@ const StepBuy = ({ setStep }) => {
             width={300}
             height={"auto"}
           />
-          <button onClick={() => setStep(3)}>CONTINUE</button>
+
+          <button
+            onClick={() => {
+              setStep(3)
+              return getDataBuy("payPal")
+            }}
+          >
+            CONTINUE
+          </button>
         </div>
       </div>
     </WrapperSteps>

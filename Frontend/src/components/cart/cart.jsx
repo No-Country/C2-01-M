@@ -41,7 +41,6 @@ const Cart = () => {
         </div>
         {cartItem?.map((item) => {
           const { image, title, price, _id, cantidad } = item
-          console.log(item)
           return (
             <div key={_id} className='card-container-cart' aria-current={true}>
               <img src={image} alt={title} />

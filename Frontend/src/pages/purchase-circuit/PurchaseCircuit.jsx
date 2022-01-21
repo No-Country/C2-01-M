@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import Stepper from "../../components/steper"
 import StepContainer from "../../components/steps/step-container"
-import Products from "../../context/ProductContext"
+import Products, { useGetDataBuy } from "../../context/ProductContext"
 
 //styles
 import { WrapperBuy, WrapperInfoBuy } from "./PurchaseCircuit.styles"
@@ -9,6 +9,7 @@ import Summary from "./Summary"
 
 const PurchaseCircuit = () => {
   const [step, setStep] = useState(0)
+  const getDataBuy = useGetDataBuy()
   const dataStep = [
     { description: "Personal information ", title: "" },
     { description: "Shipping ", title: "" },
@@ -18,7 +19,10 @@ const PurchaseCircuit = () => {
   const { infoUser } = useContext(Products)
 
   useEffect(() => {
-    if (infoUser) setStep(1)
+    if (infoUser) {
+      setStep(1)
+      getDataBuy(infoUser?.user?.uid)
+    }
   }, [infoUser])
   return (
     <div>

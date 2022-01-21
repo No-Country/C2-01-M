@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { useAddToCart, useProducts } from "../../context/ProductContext"
+import {
+  useAddToCart,
+  useDeleteDataBuy,
+  useProducts,
+} from "../../context/ProductContext"
 import { removeFavorites } from "../../helpers/remove-favorites"
 import ItemDetails from "./ItemDetails"
 
@@ -11,6 +15,7 @@ const ItemDetailContainer = () => {
   const [loader, setLoader] = useState(true)
   const [goCart, setGoCart] = useState(false)
   const addToCart = useAddToCart()
+  const deleteDataBuy = useDeleteDataBuy()
 
   useEffect(() => {
     setLoader(true)
@@ -35,6 +40,7 @@ const ItemDetailContainer = () => {
     addToCart(product, cantidad)
     setGoCart(true)
     removeFavorites(product?._id)
+    deleteDataBuy()
   }
 
   return loader ? (
