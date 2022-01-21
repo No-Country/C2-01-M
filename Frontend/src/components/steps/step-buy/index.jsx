@@ -1,5 +1,6 @@
 import React from "react"
 import { useGetDataBuy } from "../../../context/ProductContext"
+import paypal from "../../../assets/paypal.webp"
 
 // styles
 import { WrapperSteps } from "./StepBuy.styles"
@@ -48,12 +49,7 @@ const StepBuy = ({ setStep }) => {
       <div>
         <h2>SELECT THE PAYMENT METHOD </h2>
         <div className='pay-pal'>
-          <img
-            src='https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png'
-            alt='pay-pal'
-            width={300}
-            height={"auto"}
-          />
+          <img src={paypal} alt='pay-pal' width={300} height={"auto"} />
 
           <button
             onClick={() => {
