@@ -93,8 +93,8 @@
   border-radius: 0 0 0.5rem 0.5rem;
 }
 .empty-cart {
-  height: 60vh;
-  width: 100vw;
+  min-height: 70vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
