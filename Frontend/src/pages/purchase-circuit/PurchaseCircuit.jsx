@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useState } from "react"
 import Stepper from "../../components/steper"
 import StepContainer from "../../components/steps/step-container"
@@ -35,7 +36,7 @@ const PurchaseCircuit = () => {
           padding: "30px 0",
         }}
       >
-        <Stepper dataStep={dataStep} stepUser={step} />
+        <Stepper dataStep={dataStep} stepUser={step} setStep={setStep} />
       </div>
       <WrapperBuy step={step}>
         <StepContainer control={step} setStep={setStep} />
