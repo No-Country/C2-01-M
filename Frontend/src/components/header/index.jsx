@@ -37,6 +37,10 @@ const Header = () => {
   const { infoUser } = useContext(Products)
   const cartItem = useCartItem()
   const itemQty = useItemQty()
+  const linkStyles = {
+    textDecoration: "none",
+    color: "black",
+  }
 
   useEffect(() => {
     if (infoUser) setLogin(infoUser?.user?.name)
@@ -55,7 +59,7 @@ const Header = () => {
               onClick={() => setShowNavbar(!showNavbar)}
             />
           </WrapperMenu>
-          <Link to='/home' style={{ textDecoration: "none", color: "black" }}>
+          <Link to='/home' style={linkStyles}>
             <WrapperIMG>
               <img src={surf} alt='surf' width={50} />
             </WrapperIMG>
@@ -63,21 +67,21 @@ const Header = () => {
           <Ul showNavbar={showNavbar}>
             <Link
               to='/home'
-              style={{ textDecoration: "none", color: "black" }}
+              style={linkStyles}
               onClick={() => setShowNavbar(!showNavbar)}
             >
               <li>HOME</li>
             </Link>
             <Link
               to='/products'
-              style={{ textDecoration: "none", color: "black" }}
+              style={linkStyles}
               onClick={() => setShowNavbar(!showNavbar)}
             >
               <li>PRODUCTS</li>
             </Link>
             <Link
               to='/listFavorites'
-              style={{ textDecoration: "none", color: "black" }}
+              style={linkStyles}
               onClick={() => setShowNavbar(!showNavbar)}
             >
               <li>MY FAVORITES</li>
@@ -87,18 +91,9 @@ const Header = () => {
         <WrapperSearch>
           <Search />
         </WrapperSearch>
-
         <WrapperUserLogin>
           {!login ? (
-            <div
-              style={{
-                display: "flex",
-                alignItems: "flex-end",
-                marginLeft: "10px",
-                cursor: "pointer",
-              }}
-              onClick={() => navigate("/login")}
-            >
+            <div className='login' onClick={() => navigate("/login")}>
               <img src={userLogin} alt='user-login' width={30} />
               <NoLogin>X</NoLogin>
             </div>
@@ -107,10 +102,7 @@ const Header = () => {
           )}
         </WrapperUserLogin>
         <WrapperTrolley>
-          <Link
-            to={cartItem.length > 0 && "/cart"}
-            style={{ textDecoration: "none", color: "black" }}
-          >
+          <Link to={cartItem.length > 0 && "/cart"} style={linkStyles}>
             <img
               src={trolley}
               alt='trolley'

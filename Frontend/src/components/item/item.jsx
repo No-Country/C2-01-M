@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import Products from "../../context/ProductContext"
 
 //styles
 import "./item.css"
@@ -8,9 +7,6 @@ import "./item.css"
 const Item = ({ product }) => {
   const { image, price, title, _id } = product
   const [likesArray, setLikesArray] = useState([])
-  const { dataBuyInfo } = useContext(Products)
-
-  console.log(dataBuyInfo)
 
   const addLikes = (id) => {
     const likes = localStorage.getItem("itemsLikes")

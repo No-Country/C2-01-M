@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from "react"
+import getComments from "./functions/get-comments"
 
 const Products = React.createContext()
 
@@ -9,6 +10,7 @@ export function ProductsProvider({ children }) {
   const [totalCart, setTotalCart] = useState(0)
   const [infoUser, setInfoUser] = useState()
   const [dataBuyInfo, setDataBuyInfo] = useState([])
+  const [comments, setComments] = useState()
 
   const isOnCart = (product) => {
     /* Ubica si en el carrito ya existe un producto con el mismo id */
@@ -73,13 +75,22 @@ export function ProductsProvider({ children }) {
   const getDataBuy = (value) => {
     setDataBuyInfo([...dataBuyInfo, value])
   }
+
   const deleteDataBuy = () => {
     setDataBuyInfo([])
   }
+
+  const getComment = async (comment) => {
+    const commentsList = await comment
+    setComments(commentsList.comments)
+  }
+
   useEffect(() => {
     fetch(`${process.env.REACT_APP_SERVER_URI}/products?limit=50`)
       .then((res) => res.json())
       .then((data) => setProducts(data.products))
+    const commentsList = getComments()
+    getComment(commentsList)
   }, [])
 
   return (
@@ -99,6 +110,7 @@ export function ProductsProvider({ children }) {
         getDataBuy,
         dataBuyInfo,
         deleteDataBuy,
+        comments,
       }}
     >
       {children}

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react"
 import heart from "../../assets/heart.svg"
+import trash from "../../assets/trash.svg"
+import trolley from "../../assets/trolley-white.svg"
 import { useAddToCart, useProducts } from "../../context/ProductContext"
 
 // styles
@@ -9,12 +11,14 @@ import {
   WrapperCart,
 } from "./ListFavorites.styles"
 import { Link } from "react-router-dom"
+import useResize from "../../hooks/useResize"
 
 const ListFavorites = () => {
   const products = useProducts()
   const addToCart = useAddToCart()
   const [addLocalStorage, setAddLocalStorage] = useState()
   const [favoritesProducts, setFavoritesProducts] = useState()
+  const resize = useResize()
 
   const removeFavorites = (id) => {
     const favorites = localStorage.getItem("itemsLikes")
@@ -22,6 +26,7 @@ const ListFavorites = () => {
     const newArray = newFavorites.filter((item) => item !== id)
     setAddLocalStorage(newArray)
   }
+
   useEffect(() => {
     if (addLocalStorage) {
       localStorage.setItem("itemsLikes", JSON.stringify(addLocalStorage))
@@ -61,7 +66,15 @@ const ListFavorites = () => {
                 <span>Price: ${price} </span>
                 <div className='buttons'>
                   <button onClick={() => removeFavorites(_id)}>
-                    REMOVE FROM FAVORITES
+                    {resize?.width > 730 ? (
+                      "REMOVE FROM FAVORITES"
+                    ) : (
+                      <img
+                        className='img-trash'
+                        src={trash}
+                        alt={"delete favorite"}
+                      />
+                    )}
                   </button>
                   <button
                     onClick={() => {
@@ -69,7 +82,15 @@ const ListFavorites = () => {
                       return removeFavorites(_id)
                     }}
                   >
-                    ADD TO CART
+                    {resize?.width > 630 ? (
+                      "ADD TO CART"
+                    ) : (
+                      <img
+                        className='img-trash'
+                        src={trolley}
+                        alt={"add cart"}
+                      />
+                    )}
                   </button>
                 </div>
               </div>

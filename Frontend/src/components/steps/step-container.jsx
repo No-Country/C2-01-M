@@ -5,7 +5,7 @@ import StepShipping from "./step-shipping"
 
 const StepContainer = (props) => {
   const { control, setStep } = props
-  console.log(control)
+
   switch (control) {
     case 0:
       return <StepRegister />

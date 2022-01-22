@@ -102,6 +102,12 @@ export const WrapperUserLogin = styled.div`
   justify-content: flex-end;
   align-items: flex-end;
   margin-right: 10px;
+  .login {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 10px;
+    cursor: pointer;
+  }
   @media (max-width: 1200px) {
     margin: 5px;
   }
