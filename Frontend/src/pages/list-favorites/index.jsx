@@ -26,7 +26,7 @@ const ListFavorites = () => {
     const newArray = newFavorites.filter((item) => item !== id)
     setAddLocalStorage(newArray)
   }
-  console.log(resize)
+
   useEffect(() => {
     if (addLocalStorage) {
       localStorage.setItem("itemsLikes", JSON.stringify(addLocalStorage))
