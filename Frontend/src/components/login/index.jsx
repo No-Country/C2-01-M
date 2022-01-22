@@ -6,11 +6,11 @@ import FormControl from "../form/FormControl"
 import axiosHttp from "../../helpers/axiosHTTP"
 import { Link, useNavigate } from "react-router-dom"
 import { useGetInfoUser } from "../../context/ProductContext"
-import Loader from "../loader/loader"
 
 // styles
 import { WrapperSignin, WrapperButton } from "./Login.Styles"
 import TextError from "../form/text-error/TextError"
+import Loading from "../loading"
 
 const Login = ({ buy }) => {
   const navigate = useNavigate()
@@ -52,7 +52,7 @@ const Login = ({ buy }) => {
         return (
           <>
             {formik.isSubmitting ? (
-              <Loader />
+              <Loading />
             ) : (
               <WrapperSignin buy={buy}>
                 <Form className='form'>
