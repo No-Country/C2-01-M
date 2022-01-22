@@ -1,11 +1,13 @@
-import React from "react"
+import React, { useState } from "react"
 import { useGetDataBuy } from "../../../context/ProductContext"
 import paypal from "../../../assets/paypal.webp"
 
 // styles
 import { WrapperSteps } from "./StepBuy.styles"
+import PayPal from "../../paypal"
 
 const StepBuy = ({ setStep }) => {
+  const [checkout, setCheckout] = useState(false)
   const getDataBuy = useGetDataBuy()
 
   return (
@@ -50,15 +52,18 @@ const StepBuy = ({ setStep }) => {
         <h2>SELECT THE PAYMENT METHOD </h2>
         <div className='pay-pal'>
           <img src={paypal} alt='pay-pal' width={300} height={"auto"} />
-
-          <button
-            onClick={() => {
-              setStep(3)
-              return getDataBuy("payPal")
-            }}
-          >
-            CONTINUE
-          </button>
+          {checkout ? (
+            <PayPal setStep={setStep} />
+          ) : (
+            <button
+              onClick={() => {
+                setCheckout(true)
+                return getDataBuy("payPal")
+              }}
+            >
+              CONTINUE
+            </button>
+          )}
         </div>
       </div>
     </WrapperSteps>

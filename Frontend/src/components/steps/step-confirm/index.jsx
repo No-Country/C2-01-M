@@ -18,7 +18,7 @@ const StepConfirm = () => {
   const average = [1, 2, 3, 4, 5]
   const [state, setState] = useState(0)
   const [comment, setComment] = useState([])
-  const { infoUser, dataBuyInfo } = useContext(Products)
+  const { infoUser } = useContext(Products)
 
   const saveComments = async (comment) => {
     try {
@@ -35,7 +35,7 @@ const StepConfirm = () => {
       console.log(error)
     }
   }
-  console.log(dataBuyInfo, cartItem)
+
   return (
     <Wrapper>
       <div>
