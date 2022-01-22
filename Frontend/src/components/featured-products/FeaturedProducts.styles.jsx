@@ -20,7 +20,7 @@ export const Wrapper = styled.div`
     color: #060606;
     font-family: "Oswald", sans-serif;
     margin-top: 1rem;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
   }
   @media (max-width: 690px) {
     flex-direction: column;
