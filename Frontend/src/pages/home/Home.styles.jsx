@@ -17,6 +17,7 @@ export const WrapperComments = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   p {
     font-size: 24px;
     margin: 0;

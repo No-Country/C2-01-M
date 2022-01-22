@@ -6,6 +6,7 @@ export const Container = styled.div`
   background-image: ${({ url }) => `url(${url})`};
   background-repeat: no-repeat;
   background-size: 100% auto;
+  text-align: center;
   @media (max-width: 1280px) {
     width: 400px;
     height: 400px;
