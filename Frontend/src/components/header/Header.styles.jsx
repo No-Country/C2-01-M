@@ -16,7 +16,7 @@ export const Content = styled.div`
   @media (max-width: 991px) {
     justify-content: baseline !important;
   }
-  @media (max-width: 450px) {
+  @media (max-width: 600px) {
     flex-wrap: wrap;
     justify-content: space-between;
   }
@@ -77,7 +77,7 @@ export const DisplayOverlay = styled.div`
   max-width: none !important;
 `;
 export const WrapperIMG = styled.div`
-  margin-left: 20px;
+  margin: 0 20px;
   border: 2px solid black;
   padding: 5px;
   border-radius: 50%;

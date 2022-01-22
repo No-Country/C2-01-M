@@ -1,8 +1,8 @@
-import React from "react"
-import Slider from "react-slick"
+import React from "react";
+import Slider from "react-slick";
 
 // styles
-import "./navbar.css"
+import "./navbar.css";
 
 const PromotionalBar = () => {
   const settings = {
@@ -15,16 +15,16 @@ const PromotionalBar = () => {
     autoplaySpeed: 4000,
     cssEase: "linear",
     arrows: false,
-  }
+  };
   const info = [
     "FREE SHIPPING NATIONWIDE ",
     "WE ARE DELIVERING! ",
     "FREE SHIPPING NATIONWIDE",
     "3 AND 6 INTEREST-FREE INSTALLMENTS! ",
-  ]
+  ];
   return (
     <div
-      className='slider'
+      className="slider"
       style={{
         background: "black",
         height: "50px",
@@ -35,23 +35,24 @@ const PromotionalBar = () => {
           info.map((item, index) => {
             return (
               <div
+                className="promotion-container"
                 key={index}
                 style={{
                   background: "black",
                 }}
               >
                 <h3
-                  className='promotion'
+                  className="promotion"
                   style={{ color: "#fff", margin: "10px" }}
                 >
                   {item}
                 </h3>
               </div>
-            )
+            );
           })}
       </Slider>
     </div>
-  )
-}
+  );
+};
 
-export default PromotionalBar
+export default PromotionalBar;
