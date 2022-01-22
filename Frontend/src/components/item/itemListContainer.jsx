@@ -41,8 +41,11 @@ const ItemListContainer = ({ featured }) => {
           <div className='sort-container'>
             <Sort setItems={setItems} />
           </div>
-          <div className='product-container'>
-            <Filter />
+
+          <div className="product-container">
+            <Filter setItems={setItems} />
+
+
             <ItemList items={items} featured={featured} />
           </div>
         </>
