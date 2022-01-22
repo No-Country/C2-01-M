@@ -12,21 +12,22 @@
   min-height: 350px;
   text-align: center;
   margin: 1rem;
+  background-color: azure;
   border-radius: 0.5rem;
   box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.28);
   -webkit-box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.28);
   -moz-box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.28);
 
-  transition-duration: .2s;
+  transition-duration: 0.2s;
   transform: scale(1);
 }
 
-.card-container:hover{
+.card-container:hover {
   transform: scale(1.02);
 }
 
-.card-container:active{
-  transform: scale(.99);
+.card-container:active {
+  transform: scale(0.99);
 }
 
 .like-container {
@@ -73,8 +74,8 @@
   width: 95%;
 }
 
-@media (max-width:533px){
-  .product-container{
+@media (max-width: 533px) {
+  .product-container {
     display: initial;
   }
 }
