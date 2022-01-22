@@ -12,7 +12,6 @@ const Sort = ({ setItems }) => {
   ]
 
   const [option, setOption] = useState(null)
-  const [list, setList] = useState([])
   const products = useProducts()
 
   const changeOption = (evt) => {
@@ -53,10 +52,9 @@ const Sort = ({ setItems }) => {
       default:
         sortedList = products
     }
-    setList(sortedList)
-  }
 
-  setItems(list)
+    setItems(sortedList)
+  }
 
   useEffect(() => {
     sortProducts()
@@ -64,12 +62,7 @@ const Sort = ({ setItems }) => {
 
   return (
     <div className='sort-container'>
-      <Select
-        options={options}
-        onChange={changeOption}
-        list={list}
-        option={option}
-      />
+      <Select options={options} onChange={changeOption} option={option} />
     </div>
   )
 }
