@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
   h2 {
     font-size: 44px;
   }

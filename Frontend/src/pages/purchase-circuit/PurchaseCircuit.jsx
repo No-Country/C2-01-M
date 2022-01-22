@@ -26,7 +26,7 @@ const PurchaseCircuit = () => {
   }, [infoUser])
   return (
     <div>
-      <h1>WILD WAVE SURF </h1>
+      <h2 style={{ textAlign: "center", fontSize: "42px" }}>WILD WAVE SURF </h2>
       <div
         style={{
           borderBottom: "0.1px solid gray",
