@@ -5,13 +5,12 @@ export const WrapperHeroImage = styled.div`
   justify-content: space-around;
   align-items: center;
   height: 100vh;
-  width: 100vw;
   margin: 0;
   background-image: url("https://i.imgur.com/GCVGSoG.jpg");
   background-position: center;
   background-repeat: none;
   background-size: cover;
-  @media (max-width: 690px) {
+  @media (max-width: 865px) {
     flex-direction: column;
     height: 100%;
   }
@@ -25,7 +24,6 @@ export const WrapperComments = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 100vw;
   height: 40vh;
   background-image: url("https://i.imgur.com/GjKOrVm.jpg");
   background-position: center;
