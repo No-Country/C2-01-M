@@ -5,12 +5,11 @@ import { initialValuesRegister } from "../../constants/initial-values-register"
 import FormControl from "../form/FormControl"
 import axiosHttp from "../../helpers/axiosHTTP"
 import { Link, useNavigate } from "react-router-dom"
-import Loader from "../loader/loader"
+import Loading from "../loading"
 import Message from "../message"
 
 // styles
 import { WrapperSignup, WrapperButton } from "./Register.Styles"
-import Loading from "../loading"
 
 const Register = ({ buy, setShowRegister }) => {
   const [showMsg, setShowMsg] = useState({
@@ -34,7 +33,6 @@ const Register = ({ buy, setShowRegister }) => {
       const info = await api.post(url, options)
 
       if (buy && info.userData.state) {
-        console.log("error")
         setShowRegister(false)
       }
       if (!buy && info.userData.state) {
@@ -75,7 +73,6 @@ const Register = ({ buy, setShowRegister }) => {
               <Loading />
             ) : (
               <>
-                {" "}
                 {showMsg.show ? (
                   <Message
                     msg={showMsg.message}
