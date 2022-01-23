@@ -1,8 +1,5 @@
 import React from "react"
-import facebook from "../../assets/facebook.svg"
-import instagram from "../../assets/intagram.svg"
-import linkedin from "../../assets/linkedin.svg"
-import twitter from "../../assets/twitter.svg"
+import { facebook, instagram, linkedin, twitter } from "../../assets"
 
 // styles
 import { WrapperFooter } from "./Footer.Styles"

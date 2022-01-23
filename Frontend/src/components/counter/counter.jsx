@@ -1,21 +1,16 @@
 import React, { useState } from "react"
+
+// styles
 import "./counter.css"
 
 const Counter = ({ onAdd }) => {
   const [number, setNumber] = useState(0)
 
-  const sumNumber = () => {
-    setNumber(number + 1)
-  }
-  const subsNumber = () => {
-    setNumber(number - 1)
-  }
-
   return (
     <div className='container-counter'>
       <button
         className='btn-counter'
-        onClick={() => subsNumber()}
+        onClick={() => setNumber(number - 1)}
         disabled={number === 0}
       >
         <span>-</span>
@@ -23,7 +18,7 @@ const Counter = ({ onAdd }) => {
       <p className='counter-number'>
         <span>{number}</span>
       </p>
-      <button className='btn-counter' onClick={() => sumNumber()}>
+      <button className='btn-counter' onClick={() => setNumber(number + 1)}>
         <span>+</span>
       </button>
       <button

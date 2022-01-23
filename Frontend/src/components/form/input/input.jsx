@@ -1,8 +1,8 @@
 import React from "react"
 import { Field, ErrorMessage } from "formik"
 import TextError from "../text-error/TextError"
-import PropTypes from "prop-types"
 
+// styles
 import { Wrapper } from "./Input.Styles"
 
 const Input = (props) => {
@@ -14,14 +14,6 @@ const Input = (props) => {
       <ErrorMessage name={name} component={TextError} />
     </Wrapper>
   )
-}
-Input.propTypes = {
-  label: PropTypes.string,
-  name: PropTypes.string,
-}
-Input.defaultProps = {
-  label: "",
-  name: "",
 }
 
 export default Input

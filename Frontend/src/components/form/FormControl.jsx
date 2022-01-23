@@ -1,6 +1,5 @@
 import React from "react"
 import Input from "./input/input"
-import PropTypes from "prop-types"
 
 const FormControl = (props) => {
   const { control, ...rest } = props
@@ -12,10 +11,6 @@ const FormControl = (props) => {
     default:
       return null
   }
-}
-
-FormControl.propTypes = {
-  control: PropTypes.string.isRequired,
 }
 
 export default FormControl
