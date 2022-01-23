@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const WrapperFooter = styled.div`
   width: 100%;
@@ -21,7 +21,9 @@ export const WrapperFooter = styled.div`
     margin-left: 10px;
     color: #fff !important;
   }
-
+  a {
+    align-items: center;
+  }
   img {
     margin: 0px 10px;
   }
@@ -43,4 +45,4 @@ export const WrapperFooter = styled.div`
       order: 1;
     }
   }
-`
+`;
