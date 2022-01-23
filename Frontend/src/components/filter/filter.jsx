@@ -4,6 +4,8 @@ import { useEffect } from "react"
 import { useState } from "react"
 import { useSearchParams } from "react-router-dom"
 import { useProducts } from "../../context/ProductContext"
+
+// styles
 import "./filter.css"
 
 const Filter = ({ setItems }) => {
