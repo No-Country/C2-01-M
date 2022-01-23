@@ -62,7 +62,12 @@ const Sort = ({ setItems }) => {
 
   return (
     <div className="sort-container">
-      <Select options={options} onChange={changeOption} option={option} />
+      <Select
+        options={options}
+        onChange={changeOption}
+        option={option}
+        className="select"
+      />
     </div>
   );
 };

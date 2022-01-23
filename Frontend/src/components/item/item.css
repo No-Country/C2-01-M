@@ -79,3 +79,10 @@
     display: initial;
   }
 }
+.img-product-container {
+  display: flex;
+  width: 100%;
+}
+.img-product-container img {
+  width: 100%;
+}

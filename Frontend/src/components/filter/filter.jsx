@@ -68,9 +68,23 @@ const Filter = ({ setItems }) => {
 
   return (
     <aside className="filter-container">
+      {value === "TABLAS" ? (
+        <img
+          src="https://i.imgur.com/xcHgSso.jpg"
+          className="img-filter"
+          alt="img"
+        />
+      ) : (
+        <img
+          src="https://i.imgur.com/tWhcoZA.jpg"
+          className="img-filter"
+          alt="img"
+        />
+      )}
       <form className="filter-cat">
         <fieldset>
-          <legend>Category</legend>
+          <legend>CATEGORY</legend>
+          <hr />
           <label htmlFor="category">
             <input
               type="checkbox"
@@ -96,7 +110,8 @@ const Filter = ({ setItems }) => {
 
       <form className="filter-price">
         <fieldset>
-          <legend>Price Range</legend>
+          <legend>PRICE RANGE</legend>
+          <hr />
           <label htmlFor="price">
             min
             <input
@@ -119,7 +134,8 @@ const Filter = ({ setItems }) => {
       </form>
       <form className="filter-val">
         <fieldset>
-          <legend>Valuation</legend>
+          <legend>VALUATION</legend>
+          <hr />
           <label htmlFor="category">
             <input
               type="checkbox"
