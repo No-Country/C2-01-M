@@ -1,5 +1,7 @@
-import React from "react";
-import { facebook, instagram, linkedin, twitter } from "../../assets";
+
+import React from "react"
+import { facebook, instagram, linkedin, twitter } from "../../assets"
+
 
 // styles
 import { WrapperFooter } from "./Footer.Styles";
