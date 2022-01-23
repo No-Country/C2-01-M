@@ -15,11 +15,12 @@ const customDot = (dot, { status, index }) => (
   </Popover>
 )
 
-const Stepper = ({ dataStep, stepUser }) => {
+const Stepper = ({ dataStep, stepUser, setStep }) => {
   const { Step } = Steps
   const [curren, setCurren] = useState(0)
   const onChange = (e) => {
     setCurren(e)
+    setStep(e)
   }
   useEffect(() => {
     setCurren(stepUser)

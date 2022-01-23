@@ -1,5 +1,8 @@
 import React from "react"
 import { Link, useNavigate } from "react-router-dom"
+import { add, desc, trashBlack } from "../../assets"
+
+// context
 import {
   useCartItem,
   useDeleteFromCart,
@@ -8,9 +11,6 @@ import {
   useDeleteAllItems,
   useCounterItems,
 } from "../../context/ProductContext"
-import add from "../../assets/add.svg"
-import desc from "../../assets/desc.svg"
-import trash from "../../assets/trash-black.svg"
 
 // styles
 import "./cart.css"
@@ -49,19 +49,13 @@ const Cart = () => {
               <img src={image} alt={title} />
               <p>{title} </p>
               <span>Price: ${price} </span>
-              <span
-                style={{
-                  cursor: "pointer",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                Units :{" "}
+              <span className='units'>
+                Units:
                 {cantidad > 1 && (
                   <img
                     src={desc}
                     alt='add'
+                    className='img-add'
                     style={{
                       width: "12px",
                       display: "inline",
@@ -84,7 +78,7 @@ const Cart = () => {
                 />
               </span>
               <img
-                src={trash}
+                src={trashBlack}
                 alt='garbage'
                 className='icon-delete'
                 onClick={() => deleteFromCart(item)}
