@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   max-height: 100%;
   text-align: center;
   margin: 0;
@@ -24,6 +24,5 @@ export const Wrapper = styled.div`
   @media (max-width: 690px) {
     flex-direction: column;
     height: 100%;
-    
   }
-`;
+`
