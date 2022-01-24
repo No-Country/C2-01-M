@@ -5,15 +5,20 @@
   height: min-content;
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (min-width: 991px) {
   .promotion {
     font-size: 16px;
     min-width: max-content;
   }
 }
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 990px) {
+  .promotion-container {
+    width: 100%;
+  }
   .promotion {
-    font-size: 14px;
+    font-size: 10px;
+    width: 100%;
+    align-items: center;
   }
 }
 @media only screen and (max-width: 450px) {

@@ -1,8 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+
 import React from "react"
 import { useEffect } from "react"
 import { useState } from "react"
+import { useSearchParams } from "react-router-dom"
 import { useProducts } from "../../context/ProductContext"
+
+// styles
 import "./filter.css"
 
 const Filter = ({ setItems }) => {
@@ -10,6 +14,8 @@ const Filter = ({ setItems }) => {
   const [min, setMin] = useState(0)
   const [max, setMax] = useState(0)
   const products = useProducts()
+  const [searchParams] = useSearchParams()
+
 
   const handleCheckbox = (e) => {
     if (e.target.checked === true) {
@@ -41,12 +47,13 @@ const Filter = ({ setItems }) => {
   const filterProducts = () => {
     let filteredList
     switch (value) {
-      case "TABLAS":
+      case "surfboards":
         filteredList = [...products].filter(
           (item) => item.category.name === "TABLAS"
+
         )
         break
-      case "ROPA":
+      case "clothing":
         filteredList = [...products].filter(
           (item) => item.category.name === "ROPA"
         )
@@ -66,38 +73,85 @@ const Filter = ({ setItems }) => {
     filteredPrice(min, max)
   }, [min, max])
 
+  useEffect(() => {
+    if (searchParams.get("filter")) setValue(searchParams.get("filter"))
+  }, [])
+
+  useEffect(() => {
+    if (searchParams.get("filter")) setValue(searchParams.get("filter"));
+  }, []);
+
   return (
-    <aside className='filter-container'>
-      <form className='filter-cat'>
+
+    <aside className="filter-container">
+
+      {value === "surfboards" ? (
+
+        <img
+          src="https://i.imgur.com/xcHgSso.jpg"
+          className="img-filter"
+          alt="img"
+        />
+      ) : (
+        <img
+          src="https://i.imgur.com/tWhcoZA.jpg"
+          className="img-filter"
+          alt="img"
+        />
+      )}
+      <form className="filter-cat">
         <fieldset>
-          <legend>Categorías</legend>
-          <label htmlFor='category'>
+          <legend>CATEGORY</legend>
+          <hr />
+          <label htmlFor="category">
+
             <input
-              type='checkbox'
+              type="radio"
               onChange={handleCheckbox}
               defaultChecked={false}
-              name='category'
-              value={"TABLAS"}
+              name="category"
+              id="category"
+
+              value={"surfboards"}
             />
-            Tablas
+            Surfboards
           </label>
           <label>
             <input
-              type='checkbox'
+
+              type='radio'
               onChange={handleCheckbox}
               defaultChecked={false}
               name='category'
-              value={"ROPA"}
+              id='category'
+              value={"clothing"}
             />
-            Ropa
+            Clothing
+          </label>
+          <label>
+            <input
+
+              type='radio'
+              onChange={handleCheckbox}
+              defaultChecked={false}
+              name='category'
+              id='category'
+
+              value={""}
+            />
+            All
           </label>
         </fieldset>
       </form>
 
       <form className='filter-price'>
         <fieldset>
-          <legend>Rango de precios</legend>
-          <label htmlFor='price'>
+
+          <legend>PRICE RANGE</legend>
+          <hr />
+          <label htmlFor="price">
+
+
             min
             <input
               type='number'
@@ -119,8 +173,11 @@ const Filter = ({ setItems }) => {
       </form>
       <form className='filter-val'>
         <fieldset>
-          <legend>Valoración</legend>
-          <label htmlFor='category'>
+
+          <legend>VALUATION</legend>
+          <hr />
+          <label htmlFor="category">
+
             <input
               type='checkbox'
               onChange={handleCheckbox}

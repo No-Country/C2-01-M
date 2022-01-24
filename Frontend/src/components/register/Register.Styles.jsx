@@ -43,7 +43,7 @@ export const WrapperButton = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: ${({ buy }) => (buy ? "flex-start" : "center")};
+  align-items: ${({ buy }) => (buy ? "flex-start" : "left")};
   button {
     position: relative;
     padding: 10px;

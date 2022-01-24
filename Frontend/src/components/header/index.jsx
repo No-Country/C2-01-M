@@ -1,19 +1,13 @@
 import React, { useContext, useEffect, useState } from "react"
+import { useNavigate, Link } from "react-router-dom"
+// components
 import PromotionalBar from "../promotional-navbar"
-import surf from "../../assets/surf.png"
 import Search from "../search"
-import userLogin from "../../assets/user-login.svg"
-import trolley from "../../assets/trolley.svg"
-import menu from "../../assets/menu.svg"
+import { surf, userLogin, trolley, menu } from "../../assets"
+// context
 import Products from "../../context/ProductContext"
-import { useNavigate } from "react-router-dom"
-import {
-  useCartItem,
-  useItemQty,
-  /* useDeleteFromCart,
-  useTotalCart, */
-} from "../../context/ProductContext"
-import { Link } from "react-router-dom"
+import { useCartItem, useItemQty } from "../../context/ProductContext"
+
 // styles
 import {
   Content,

@@ -1,11 +1,11 @@
-import React from "react"
-import Slider from "react-slick"
-import slider1 from "../../assets/slider1.jpg"
-import slider2 from "../../assets/slider2.jpg"
-import slider3 from "../../assets/slider3.jpg"
+import React from "react";
+import Slider from "react-slick";
+import slider1 from "../../assets/slider1.jpg";
+import slider2 from "../../assets/slider2.jpg";
+import slider3 from "../../assets/slider3.jpg";
 
 // styles
-import "./landing.css"
+import "./landing.css";
 
 const Landing = () => {
   const settings = {
@@ -18,22 +18,22 @@ const Landing = () => {
     autoplaySpeed: 5000,
     cssEase: "linear",
     arrows: false,
-  }
-  const info = [slider1, slider2, slider3]
+  };
+  const info = [slider1, slider2, slider3];
   return (
-    <div>
+    <div className="slider-container">
       <Slider {...settings}>
         {info &&
           info.map((item, index) => {
             return (
-              <div key={index} className='img-container'>
-                <img src={item} alt={"img" + index} className='img-slide' />
+              <div key={index} className="img-container">
+                <img src={item} alt={"img" + index} className="img-slide" />
               </div>
-            )
+            );
           })}
       </Slider>
     </div>
-  )
-}
+  );
+};
 
-export default Landing
+export default Landing;

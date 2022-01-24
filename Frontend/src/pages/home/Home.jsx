@@ -7,6 +7,7 @@ import quoteLeft from "../../assets/quote-left.svg"
 import quoteRight from "../../assets/quote-right.svg"
 import featured1 from "../../assets/featured1.jpg"
 import featured2 from "../../assets/featured2.webp"
+import { Link } from "react-router-dom"
 
 // styles
 import {
@@ -25,22 +26,26 @@ const Home = () => {
       <Landing />
       <FeaturedProducts />
       <WrapperHeroImage>
-        <HeroImage
-          url={featured1}
-          styles={{
-            cursor: "pointer",
-          }}
-        />
-        <HeroImage
-          url={featured2}
-          styles={{
-            height: "400px",
-            transform: "rotate(-15deg)",
-            cursor: "pointer",
-          }}
-        >
-          <SurfboardsTitle>surfboards</SurfboardsTitle>
-        </HeroImage>
+        <Link to='/products?filter=clothing'>
+          <HeroImage
+            url={featured1}
+            styles={{
+              cursor: "pointer",
+            }}
+          />
+        </Link>
+        <Link to='/products?filter=surfboards'>
+          <HeroImage
+            url={featured2}
+            styles={{
+              height: "400px",
+              transform: "rotate(-15deg)",
+              cursor: "pointer",
+            }}
+          >
+            <SurfboardsTitle>surfboards</SurfboardsTitle>
+          </HeroImage>
+        </Link>
       </WrapperHeroImage>
       <WrapperComments>
         {comments &&

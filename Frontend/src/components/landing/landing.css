@@ -8,8 +8,20 @@
 .img-container img {
   width: 100%;
   max-width: 100%;
-  object-fit: contain;
-  height: 70vh;
+  height: 85vh;
+  margin: 0;
+}
+@media (max-width: 690px) {
+  .img-container {
+    width: 100%;
+    max-width: 100vw;
+  }
+  .img-container img {
+    width: 100%;
+    max-width: 100%;
+    height: 500px;
+    margin: 0;
+  }
 }
 
 .slick-arrow,

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Content = styled.div`
   width: 100%;
@@ -6,8 +6,8 @@ export const Content = styled.div`
   align-items: center;
   justify-content: baseline;
 
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   @media (max-width: 1200px) {
     img {
       margin: 0 !important;
@@ -16,11 +16,11 @@ export const Content = styled.div`
   @media (max-width: 991px) {
     justify-content: baseline !important;
   }
-  @media (max-width: 450px) {
+  @media (max-width: 600px) {
     flex-wrap: wrap;
     justify-content: space-between;
   }
-`
+`;
 export const WrapperNavbar = styled.div`
   display: flex;
   width: 100%;
@@ -31,7 +31,7 @@ export const WrapperNavbar = styled.div`
   @media (max-width: 601px) {
     width: auto;
   }
-`
+`;
 
 export const Ul = styled.ul`
   display: flex;
@@ -66,7 +66,7 @@ export const Ul = styled.ul`
     align-items: flex-start;
     padding-right: 20px;
   }
-`
+`;
 export const DisplayOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -75,17 +75,18 @@ export const DisplayOverlay = styled.div`
   width: 100%;
   height: 100%;
   max-width: none !important;
-`
+`;
 export const WrapperIMG = styled.div`
-  margin-left: 20px;
+  margin: 0 20px;
   border: 2px solid black;
   padding: 5px;
   border-radius: 50%;
   height: 63px;
   @media (max-width: 451px) {
-    display: none;
+    display: flex;
+    justify-content: center;
   }
-`
+`;
 export const NoLogin = styled.span`
   display: flex;
   align-items: center;
@@ -96,7 +97,7 @@ export const NoLogin = styled.span`
   padding: 9px;
   width: 14px;
   height: 16px;
-`
+`;
 export const WrapperUserLogin = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -111,7 +112,7 @@ export const WrapperUserLogin = styled.div`
   @media (max-width: 1200px) {
     margin: 5px;
   }
-`
+`;
 export const WrapperTrolley = styled.div`
   display: flex;
   align-items: flex-end;
@@ -122,7 +123,7 @@ export const WrapperTrolley = styled.div`
   @media (max-width: 1200px) {
     margin: 5px;
   }
-`
+`;
 
 export const QuantityItems = styled.span`
   position: relative;
@@ -137,7 +138,7 @@ export const QuantityItems = styled.span`
   width: 14px;
   height: 16px;
   bottom: 3px;
-`
+`;
 export const WrapperMenu = styled.div`
   display: none;
   @media (max-width: 990px) {
@@ -146,13 +147,14 @@ export const WrapperMenu = styled.div`
     margin-left: 10px !important;
     margin-top: 4px;
   }
-`
+`;
 export const WrapperSearch = styled.div`
-  @media (max-width: 450px) {
+  @media (max-width: 650px) {
     order: 4;
     flex: 0 0 100%;
+    display: none;
   }
-`
+`;
 export const WrapperName = styled.span`
   display: flex;
   justify-content: center;
@@ -166,10 +168,10 @@ export const WrapperName = styled.span`
   width: 24px;
   height: 24px;
   margin-left: 10px;
-`
+`;
 export const WrapperCart = styled.div`
   display: flex;
   position: absolute;
   right: 20px;
   top: 150px;
-`
+`;
