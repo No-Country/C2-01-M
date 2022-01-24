@@ -6,9 +6,9 @@ import { Wrapper } from "./FeaturedProducts.styles"
 
 const FeaturedProducts = () => {
   return (
-    <Wrapper>
+    <Wrapper className="img1">
       <h1>FEATURED PRODUCTS</h1>
-      <ItemListContainer featured={true} />
+      <ItemListContainer featured={true}/>
     </Wrapper>
   )
 }

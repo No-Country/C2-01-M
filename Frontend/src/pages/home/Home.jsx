@@ -46,13 +46,13 @@ const Home = () => {
           </HeroImage>
         </Link>
       </WrapperHeroImage>
-      <WrapperComments>
+      <WrapperComments className="img1">
         {comments &&
           comments.slice(0, 5).map((comment, index) => {
             return (
               <CardContainer key={index}>
                 <WrapperImg>
-                  <img src={quoteLeft} alt='quote left' />
+                  <img src={quoteLeft} alt='quote left' className="imgQuote" />
                 </WrapperImg>
 
                 <p>{comment.comment}</p>

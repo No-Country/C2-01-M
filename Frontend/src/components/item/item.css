@@ -12,7 +12,7 @@
   max-height: 480px;
   text-align: center;
   margin: 1rem;
-  background-color: azure;
+  background-color: var(--bodyBG);
   border-radius: 0.5rem;
   box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.28);
   -webkit-box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.28);
