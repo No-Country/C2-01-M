@@ -84,7 +84,9 @@ const Filter = ({ setItems }) => {
   return (
 
     <aside className="filter-container">
+
       {value === "surfboards" ? (
+
         <img
           src="https://i.imgur.com/xcHgSso.jpg"
           className="img-filter"
@@ -102,6 +104,7 @@ const Filter = ({ setItems }) => {
           <legend>CATEGORY</legend>
           <hr />
           <label htmlFor="category">
+
             <input
               type="radio"
               onChange={handleCheckbox}
@@ -147,6 +150,7 @@ const Filter = ({ setItems }) => {
           <legend>PRICE RANGE</legend>
           <hr />
           <label htmlFor="price">
+
 
             min
             <input
