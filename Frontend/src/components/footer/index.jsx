@@ -1,10 +1,9 @@
-
 import React from "react"
 import { facebook, instagram, linkedin, twitter } from "../../assets"
 import DarkMode from "../../hooks/DarkMode"
 
 // styles
-import { WrapperFooter } from "./Footer.Styles";
+import { WrapperFooter } from "./Footer.Styles"
 
 const Footer = () => {
   const social = [
@@ -21,7 +20,7 @@ const Footer = () => {
       name: twitter,
       url: "https://twitter.com/fparabacuto?ref_src=twsrc%5Etfw",
     },
-  ];
+  ]
 
   return (
     <WrapperFooter>
@@ -32,15 +31,15 @@ const Footer = () => {
         {social.length > 0
           ? social.map((item, index) => {
               return (
-                <a href={item.url} target={"blank"}>
-                  <img src={item.name} alt={item.name} key={index} />
+                <a href={item.url} target={"blank"} key={index}>
+                  <img src={item.name} alt={item.name} />
                 </a>
-              );
+              )
             })
           : null}
       </div>
     </WrapperFooter>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

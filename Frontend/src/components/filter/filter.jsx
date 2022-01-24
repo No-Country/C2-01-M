@@ -82,12 +82,14 @@ const Filter = ({ setItems }) => {
           src='https://i.imgur.com/xcHgSso.jpg'
           className='img-filter'
           alt='img'
+          style={{ maxHeight: "180px" }}
         />
       ) : (
         <img
           src='https://i.imgur.com/tWhcoZA.jpg'
           className='img-filter'
           alt='img'
+          style={{ maxHeight: "180px" }}
         />
       )}
       <form className='filter-cat'>
