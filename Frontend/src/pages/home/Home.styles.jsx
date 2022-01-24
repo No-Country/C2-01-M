@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const WrapperHeroImage = styled.div`
   display: flex;
@@ -14,17 +14,17 @@ export const WrapperHeroImage = styled.div`
     flex-direction: column;
     height: 100%;
   }
-`;
+`
 export const SurfboardsTitle = styled.span`
   font-size: 40px;
   font-weight: bold;
-`;
+`
 export const WrapperComments = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   text-align: center;
-  height: 40vh;
   background-image: url("https://i.imgur.com/GjKOrVm.jpg");
   background-position: center;
   background-repeat: none;
@@ -36,15 +36,16 @@ export const WrapperComments = styled.div`
     margin: 0;
   }
   @media (max-width: 690px) {
-    flex-direction: column;
+    flex-direction: row;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
+    margin-bottom: 40px;
   }
-`;
+`
 
 export const WrapperImg = styled.div`
   display: flex;
   justify-content: ${({ right }) => (right ? "flex-end" : "flex-start")};
   width: 100%;
   margin-left: ${({ right }) => (right ? "-20px" : "20px")};
-`;
+`
