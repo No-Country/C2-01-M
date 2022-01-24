@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+
 import React from "react"
 import { useEffect } from "react"
 import { useState } from "react"
@@ -14,6 +15,7 @@ const Filter = ({ setItems }) => {
   const [max, setMax] = useState(0)
   const products = useProducts()
   const [searchParams] = useSearchParams()
+
 
   const handleCheckbox = (e) => {
     if (e.target.checked === true) {
@@ -48,6 +50,7 @@ const Filter = ({ setItems }) => {
       case "surfboards":
         filteredList = [...products].filter(
           (item) => item.category.name === "TABLAS"
+
         )
         break
       case "clothing":
@@ -55,6 +58,7 @@ const Filter = ({ setItems }) => {
           (item) => item.category.name === "ROPA"
         )
         break
+
       default:
         filteredList = products
     }
@@ -73,10 +77,16 @@ const Filter = ({ setItems }) => {
     if (searchParams.get("filter")) setValue(searchParams.get("filter"))
   }, [])
 
+  useEffect(() => {
+    if (searchParams.get("filter")) setValue(searchParams.get("filter"));
+  }, []);
+
   return (
 
     <aside className="filter-container">
-      {value === "TABLAS" ? (
+
+      {value === "surfboards" ? (
+
         <img
           src="https://i.imgur.com/xcHgSso.jpg"
           className="img-filter"
@@ -95,19 +105,20 @@ const Filter = ({ setItems }) => {
           <hr />
           <label htmlFor="category">
 
-
             <input
-              type='radio'
+              type="radio"
               onChange={handleCheckbox}
               defaultChecked={false}
-              name='category'
-              id='category'
+              name="category"
+              id="category"
+
               value={"surfboards"}
             />
             Surfboards
           </label>
           <label>
             <input
+
               type='radio'
               onChange={handleCheckbox}
               defaultChecked={false}
@@ -119,11 +130,13 @@ const Filter = ({ setItems }) => {
           </label>
           <label>
             <input
+
               type='radio'
               onChange={handleCheckbox}
               defaultChecked={false}
               name='category'
               id='category'
+
               value={""}
             />
             All
@@ -137,7 +150,7 @@ const Filter = ({ setItems }) => {
           <legend>PRICE RANGE</legend>
           <hr />
           <label htmlFor="price">
-=======
+
 
             min
             <input
@@ -164,7 +177,6 @@ const Filter = ({ setItems }) => {
           <legend>VALUATION</legend>
           <hr />
           <label htmlFor="category">
-
 
             <input
               type='checkbox'
