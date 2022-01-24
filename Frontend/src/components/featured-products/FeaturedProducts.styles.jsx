@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   height: 100vh;
   max-height: 100%;
   text-align: center;
-  margin 0;
+  margin: 0;
   background-image: url("https://i.imgur.com/GjKOrVm.jpg");
   background-position: center;
   background-repeat: none;
