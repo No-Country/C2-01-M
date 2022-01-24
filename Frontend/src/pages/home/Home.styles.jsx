@@ -27,7 +27,7 @@ export const WrapperComments = styled.div`
   text-align: center;
   background-image: url("https://i.imgur.com/GjKOrVm.jpg");
   background-position: center;
-  background-repeat: none;
+  background-repeat: no-repeat;
   background-size: cover;
   color: black;
 

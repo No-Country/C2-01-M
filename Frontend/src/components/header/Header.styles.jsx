@@ -25,6 +25,7 @@ export const WrapperNavbar = styled.div`
   display: flex;
   width: 100%;
   justify-content: baseline;
+  color:var(--bodyColor);
   @media (max-width: 991px) {
     justify-content: space-between;
   }

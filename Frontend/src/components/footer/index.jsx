@@ -1,7 +1,7 @@
 
 import React from "react"
 import { facebook, instagram, linkedin, twitter } from "../../assets"
-
+import DarkMode from "../../hooks/DarkMode"
 
 // styles
 import { WrapperFooter } from "./Footer.Styles";
@@ -26,6 +26,7 @@ const Footer = () => {
   return (
     <WrapperFooter>
       <h6>© Copyright 2021, Wildwavesurf, open source. All rights reserved.</h6>
+      <DarkMode></DarkMode>
       <div style={{ display: "flex" }}>
         <h4>FOLLOW US</h4>
         {social.length > 0

@@ -43,8 +43,8 @@ const Header = () => {
   return (
     <div>
       <PromotionalBar />
-      <Content>
-        <WrapperNavbar>
+      <Content className="menuIMGStyle">
+        <WrapperNavbar  >
           <WrapperMenu>
             <img
               src={menu}

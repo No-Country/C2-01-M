@@ -8,7 +8,6 @@ export const Wrapper = styled.div`
   max-height: 100%;
   text-align: center;
   margin: 0;
-  background-image: url("https://i.imgur.com/GjKOrVm.jpg");
   background-position: center;
   background-repeat: none;
   background-size: cover;
@@ -21,6 +20,8 @@ export const Wrapper = styled.div`
     margin-top: 1rem;
     letter-spacing: 4px;
   }
+
+
   @media (max-width: 690px) {
     flex-direction: column;
     height: 100%;
