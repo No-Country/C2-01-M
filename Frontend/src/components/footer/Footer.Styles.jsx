@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const WrapperFooter = styled.div`
   width: 100%;
@@ -23,6 +23,7 @@ export const WrapperFooter = styled.div`
   }
   a {
     align-items: center;
+    margin-top: 10px;
   }
   img {
     margin: 0px 10px;
@@ -33,16 +34,16 @@ export const WrapperFooter = styled.div`
     margin: 0;
     font-size: 12px;
     h6 {
-      margin: 20px 0;
+      margin: 10px 0;
       order: 1;
+      font-size: 12px;
     }
   }
   @media (max-width: 991px) {
-    display: flex;
     flex-direction: column;
     h6 {
-      margin: 20px 0;
+      margin: 0;
       order: 1;
     }
   }
-`;
+`

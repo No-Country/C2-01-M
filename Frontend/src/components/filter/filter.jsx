@@ -16,7 +16,6 @@ const Filter = ({ setItems }) => {
   const products = useProducts()
   const [searchParams] = useSearchParams()
 
-
   const handleCheckbox = (e) => {
     if (e.target.checked === true) {
       setValue(e.target.value)
@@ -50,7 +49,6 @@ const Filter = ({ setItems }) => {
       case "surfboards":
         filteredList = [...products].filter(
           (item) => item.category.name === "TABLAS"
-
         )
         break
       case "clothing":
@@ -77,48 +75,38 @@ const Filter = ({ setItems }) => {
     if (searchParams.get("filter")) setValue(searchParams.get("filter"))
   }, [])
 
-  useEffect(() => {
-    if (searchParams.get("filter")) setValue(searchParams.get("filter"));
-  }, []);
-
   return (
-
-    <aside className="filter-container">
-
+    <aside className='filter-container'>
       {value === "surfboards" ? (
-
         <img
-          src="https://i.imgur.com/xcHgSso.jpg"
-          className="img-filter"
-          alt="img"
+          src='https://i.imgur.com/xcHgSso.jpg'
+          className='img-filter'
+          alt='img'
         />
       ) : (
         <img
-          src="https://i.imgur.com/tWhcoZA.jpg"
-          className="img-filter"
-          alt="img"
+          src='https://i.imgur.com/tWhcoZA.jpg'
+          className='img-filter'
+          alt='img'
         />
       )}
-      <form className="filter-cat">
+      <form className='filter-cat'>
         <fieldset>
           <legend>CATEGORY</legend>
           <hr />
-          <label htmlFor="category">
-
+          <label htmlFor='category'>
             <input
-              type="radio"
+              type='radio'
               onChange={handleCheckbox}
               defaultChecked={false}
-              name="category"
-              id="category"
-
+              name='category'
+              id='category'
               value={"surfboards"}
             />
             Surfboards
           </label>
           <label>
             <input
-
               type='radio'
               onChange={handleCheckbox}
               defaultChecked={false}
@@ -130,13 +118,11 @@ const Filter = ({ setItems }) => {
           </label>
           <label>
             <input
-
               type='radio'
               onChange={handleCheckbox}
               defaultChecked={false}
               name='category'
               id='category'
-
               value={""}
             />
             All
@@ -146,12 +132,9 @@ const Filter = ({ setItems }) => {
 
       <form className='filter-price'>
         <fieldset>
-
           <legend>PRICE RANGE</legend>
           <hr />
-          <label htmlFor="price">
-
-
+          <label htmlFor='price'>
             min
             <input
               type='number'
@@ -173,11 +156,9 @@ const Filter = ({ setItems }) => {
       </form>
       <form className='filter-val'>
         <fieldset>
-
           <legend>VALUATION</legend>
           <hr />
-          <label htmlFor="category">
-
+          <label htmlFor='category'>
             <input
               type='checkbox'
               onChange={handleCheckbox}

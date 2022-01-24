@@ -20,7 +20,6 @@ import Products from "../../context/ProductContext"
 
 const Home = () => {
   const { comments } = useContext(Products)
-
   return (
     <div>
       <Landing />
