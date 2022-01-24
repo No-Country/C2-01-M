@@ -3,6 +3,7 @@
   justify-content: end;
   align-items: center;
   width: 100%;
+  color: #333;
 }
 .sort-container .select {
   width: 200px;

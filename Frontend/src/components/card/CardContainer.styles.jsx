@@ -14,8 +14,10 @@ export const Container = styled.div`
   -moz-box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.28);
   transition-duration: 0.2s;
   transform: scale(1);
+  border: 2px solid var(--bodyColor);
   @media (max-width: 890px) {
     width: 300px;
     margin: 5px;
+
   }
 `
