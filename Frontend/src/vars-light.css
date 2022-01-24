@@ -1,0 +1,10 @@
+:root {
+  --whiteBG: #fff;
+  --whiteColor: #000;
+
+  --blackBG: #000;
+  --blackColor: #fff;
+
+  --gray: #555;
+  --grayColor: rgb(185, 185, 185);
+}

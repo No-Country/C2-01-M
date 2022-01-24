@@ -1,0 +1,11 @@
+:root {
+	--whiteBG: rgb(31, 31, 31);
+	--whiteColor: rgb(221, 221, 221);
+  
+	--blackBG: #000;
+	--blackColor: #fff;
+  
+	--gray: #555;
+	--grayColor: rgb(185, 185, 185);
+  }
+  
