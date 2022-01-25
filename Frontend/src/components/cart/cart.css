@@ -9,8 +9,6 @@
 }
 
 .cart-container h2{
-  color: var(--bodyColor);
-
 }
 
 .cart-container .shop-detail {
@@ -30,8 +28,9 @@
   margin: 0.5rem auto;
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: var(--bodyColor);
-  color: var(--bodyBG);
+  background-color: rgb(207 207 207);
+  font-weight: 700;
+  
 }
 .card-container-cart .icon-delete {
   width: 24px;
@@ -91,7 +90,7 @@
 }
 .cart-container .check-data button:hover {
   cursor: pointer;
-  background-color: chartreuse;
+  background-color: rgb(121, 194, 49);
 }
 .cart-container .check-data a {
   padding: 0.5rem;

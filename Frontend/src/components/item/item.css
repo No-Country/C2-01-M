@@ -12,7 +12,6 @@
   max-height: 480px;
   text-align: center;
   margin: 1rem;
-  background-color: var(--bodyBG);
   border: 1px solid var(--bodyColor);
   border-radius: 0.5rem;
   box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.28);
@@ -21,7 +20,6 @@
 
   transition-duration: 0.2s;
   transform: scale(1);
-  color: var(--bodyColor);
 }
 
 .card-container:hover {
@@ -64,7 +62,7 @@
   padding: 0;
 }
 .preloader-container {
-  width: 100vw;
+  width: 95vw;
   height: 90vh;
   display: flex;
   justify-content: center;
@@ -78,8 +76,6 @@
 }
 
 body.dark .preloader-container{
-  background-color: var(--bodyColor);
-  filter: invert(1);
 }
 
 .heart {

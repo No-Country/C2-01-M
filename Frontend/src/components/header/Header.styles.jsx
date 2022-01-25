@@ -5,7 +5,7 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: baseline;
-  background-color: var(--bodyBG);
+  background-color: white;
   padding-top: 5px;
   padding-bottom: 5px;
   @media (max-width: 1200px) {
@@ -40,13 +40,13 @@ export const Ul = styled.ul`
   z-index: 4;
   align-items: flex-end;
   li {
-    color: var(--bodyColor);
+    color: black;
     margin-left: 40px;
     cursor: pointer;
     min-width: max-content;
     font-size: 14px;
     :hover {
-      border-bottom: 2px solid var(--bodyColor) !important;
+      border-bottom: 2px solid black;
     }
   }
   @media (max-width: 1200px) {
