@@ -45,8 +45,8 @@ const Header = () => {
   return (
     <div>
       <PromotionalBar />
-      <Content className="menuIMGStyle">
-        <WrapperNavbar  >
+      <Content className='menuIMGStyle'>
+        <WrapperNavbar>
           <WrapperMenu>
             <img
               src={menu}
@@ -56,14 +56,14 @@ const Header = () => {
             />
           </WrapperMenu>
 
-          <Link to='/home' style={linkStyles}>
+          <Link to='/' style={linkStyles}>
             <WrapperIMG>
               <img src={surf} alt='surf' width={50} />
             </WrapperIMG>
           </Link>
           <Ul showNavbar={showNavbar}>
             <Link
-              to='/home'
+              to='/'
               style={linkStyles}
               onClick={() => setShowNavbar(!showNavbar)}
             >
@@ -98,7 +98,7 @@ const Header = () => {
             <WrapperName>{login.charAt(0).toUpperCase()}</WrapperName>
           )}
         </WrapperUserLogin>
-      <DarkMode></DarkMode>
+        <DarkMode></DarkMode>
 
         <WrapperTrolley>
           <Link to={cartItem.length > 0 && "/cart"} style={linkStyles}>
