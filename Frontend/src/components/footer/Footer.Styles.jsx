@@ -6,7 +6,7 @@ export const WrapperFooter = styled.div`
   justify-content: space-between;
   align-items: center;
   bottom: 0 !important;
-
+  margin-top:50px;
   background: black;
   color: #fff !important;
   h4 {
