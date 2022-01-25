@@ -8,6 +8,8 @@ import { surf, userLogin, trolley, menu } from "../../assets"
 import Products from "../../context/ProductContext"
 import { useCartItem, useItemQty } from "../../context/ProductContext"
 
+import DarkMode from "../../hooks/DarkMode"
+
 // styles
 import {
   Content,
@@ -43,8 +45,8 @@ const Header = () => {
   return (
     <div>
       <PromotionalBar />
-      <Content className='menuIMGStyle'>
-        <WrapperNavbar>
+      <Content className="menuIMGStyle">
+        <WrapperNavbar  >
           <WrapperMenu>
             <img
               src={menu}
@@ -53,14 +55,15 @@ const Header = () => {
               onClick={() => setShowNavbar(!showNavbar)}
             />
           </WrapperMenu>
-          <Link to='/' style={linkStyles}>
+
+          <Link to='/home' style={linkStyles}>
             <WrapperIMG>
               <img src={surf} alt='surf' width={50} />
             </WrapperIMG>
           </Link>
           <Ul showNavbar={showNavbar}>
             <Link
-              to='/'
+              to='/home'
               style={linkStyles}
               onClick={() => setShowNavbar(!showNavbar)}
             >
@@ -95,6 +98,8 @@ const Header = () => {
             <WrapperName>{login.charAt(0).toUpperCase()}</WrapperName>
           )}
         </WrapperUserLogin>
+      <DarkMode></DarkMode>
+
         <WrapperTrolley>
           <Link to={cartItem.length > 0 && "/cart"} style={linkStyles}>
             <img

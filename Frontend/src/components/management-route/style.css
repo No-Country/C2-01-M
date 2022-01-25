@@ -1,0 +1,15 @@
+*{
+
+	color: var(--bodyColor);
+}
+
+h2,div,span,section,
+.ant-steps-item-description{
+	color: var(--bodyColor);
+}
+
+.check-title,
+.check-data,
+.shipping{
+	color: black;
+}

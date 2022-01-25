@@ -5,9 +5,9 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: baseline;
-
-  margin-top: 5px;
-  margin-bottom: 5px;
+  background-color: var(--bodyBG);
+  padding-top: 5px;
+  padding-bottom: 5px;
   @media (max-width: 1200px) {
     img {
       margin: 0 !important;
@@ -40,12 +40,13 @@ export const Ul = styled.ul`
   z-index: 4;
   align-items: flex-end;
   li {
+    color: var(--bodyColor);
     margin-left: 40px;
     cursor: pointer;
     min-width: max-content;
     font-size: 14px;
     :hover {
-      border-bottom: 2px solid black !important;
+      border-bottom: 2px solid var(--bodyColor) !important;
     }
   }
   @media (max-width: 1200px) {
@@ -66,6 +67,12 @@ export const Ul = styled.ul`
     flex-direction: column;
     align-items: flex-start;
     padding-right: 20px;
+    li{
+      color: black;
+      :hover {
+      border-color: black !important;
+    }
+    }
   }
 `;
 export const DisplayOverlay = styled.div`

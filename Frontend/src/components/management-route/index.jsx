@@ -14,6 +14,8 @@ import Home from "../../pages/home/Home"
 import PurchaseCircuit from "../../pages/purchase-circuit/PurchaseCircuit"
 import ListFavorites from "../../pages/list-favorites"
 
+import "./style.css"
+
 const ManagementRoute = () => {
   return (
     <div style={{ minHeight: "100%" }}>
