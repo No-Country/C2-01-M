@@ -30,7 +30,7 @@ const Login = ({ buy }) => {
       const info = await api.post(url, options)
       if (info.user.state) {
         getInfoUser(info)
-        return !buy && navigate("/home")
+        return !buy && navigate("/")
       }
     } catch (error) {
       if (error) {
@@ -90,7 +90,7 @@ const Login = ({ buy }) => {
                     <Link to={"/register"} style={{ display: buy && "none" }}>
                       You do not have an account? Sign up
                     </Link>
-                    <Link to={"/home"} style={{ display: buy && "none" }}>
+                    <Link to={"/"} style={{ display: buy && "none" }}>
                       Sign in as a guest
                     </Link>
                   </WrapperButton>
