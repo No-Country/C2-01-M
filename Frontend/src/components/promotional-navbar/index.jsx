@@ -38,12 +38,12 @@ const PromotionalBar = () => {
                 className="promotion-container"
                 key={index}
                 style={{
-                  background: "black",
+                  background: "black"
                 }}
               >
                 <h3
                   className="promotion"
-                  style={{padding: "10px" }}
+                  style={{padding: "10px",color:"white" }}
                 >
                   {item}
                 </h3>

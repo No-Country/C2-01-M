@@ -15,9 +15,8 @@ html{
   -moz-osx-font-smoothing: grayscale;
   min-height: 100%;
   position: relative;
-  background-color: var(--bodyBG) ;
-  color: var(--bodyColor) ;
-
+  --bodyBG:#eee;
+  --bodyColor:#333;
 }
 
 code {

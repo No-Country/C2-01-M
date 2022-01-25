@@ -8,7 +8,6 @@ import { surf, userLogin, trolley, menu } from "../../assets"
 import Products from "../../context/ProductContext"
 import { useCartItem, useItemQty } from "../../context/ProductContext"
 
-import DarkMode from "../../hooks/DarkMode"
 
 // styles
 import {
@@ -98,7 +97,6 @@ const Header = () => {
             <WrapperName>{login.charAt(0).toUpperCase()}</WrapperName>
           )}
         </WrapperUserLogin>
-        <DarkMode></DarkMode>
 
         <WrapperTrolley>
           <Link to={cartItem.length > 0 && "/cart"} style={linkStyles}>
