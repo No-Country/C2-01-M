@@ -5,9 +5,9 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: baseline;
-
-  margin-top: 5px;
-  margin-bottom: 5px;
+  background-color: var(--bodyBG);
+  padding-top: 5px;
+  padding-bottom: 5px;
   @media (max-width: 1200px) {
     img {
       margin: 0 !important;

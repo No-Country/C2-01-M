@@ -36,6 +36,7 @@ export const WrapperSummary = styled.div`
   }
   h2 {
     font-weight: 800;
+    color:var(--bodyColor);
   }
   h3 {
     display: flex;

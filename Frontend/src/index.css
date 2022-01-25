@@ -4,14 +4,20 @@ html{
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+    
+  transition-duration: .2s;
+  
 }
 
-body {
+#root {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100%;
   position: relative;
+  background-color: var(--bodyBG) ;
+  color: var(--bodyColor) ;
+
 }
 
 code {

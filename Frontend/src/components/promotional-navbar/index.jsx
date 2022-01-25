@@ -43,7 +43,7 @@ const PromotionalBar = () => {
               >
                 <h3
                   className="promotion"
-                  style={{ color: "#fff", margin: "10px" }}
+                  style={{padding: "10px" }}
                 >
                   {item}
                 </h3>

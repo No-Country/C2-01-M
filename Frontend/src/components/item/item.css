@@ -64,17 +64,24 @@
   padding: 0;
 }
 .preloader-container {
-  width: 90vw;
+  width: 100vw;
   height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .preloader-container img {
   height: 100%;
   width: 100%;
   object-fit: contain;
 }
+
+body.dark .preloader-container{
+  background-color: var(--bodyColor);
+  filter: invert(1);
+}
+
 .heart {
   margin: 10px;
 }

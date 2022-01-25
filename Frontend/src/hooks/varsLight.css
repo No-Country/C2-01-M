@@ -35,21 +35,13 @@
 .light {
   --bodyBG:#eee;
   --bodyColor:#333;
-
-  transition-duration: .2s;
   }
   
   .dark {
     --bodyBG:#333;
     --bodyColor:#eee;
-
-    transition-duration: .2s;
 }
 
-body{
-  background-color: var(--bodyBG);
-  color: var(--bodyColor);
-}
 
 /* ******************** */
 /* ******************** */
