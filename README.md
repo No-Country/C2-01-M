@@ -5,6 +5,8 @@ _______________________________
 
 Hemos decidido trabajar sobre el stack de tecnologías MERN (MongoDB, Express, React y NodeJS) llevando a cabo las mejores prácticas posibles en el tiempo dado, y consultando quasi diariamente de forma interna que cosas podría cada uno mejorar con fin de obtener un resultado (proyecto) sólido y escalable.
 
+Visite nuestro [eCommerce](https://nifty-torvalds-71aefb.netlify.app/) 🏄‍♂️🌴
+
 _______________________________
 ## Presentacion del MVP
 
