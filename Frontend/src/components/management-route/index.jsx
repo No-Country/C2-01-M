@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Login from "../login/index"
 import Register from "../register"
@@ -15,17 +15,13 @@ import PurchaseCircuit from "../../pages/purchase-circuit/PurchaseCircuit"
 import ListFavorites from "../../pages/list-favorites"
 
 const ManagementRoute = () => {
-  const [show, setShow] = useState(false)
-  setTimeout(() => {
-    setShow(true)
-  }, 4000)
   return (
     <div style={{ minHeight: "100%" }}>
       <BrowserRouter>
-        {show && <Header />}
+        <Header />
         <Routes>
-          <Route exact path='/' element={<Welcome />} />
-          <Route exact path='/home' element={<Home />} />
+          <Route exact path='/' element={<Home />} />
+          <Route exact path='/welcome' element={<Welcome />} />
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/register' element={<Register />} />
           <Route exact path='/cart' element={<Cart />} />
@@ -40,7 +36,7 @@ const ManagementRoute = () => {
 
           <Route path='*' element={<Error404 />} />
         </Routes>
-        {show && <Footer />}
+        <Footer />
       </BrowserRouter>
     </div>
   )
