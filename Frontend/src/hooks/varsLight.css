@@ -8,12 +8,16 @@
   background-size: 30px 30px;
   width: 45px;
   height: 45px;
-  background-color: rgb(196, 196, 132);
+  background-color: rgb(82 55 55);
   border: none;
   border-radius: 50%;
   transform: scale(1);
   transition-duration: .2s;
   cursor: pointer;
+  background-image: url("https://cdn.iconscout.com/icon/free/png-256/night-mode-2-475098.png");
+  background-position: center center;
+  background-size: contain;
+  filter: invert(1);
 }
 
 #darkMode:active {
