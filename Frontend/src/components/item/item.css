@@ -1,0 +1,115 @@
+.item-list-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem 2rem;
+  margin-bottom: 50px;
+}
+
+.card-container {
+  width: 280px;
+  max-height: 480px;
+  text-align: center;
+  margin: 1rem;
+  background-color: var(--bodyBG);
+  border: 1px solid var(--bodyColor);
+  border-radius: 0.5rem;
+  box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.28);
+  -webkit-box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.28);
+  -moz-box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.28);
+
+  transition-duration: 0.2s;
+  transform: scale(1);
+  color: var(--bodyColor);
+}
+
+.card-container:hover {
+  transform: scale(1.02);
+}
+
+.card-container:active {
+  transform: scale(0.99);
+}
+
+.like-container {
+  display: flex;
+  justify-content: end;
+}
+
+.card-container .img-card img {
+  width: 230px;
+  height: 290px;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.card-container .info-card {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+.info-card hr {
+  margin: 0.5rem;
+}
+.card-container .info-card p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+.card-container .info-card span {
+  font-size: 1rem;
+  font-weight: bolder;
+  padding: 0;
+}
+.preloader-container {
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.preloader-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.heart {
+  margin: 10px;
+}
+.product-container {
+  display: flex;
+}
+.sort-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 95%;
+}
+
+@media (max-width: 533px) {
+  .product-container {
+    display: initial;
+  }
+}
+.img-product-container {
+  display: flex;
+  width: 100%;
+}
+.img-product-container img {
+  width: 100%;
+}
+
+.redes-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 0.5rem;
+}
+.redes-container div img {
+  width: 15px;
+  height: 15px;
+  margin: 0 0.3rem;
+}
+
