@@ -33,7 +33,7 @@ const PurchaseCircuit = () => {
           borderBottom: "0.1px solid gray",
           margin: "30px 0",
           borderTop: ".1px solid gray",
-          padding: "30px 0",
+          padding: "30px 20px",
         }}
       >
         <Stepper dataStep={dataStep} stepUser={step} setStep={setStep} />

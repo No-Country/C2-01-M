@@ -30,14 +30,19 @@ export const WrapperComments = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   color: black;
+  margin-top: 20px;
   padding-bottom: 50px;
   p {
     font-size: 24px;
     margin: 0;
   }
+  @media (max-width: 1090px) {
+    p {
+      font-size: 20px;
+    }
+  }
   @media (max-width: 690px) {
-    flex-direction: row;
-    width: 100vw;
+    flex-direction: column;
     height: 100%;
     margin-bottom: 40px;
   }
