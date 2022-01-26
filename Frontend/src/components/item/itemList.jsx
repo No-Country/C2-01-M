@@ -17,7 +17,7 @@ const ItemList = ({ items, featured }) => {
       <>
         {newItems?.map((item) => {
           return (
-            <Item click={window.scrollTo(0, 0)} key={item._id} product={item} />
+            <Item key={item._id} product={item} />
           )
         })}
       </>
