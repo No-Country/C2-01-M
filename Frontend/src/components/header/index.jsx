@@ -2,12 +2,10 @@ import React, { useContext, useEffect, useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 // components
 import PromotionalBar from "../promotional-navbar"
-import Search from "../search"
 import { surf, userLogin, trolley, menu } from "../../assets"
 // context
 import Products from "../../context/ProductContext"
 import { useCartItem, useItemQty } from "../../context/ProductContext"
-
 
 // styles
 import {
@@ -19,7 +17,6 @@ import {
   WrapperTrolley,
   WrapperMenu,
   WrapperNavbar,
-  WrapperSearch,
   WrapperName,
   QuantityItems,
 } from "./Header.styles"
@@ -84,9 +81,6 @@ const Header = () => {
             </Link>
           </Ul>
         </WrapperNavbar>
-        <WrapperSearch>
-          <Search />
-        </WrapperSearch>
         <WrapperUserLogin>
           {!login ? (
             <div className='login' onClick={() => navigate("/login")}>
