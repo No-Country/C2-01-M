@@ -30,7 +30,7 @@ const Home = () => {
 
   return (
     <>
-      {showHome ? (
+      {!showHome ? (
         <Welcome />
       ) : (
         <div>
