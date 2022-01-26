@@ -169,10 +169,16 @@
     padding-bottom: 5rem;
   }
   .cart-container .check-container .check-title {
-    justify-content: left;
+    justify-content: center;
   }
   .cart-container .check-data {
     width: 90%;
+  }
+  .cart-container .shop-detail {
+    width: 100%;
+  }
+  .cart-container .shop-detail .cart-title {
+    justify-content: center;
   }
   .button-delete-all {
     margin: 0;
@@ -209,7 +215,7 @@
   }
 
   .shop-detail {
-    width: 100% !important;
+    width: 100%;
   }
 
   .card-container-cart {
