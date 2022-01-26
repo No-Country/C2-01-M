@@ -1,6 +1,5 @@
 .container-counter {
   display: flex;
-  justify-content: space-around;
   align-items: center;
   width: 100%;
 }
@@ -8,13 +7,14 @@
 .btn-counter {
   max-width: max-content;
   max-height: 30px;
+  max-width: 50px;
   font-size: 20px;
-  font-weight: 700 !important;
+  font-weight: 700;
+  margin: 0 1rem;
+  padding: 1rem;
 }
-
-.btn-counter span {
-  margin: 0 !important;
-  font-size: 50px;
+.btn-counter:hover {
+  cursor: pointer;
 }
 
 .counter-number {
@@ -23,12 +23,12 @@
   align-items: center;
   font-size: 20px;
   font-weight: 700;
-  margin: 0 !important;
+  margin: 0;
 }
 
 .btn-add-to-cart {
-  max-width: max-content;
   max-height: 40px;
+  max-width: 400px;
   background: black;
   color: #fff;
   border: none;
