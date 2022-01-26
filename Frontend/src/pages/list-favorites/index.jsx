@@ -41,7 +41,7 @@ const ListFavorites = () => {
   }, [addLocalStorage, products])
 
   return (
-    <>
+    <div style={{ paddingBottom: "50px" }}>
       <WrapperHeader>
         <img src={heart} alt='heart' width={40} />
         <WrapperTitle>
@@ -103,7 +103,7 @@ const ListFavorites = () => {
           </div>
         )}
       </WrapperCart>
-    </>
+    </div>
   )
 }
 

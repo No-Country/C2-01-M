@@ -1,6 +1,5 @@
 import React from "react"
 import { facebook, instagram, linkedin, twitter } from "../../assets"
-import DarkMode from "../../hooks/DarkMode"
 
 // styles
 import { WrapperFooter } from "./Footer.Styles"
