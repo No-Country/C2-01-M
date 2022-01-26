@@ -84,7 +84,12 @@ const Header = () => {
         <WrapperUserLogin>
           {!login ? (
             <div className='login' onClick={() => navigate("/login")}>
-              <img src={userLogin} alt='user-login' width={30} />
+              <img
+                src={userLogin}
+                alt='user-login'
+                width={30}
+                className='img-user'
+              />
               <NoLogin>X</NoLogin>
             </div>
           ) : (
