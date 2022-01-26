@@ -156,45 +156,6 @@ const Filter = ({ setItems }) => {
           </label>
         </fieldset>
       </form>
-      <form className='filter-val'>
-        <fieldset>
-          <legend>VALUATION</legend>
-          <hr />
-          <label htmlFor='category'>
-            <input
-              type='checkbox'
-              onChange={handleCheckbox}
-              defaultChecked={false}
-              name='valuation'
-              value={1}
-            />
-            <img src='https://i.imgur.com/XcWChpG.png' alt='star' />
-          </label>
-          <label>
-            <input
-              type='checkbox'
-              onChange={handleCheckbox}
-              defaultChecked={false}
-              name='valuation'
-              value={2}
-            />
-            <img src='https://i.imgur.com/XcWChpG.png' alt='star' />
-            <img src='https://i.imgur.com/XcWChpG.png' alt='star' />
-          </label>
-          <label>
-            <input
-              type='checkbox'
-              onChange={handleCheckbox}
-              defaultChecked={false}
-              name='valuation'
-              value={3}
-            />
-            <img src='https://i.imgur.com/XcWChpG.png' alt='star' />
-            <img src='https://i.imgur.com/XcWChpG.png' alt='star' />
-            <img src='https://i.imgur.com/XcWChpG.png' alt='star' />
-          </label>
-        </fieldset>
-      </form>
     </aside>
   )
 }
