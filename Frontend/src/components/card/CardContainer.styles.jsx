@@ -18,6 +18,6 @@ export const Container = styled.div`
   @media (max-width: 890px) {
     width: 300px;
     margin: 5px;
-
+    margin-bottom:30px;
   }
 `
