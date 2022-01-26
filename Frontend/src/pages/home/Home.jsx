@@ -1,3 +1,4 @@
+
 import React, { useContext, useEffect, useState } from "react"
 import CardContainer from "../../components/card"
 import FeaturedProducts from "../../components/featured-products"
@@ -17,6 +18,7 @@ import {
   SurfboardsTitle,
   WrapperComments,
   WrapperImg,
+
 } from "./Home.styles"
 
 const Home = () => {
@@ -88,4 +90,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;

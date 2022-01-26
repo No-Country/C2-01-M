@@ -1,16 +1,16 @@
-import React from "react"
-import ItemListContainer from "../item/itemListContainer"
+import React from "react";
+import ItemListContainer from "../item/itemListContainer";
 
 //styles
-import { Wrapper } from "./FeaturedProducts.styles"
+import { Wrapper } from "./FeaturedProducts.styles";
 
-const FeaturedProducts = () => {
+const FeaturedProducts = ({ title }) => {
   return (
     <Wrapper className="img1">
-      <h1>FEATURED PRODUCTS</h1>
-      <ItemListContainer featured={true}/>
+      <h1>{title} </h1>
+      <ItemListContainer featured={true} />
     </Wrapper>
-  )
-}
+  );
+};
 
-export default FeaturedProducts
+export default FeaturedProducts;
