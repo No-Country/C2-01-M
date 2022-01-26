@@ -70,12 +70,12 @@
   overflow: hidden;
 }
 .preloader-container img {
-  height: 100px;
-  width: 100px;
+  height: 180px;
+  width: 180px;
   object-fit: contain;
 }
 
-body.dark .preloader-container{
+body.dark .preloader-container {
 }
 
 .heart {
