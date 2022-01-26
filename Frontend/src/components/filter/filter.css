@@ -33,10 +33,10 @@ fieldset {
 }
 
 input[type="number"] {
-  width: 100px;
+  width: 130px;
   margin-left: 5px;
   text-align: center;
-  border: none;
+  border: 0.5px solid rgba(0, 0, 0, 0.4);
   color: grey;
 }
 input[type="number"]::-webkit-inner-spin-button,
