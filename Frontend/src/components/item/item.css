@@ -4,7 +4,7 @@
   justify-content: center;
   flex-wrap: wrap;
   margin: 1rem 2rem;
-  padding-bottom: 250px;
+  padding-bottom: 100px !important;
 }
 
 .card-container {
