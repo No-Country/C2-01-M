@@ -7,9 +7,11 @@ import Products, {
   useGetDataBuy,
 } from "../../../context/ProductContext"
 import axiosHttp from "../../../helpers/axiosHTTP"
+import useResize from "../../../hooks/useResize"
 
 // styles
 import { Wrapper } from "./StepConfirm.styles"
+
 const StepConfirm = () => {
   const cartItem = useCartItem()
   const getDataBuy = useGetDataBuy()
@@ -19,6 +21,7 @@ const StepConfirm = () => {
   const [state, setState] = useState(0)
   const [comment, setComment] = useState([])
   const { infoUser } = useContext(Products)
+  const { width } = useResize()
 
   const saveComments = async (comment) => {
     try {
@@ -39,12 +42,12 @@ const StepConfirm = () => {
   return (
     <Wrapper>
       <div>
-        <img src={warning} alt='warning' width={200} />
+        <img src={warning} alt='warning' width={width < 430 ? 100 : 200} />
       </div>
       <h2>Your order will be processed when you make the payment </h2>
       <h3>
         We will confirm your order when the payment has been confirmed. Thank
-        you very much for choosing us!{" "}
+        you very much for choosing us!
       </h3>
       <div>
         <button>SEE COUPON</button>
@@ -55,12 +58,11 @@ const StepConfirm = () => {
           return (
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='84'
+              width={width < 430 ? "64" : "84"}
               height='84'
               viewBox='0 0 24 24'
               onClick={() => setState(item)}
-              onMouseOver={() => setState(item)}
-              style={{ marginLeft: "20px" }}
+              style={{ marginLeft: width ? "10px" : "20px" }}
               key={index}
             >
               <path

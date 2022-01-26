@@ -1,19 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Steps } from "./Steper.styles"
 import "antd/dist/antd.css"
-import { Popover } from "antd"
-
-const customDot = (dot, { status, index }) => (
-  <Popover
-    content={
-      <span style={{ fontSize: "16px" }}>
-        step {index} status: {status}
-      </span>
-    }
-  >
-    {dot}
-  </Popover>
-)
 
 const Stepper = ({ dataStep, stepUser, setStep }) => {
   const { Step } = Steps
@@ -31,7 +18,7 @@ const Stepper = ({ dataStep, stepUser, setStep }) => {
         current={curren}
         onChange={onChange}
         direction='horizontal'
-        progressDot={customDot}
+        responsive={true}
       >
         {dataStep &&
           dataStep.map((step, index) => {
@@ -40,6 +27,7 @@ const Stepper = ({ dataStep, stepUser, setStep }) => {
                 key={index}
                 title={step.title}
                 description={step.description}
+                style={{ paddingLeft: "40px" }}
               />
             )
           })}
