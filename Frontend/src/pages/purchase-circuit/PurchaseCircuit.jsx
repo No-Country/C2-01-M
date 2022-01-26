@@ -12,10 +12,10 @@ const PurchaseCircuit = () => {
   const [step, setStep] = useState(0)
   const getDataBuy = useGetDataBuy()
   const dataStep = [
-    { description: "Personal information ", title: "" },
-    { description: "Shipping ", title: "" },
-    { description: "Pay", title: "" },
-    { description: "Confirmation ", title: "" },
+    { title: "Personal information ", description: "" },
+    { title: "Shipping ", description: "" },
+    { title: "Pay", description: "" },
+    { title: "Confirmation ", description: "" },
   ]
   const { infoUser } = useContext(Products)
 

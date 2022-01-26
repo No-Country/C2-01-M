@@ -60,6 +60,7 @@ const StepBuy = ({ setStep }) => {
                 setCheckout(true)
                 return getDataBuy("payPal")
               }}
+              className='button-paypal'
             >
               CONTINUE
             </button>

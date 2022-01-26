@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  margin-bottom: 40px;
   h2 {
     font-size: 44px;
   }
@@ -27,5 +28,10 @@ export const Wrapper = styled.div`
   }
   textarea {
     margin-bottom: 20px;
+  }
+  @media (max-width: 430px) {
+    h2 {
+      font-size: 34px;
+    }
   }
 `
