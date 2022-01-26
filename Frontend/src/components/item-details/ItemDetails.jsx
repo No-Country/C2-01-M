@@ -16,7 +16,7 @@ function ItemDetails({ product, onAdd, goCart }) {
   return (
     <ItemDetailsStyle>
       <div className="arrow-back">
-        <span onClick={() => navigate("/home")}>Home</span> <span>></span>
+        <span onClick={() => navigate("/")}>Home</span> <span>></span>
         <span onClick={() => navigate("/products")}>Products</span>
       </div>
 
