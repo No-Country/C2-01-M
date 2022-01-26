@@ -1,14 +1,7 @@
 import React from "react"
-import { useNavigate } from "react-router-dom"
 import welcome from "../../assets/welcome.webp"
 
 const Welcome = () => {
-  const navigate = useNavigate()
-
-  setTimeout(() => {
-    navigate("/home")
-  }, 4000)
-
   return (
     <div
       style={{
@@ -21,6 +14,7 @@ const Welcome = () => {
         backgroundSize: "100vw 100vh, cover",
         backgroundPosition: "center center",
         overflow: "hidden",
+        textAlign: "center",
       }}
     >
       <h1 style={{ color: "#915454", fontSize: "80px" }}>

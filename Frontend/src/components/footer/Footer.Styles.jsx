@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 export const WrapperFooter = styled.div`
+  position: absolute;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: absolute;
   bottom: 0;
+
   background: black;
   color: #fff;
   h4 {

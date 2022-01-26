@@ -1,5 +1,6 @@
 import React from "react";
 import "./varsDark.css";
+import "./varsLight.css";
 
 const DarkMode = () => {
   let clickedClass = "clicked";

@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 // components
-import PromotionalBar from "../promotional-navbar";
-import Search from "../search";
-import { surf, userLogin, trolley, menu } from "../../assets";
+
+import PromotionalBar from "../promotional-navbar"
+import { surf, userLogin, trolley, menu } from "../../assets"
 // context
 import Products from "../../context/ProductContext";
 import { useCartItem, useItemQty } from "../../context/ProductContext";
@@ -18,7 +18,6 @@ import {
   WrapperTrolley,
   WrapperMenu,
   WrapperNavbar,
-  WrapperSearch,
   WrapperName,
   QuantityItems,
 } from "./Header.styles";
@@ -43,24 +42,28 @@ const Header = () => {
   return (
     <div>
       <PromotionalBar />
-      <Content className="menuIMGStyle">
+
+      <Content className='menuIMGStyle'>
         <WrapperNavbar>
           <WrapperMenu>
             <img
               src={menu}
-              alt="menu"
-              width={30}
+
+              alt='menu'
+              width={60}
               onClick={() => setShowNavbar(!showNavbar)}
             />
           </WrapperMenu>
-          <Link to="/home" style={linkStyles}>
+
+          <Link to='/' style={linkStyles}>
             <WrapperIMG>
               <img src={surf} alt="surf" width={50} />
             </WrapperIMG>
           </Link>
           <Ul showNavbar={showNavbar}>
             <Link
-              to="/home"
+
+              to='/'
               style={linkStyles}
               onClick={() => setShowNavbar(!showNavbar)}
             >
@@ -85,14 +88,20 @@ const Header = () => {
 
         <WrapperUserLogin>
           {!login ? (
-            <div className="login" onClick={() => navigate("/login")}>
-              <img src={userLogin} alt="user-login" width={30} />
+            <div className='login' onClick={() => navigate("/login")}>
+              <img
+                src={userLogin}
+                alt='user-login'
+                width={30}
+                className='img-user'
+              />
               <NoLogin>X</NoLogin>
             </div>
           ) : (
             <WrapperName>{login.charAt(0).toUpperCase()}</WrapperName>
           )}
         </WrapperUserLogin>
+
         <WrapperTrolley>
           <Link to={cartItem.length > 0 && "/cart"} style={linkStyles}>
             <img

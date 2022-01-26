@@ -7,6 +7,7 @@
   justify-content: right;
   border-radius: 0.5rem;
 }
+
 .cart-container .shop-detail {
   width: 65%;
 }
@@ -39,6 +40,7 @@
     margin: 0.5rem auto;
     text-transform: uppercase;
   }
+
 }
 .card-container-cart .icon-delete {
   width: 24px;
@@ -221,4 +223,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 430px) {
+  .card-container-cart {
+    flex-direction: column;
+  }
+  .img-cart {
+    width: 80% !important;
+    height: auto !important;
+  }
+  .title,
+  span {
+    font-size: 18px;
+  }
 }
