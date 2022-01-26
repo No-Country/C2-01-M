@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const WrapperHeader = styled.div`
   display: flex;
@@ -24,7 +24,7 @@ export const WrapperHeader = styled.div`
       min-width: max-content;
     }
   }
-`;
+`
 export const WrapperTitle = styled.div`
   display: flex;
   flex: 1 0 auto;
@@ -33,7 +33,7 @@ export const WrapperTitle = styled.div`
     width: 100%;
     text-align: left;
   }
-`;
+`
 export const WrapperCart = styled.div`
   width: 90%;
   margin: auto;
@@ -82,7 +82,7 @@ export const WrapperCart = styled.div`
       font-size: 14px;
     }
   }
-  @media (max-width: 430px) {
+  @media (max-width: 690px) {
     .card-container-cart {
       flex-direction: column;
       font-size: 1.5em;
@@ -99,4 +99,4 @@ export const WrapperCart = styled.div`
       }
     }
   }
-`;
+`

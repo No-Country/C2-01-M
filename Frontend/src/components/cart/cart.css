@@ -40,7 +40,6 @@
     margin: 0.5rem auto;
     text-transform: uppercase;
   }
-
 }
 .card-container-cart .icon-delete {
   width: 24px;
@@ -184,6 +183,14 @@
     padding: 1rem;
     margin: 2rem 0;
     width: 90%;
+  }
+  .img-cart {
+    width: 80% !important;
+    height: auto !important;
+  }
+  .title,
+  span {
+    font-size: 18px;
   }
 }
 
