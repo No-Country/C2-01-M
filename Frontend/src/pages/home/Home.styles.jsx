@@ -30,7 +30,7 @@ export const WrapperComments = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   color: black;
-
+  padding-bottom: 50px;
   p {
     font-size: 24px;
     margin: 0;
