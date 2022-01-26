@@ -76,13 +76,14 @@ export const WrapperCart = styled.div`
       }
     }
   }
+
   @media (max-width: 600px) {
     .button {
       max-width: max-content;
       font-size: 14px;
     }
   }
-  @media (max-width: 430px) {
+  @media (max-width: 690px) {
     .card-container-cart {
       flex-direction: column;
       font-size: 1.5em;

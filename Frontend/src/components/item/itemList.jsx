@@ -10,10 +10,15 @@ const ItemList = ({ items, featured }) => {
     : items
 
   return (
-    <div className='item-list-container' style={{ minHeight: featured && "0" }}>
+    <div
+      className='item-list-container'
+      style={{ minHeight: featured && "0", paddingBottom: featured && "0" }}
+    >
       <>
         {newItems?.map((item) => {
-          return <Item key={item._id} product={item} />
+          return (
+            <Item click={window.scrollTo(0, 0)} key={item._id} product={item} />
+          )
         })}
       </>
     </div>

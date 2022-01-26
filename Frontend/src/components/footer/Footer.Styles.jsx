@@ -1,25 +1,27 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const WrapperFooter = styled.div`
+  position: absolute;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  bottom: 0 !important;
+  position: absolute;
+  bottom: 0;
 
   background: black;
-  color: #fff !important;
+  color: #fff;
   h4 {
     min-width: max-content;
     margin: 10px;
-    color: #fff !important;
+    color: #fff;
   }
 
   h6 {
     font-size: 14px;
     margin: 5px;
     margin-left: 10px;
-    color: #fff !important;
+    color: #fff;
   }
   a {
     align-items: center;
@@ -32,6 +34,8 @@ export const WrapperFooter = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0;
+    position: absolute;
+    bottom: 0;
     font-size: 12px;
     h6 {
       margin: 10px 0;
@@ -41,9 +45,11 @@ export const WrapperFooter = styled.div`
   }
   @media (max-width: 991px) {
     flex-direction: column;
+    position: absolute;
+    bottom: 0;
     h6 {
       margin: 0;
       order: 1;
     }
   }
-`
+`;

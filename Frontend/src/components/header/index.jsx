@@ -1,12 +1,12 @@
-import React, { useContext, useEffect, useState } from "react"
-import { useNavigate, Link } from "react-router-dom"
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 // components
+
 import PromotionalBar from "../promotional-navbar"
-import Search from "../search"
 import { surf, userLogin, trolley, menu } from "../../assets"
 // context
-import Products from "../../context/ProductContext"
-import { useCartItem, useItemQty } from "../../context/ProductContext"
+import Products from "../../context/ProductContext";
+import { useCartItem, useItemQty } from "../../context/ProductContext";
 
 // styles
 import {
@@ -18,48 +18,51 @@ import {
   WrapperTrolley,
   WrapperMenu,
   WrapperNavbar,
-  WrapperSearch,
   WrapperName,
   QuantityItems,
-} from "./Header.styles"
+} from "./Header.styles";
 
 const Header = () => {
-  const [showNavbar, setShowNavbar] = useState(false)
-  const [login, setLogin] = useState("")
-  const [showCart, setShowCart] = useState(false)
-  const navigate = useNavigate()
-  const { infoUser } = useContext(Products)
-  const cartItem = useCartItem()
-  const itemQty = useItemQty()
+  const [showNavbar, setShowNavbar] = useState(false);
+  const [login, setLogin] = useState("");
+  const [showCart, setShowCart] = useState(false);
+  const navigate = useNavigate();
+  const { infoUser } = useContext(Products);
+  const cartItem = useCartItem();
+  const itemQty = useItemQty();
   const linkStyles = {
     textDecoration: "none",
     color: "black",
-  }
+  };
 
   useEffect(() => {
-    if (infoUser) setLogin(infoUser?.user?.name)
-  }, [infoUser])
+    if (infoUser) setLogin(infoUser?.user?.name);
+  }, [infoUser]);
 
   return (
     <div>
       <PromotionalBar />
+
       <Content className='menuIMGStyle'>
         <WrapperNavbar>
           <WrapperMenu>
             <img
               src={menu}
+
               alt='menu'
-              width={30}
+              width={60}
               onClick={() => setShowNavbar(!showNavbar)}
             />
           </WrapperMenu>
+
           <Link to='/' style={linkStyles}>
             <WrapperIMG>
-              <img src={surf} alt='surf' width={50} />
+              <img src={surf} alt="surf" width={50} />
             </WrapperIMG>
           </Link>
           <Ul showNavbar={showNavbar}>
             <Link
+
               to='/'
               style={linkStyles}
               onClick={() => setShowNavbar(!showNavbar)}
@@ -67,14 +70,14 @@ const Header = () => {
               <li>HOME</li>
             </Link>
             <Link
-              to='/products'
+              to="/products"
               style={linkStyles}
               onClick={() => setShowNavbar(!showNavbar)}
             >
               <li>PRODUCTS</li>
             </Link>
             <Link
-              to='/listFavorites'
+              to="/listFavorites"
               style={linkStyles}
               onClick={() => setShowNavbar(!showNavbar)}
             >
@@ -82,24 +85,28 @@ const Header = () => {
             </Link>
           </Ul>
         </WrapperNavbar>
-        <WrapperSearch>
-          <Search />
-        </WrapperSearch>
+
         <WrapperUserLogin>
           {!login ? (
             <div className='login' onClick={() => navigate("/login")}>
-              <img src={userLogin} alt='user-login' width={30} />
+              <img
+                src={userLogin}
+                alt='user-login'
+                width={30}
+                className='img-user'
+              />
               <NoLogin>X</NoLogin>
             </div>
           ) : (
             <WrapperName>{login.charAt(0).toUpperCase()}</WrapperName>
           )}
         </WrapperUserLogin>
+
         <WrapperTrolley>
           <Link to={cartItem.length > 0 && "/cart"} style={linkStyles}>
             <img
               src={trolley}
-              alt='trolley'
+              alt="trolley"
               width={30}
               onClick={() => setShowCart(!showCart)}
             />
@@ -110,7 +117,7 @@ const Header = () => {
         </WrapperTrolley>
       </Content>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

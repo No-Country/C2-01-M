@@ -8,12 +8,16 @@
   background-size: 30px 30px;
   width: 45px;
   height: 45px;
-  background-color: rgb(196, 196, 132);
+  background-color: rgb(82 55 55);
   border: none;
   border-radius: 50%;
   transform: scale(1);
   transition-duration: .2s;
   cursor: pointer;
+  background-image: url("https://cdn.iconscout.com/icon/free/png-256/night-mode-2-475098.png");
+  background-position: center center;
+  background-size: contain;
+  filter: invert(1);
 }
 
 #darkMode:active {
@@ -31,41 +35,9 @@
 .light {
   --bodyBG:#eee;
   --bodyColor:#333;
-
-  transition-duration: .2s;
   }
   
   .dark {
     --bodyBG:#333;
     --bodyColor:#eee;
-
-    transition-duration: .2s;
-}
-
-body{
-  background-color: var(--bodyBG);
-  color: var(--bodyColor);
-}
-
-/* ******************** */
-/* ******************** */
-
-.light .img1{
-  background-image: url("https://i.imgur.com/GjKOrVm.jpg");
-  color: rgb(39, 36, 36);
-}
-.dark .img1{
-  background-image: url("https://image.freepik.com/foto-gratis/textura-oscura-acuarela_125540-769.jpg");
-  color: #eee;
-}
-
-.dark .imgQuote{
-  filter: invert(1);
-}
-
-
-/*  */
-
-.dark .menuIMGStyle img{
-  filter: invert(1);
 }
