@@ -5,7 +5,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 350px;
+  width: 250px;
   min-height: 200px;
   margin: 1rem;
   border-radius: 0.5rem;
@@ -15,9 +15,14 @@ export const Container = styled.div`
   transition-duration: 0.2s;
   transform: scale(1);
   border: 2px solid var(--bodyColor);
-  @media (max-width: 890px) {
-    width: 300px;
+  @media (max-width: 1200px) {
+    width: 33%;
     margin: 5px;
-    margin-bottom:30px;
+    margin-bottom: 30px;
+    min-height: 180px;
+  }
+  @media (max-width: 690px) {
+    width: 90%;
+    min-height: 150px;
   }
 `
