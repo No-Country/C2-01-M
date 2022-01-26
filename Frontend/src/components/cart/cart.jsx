@@ -46,8 +46,8 @@ const Cart = () => {
           const { image, title, price, _id, cantidad } = item
           return (
             <div key={_id} className='card-container-cart' aria-current={true}>
-              <img src={image} alt={title} />
-              <p>{title} </p>
+              <img src={image} alt={title} className='img-cart' />
+              <p className='title'>{title} </p>
               <span>Price: ${price} </span>
               <span className='units'>
                 Units:

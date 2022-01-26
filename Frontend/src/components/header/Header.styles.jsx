@@ -56,7 +56,7 @@ export const Ul = styled.ul`
   }
   @media (max-width: 991px) {
     position: absolute;
-    top: 87px;
+    top: 121px;
     left: ${({ showNavbar }) => (showNavbar ? "0" : "-500px")};
     background-color: #eee;
     padding-top: 10px;
@@ -71,6 +71,15 @@ export const Ul = styled.ul`
         border-color: black !important;
       }
     }
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    left: ${({ showNavbar }) => (showNavbar ? "0" : "-600px")};
+  }
+  @media (max-width: 450px) {
+    top: 74px;
   }
 `
 export const WrapperIMG = styled.div`
