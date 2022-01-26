@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const WrapperSignin = styled.div`
   margin-top: 6%;
@@ -34,7 +34,10 @@ export const WrapperSignin = styled.div`
       width: 300px;
     }
   }
-`
+  @media (max-width: 1000px) {
+    padding-bottom: 5rem;
+  }
+`;
 export const WrapperButton = styled.div`
   display: flex;
   flex-direction: column;
@@ -57,4 +60,4 @@ export const WrapperButton = styled.div`
     padding: 5px;
     cursor: pointer;
   }
-`
+`;

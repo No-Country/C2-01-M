@@ -35,3 +35,8 @@
   border-radius: 5px;
   font-weight: 600;
 }
+@media (max-width: 1000px) {
+  .btn-add-to-cart {
+    max-width: 120px;
+  }
+}

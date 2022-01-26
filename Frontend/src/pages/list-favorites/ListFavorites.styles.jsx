@@ -76,6 +76,7 @@ export const WrapperCart = styled.div`
       }
     }
   }
+
   @media (max-width: 600px) {
     .button {
       max-width: max-content;
