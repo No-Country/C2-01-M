@@ -48,6 +48,9 @@ export const ItemDetailsStyle = styled.div`
     margin: 0;
     padding: 0;
     object-fit: contain;
+    img{
+      object-fit: contain;
+    }
   }
   .img-detail {
     width: 100%;
