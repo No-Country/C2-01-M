@@ -19,7 +19,7 @@ router
 
   .delete("/:id", 
   [
-    // validateJWT,
+    validateJWT,
     check('id', 'This is not a valid ID').isMongoId(),
     check('id').custom(validUserByID),
     validateFields,
@@ -28,13 +28,13 @@ router
 
   .get("/:id", 
   [
-		// validateJWT,
+		validateJWT,
 		validateFields
 	],
   userController.getUser)
 
   .get("/", [
-		// validateJWT,
+		validateJWT,
 		validateFields
 	], 
   userController.getAllUsers);

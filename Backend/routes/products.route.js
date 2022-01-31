@@ -13,7 +13,7 @@ const productsController = require("../controller/products.controller");
 router
   .post("/", 
   [
-    // validateJWT,
+    validateJWT,
     check('title', 'The title is required').not().isEmpty(),
     check('price', 'The price is required').not().isEmpty(),
     check('image', 'The image is required').not().isEmpty(),
