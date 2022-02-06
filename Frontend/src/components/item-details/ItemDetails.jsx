@@ -1,73 +1,122 @@
-
 import React from "react"
-import { ItemDetailsStyle } from "./ItemDetails.styles"
-import back from "../../assets/back.svg"
 import { useNavigate } from "react-router-dom"
 import Counter from "../counter/counter"
 import { Link } from "react-router-dom"
 
+// styles
+import { ItemDetailsStyle } from "./ItemDetails.styles"
+import useResize from "../../hooks/useResize"
+
 function ItemDetails({ product, onAdd, goCart }) {
-  const { image, details, price, title, _id } = product;
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+  const { width } = useResize()
 
   return (
-    <ItemDetailsStyle>
-      <div className="arrow-back">
-        <img src={back} alt="back" onClick={() => navigate("/products")} />
-        <span onClick={() => navigate("/products")}>Back</span>
-      </div>
-
-      {/* Para centrar el contenedor de los detalles */}
-
-      <div className='grid-centrador'>
-        {/* Este es el grid que contiene el contenedor de la imagen y el contenedor de los detalles */}
-        <section className='itemDetailsContainer'>
-
-          {/* Lado izquierdo del grid, muestra la imagen del producto */}
-          <div className="imageContainer">
-            <img src={image} alt={title + "-" + _id} />
+    <>
+      {!product?.image ? (
+        <div className='preloader-container'>
+          <img
+            className='preloader'
+            src='https://i.imgur.com/NTByPHS.gif'
+            alt='gif'
+          />
+        </div>
+      ) : (
+        <ItemDetailsStyle>
+          <div
+            className='arrow-back'
+            style={{ display: width > 960 ? "none" : "" }}
+          >
+            <span onClick={() => navigate("/")}>Home</span>
+            <span onClick={() => navigate("/products")}>Products</span>
           </div>
 
-          {/* Lado derecho del grid, muestra los detalles del producto */}
+          <div className='grid-centrador'>
+            <section className='itemDetailsContainer'>
+              <div className='imageContainer'>
+                <img
+                  src={product.image}
+                  alt={product.title + "-" + product._id}
+                  className='img-detail'
+                />
+              </div>
 
-          <div className='detailsItems'>
-            <div className='block'>
-              <span className='title'>{title}</span>
+              <div className='detailsItems'>
+                <div className='block'>
+                  <span className='title'>{product.title}</span>
+                </div>
 
-            </div>
+                <div className='block'>
+                  <span className='price-detail'>Price: ${product.price}</span>
+                </div>
 
-            <div className="block">
-              <span>{details}</span>
-            </div>
+                <div className='block'>
+                  <span className='description-detail'>
+                    {product.description}
+                  </span>
+                </div>
 
-            <div className="block">
-              <img
-                className="imageTarjetas"
-                src="https://www.volcom.com.ar//images/ico-tarjcredito2.png"
-                alt="formas de pago aceptadas"
-              />
-            </div>
+                <div className='block'>
+                  <div className='pay-delivery'>
+                    <div className='pay-delivery-options'>
+                      <div className='img-pay-delivery'>
+                        <img
+                          src='https://i.imgur.com/nbV08hR.png'
+                          alt='paypal'
+                        />
+                        <img
+                          src='https://i.imgur.com/vwVpgJJ.png'
+                          alt='efectivo'
+                        />
+                        <img
+                          src='https://i.imgur.com/84JsEeM.png'
+                          alt='delivery'
+                        />
+                        <img
+                          src='https://i.imgur.com/7Mk43zS.png'
+                          alt='local'
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-
-            <div className='block'>
-              <span>Price: ${price}</span>
-            </div>
-            {goCart ? (
-              <Link to='/cart' className='finish-shop'>
-                Finish buying
-              </Link>
-            ) : (
-              <div className='block'>
-                <div className='buttonAddToCart'>
-                  <Counter onAdd={onAdd} />
+                {goCart ? (
+                  <div className='finish-shop-container'>
+                    <Link to='/cart' className='finish-shop'>
+                      Finish shop
+                    </Link>
+                  </div>
+                ) : (
+                  <div className='block'>
+                    <div className='buttonAddToCart'>
+                      <Counter onAdd={onAdd} />
+                    </div>
+                  </div>
+                )}
+                <div className='block'>
+                  <span>
+                    SHIPPING/PICKUP Finish your purchase and choose if you want
+                    to receive it at your home or pick it up, free of charge, by
+                    Almagro, Belgrano, Cañitas, Recoleta or Villa Crespo from
+                    Monday to Saturday from 10 a.m. to 8 p.m.
+                  </span>
+                </div>
+                <div className='block'>
+                  <span>
+                    RETURNS & EXCHANGES Local changes can be made within 30 days
+                    once the purchase is made by presenting a ticket. The return
+                    of your purchase is made within 10 days once the product has
+                    been delivered to you. To do this, you must send an email to
+                    tienda@wildwavesurf.com.
+                  </span>
                 </div>
               </div>
-            )}
-
+            </section>
           </div>
-        </section>
-      </div>
-    </ItemDetailsStyle>
-  );
+        </ItemDetailsStyle>
+      )}
+    </>
+  )
 }
-export default ItemDetails;
+export default ItemDetails

@@ -23,29 +23,13 @@ const PromotionalBar = () => {
     "3 AND 6 INTEREST-FREE INSTALLMENTS! ",
   ]
   return (
-    <div
-      className='slider'
-      style={{
-        background: "black",
-        height: "50px",
-      }}
-    >
+    <div className='slider'>
       <Slider {...settings}>
         {info &&
           info.map((item, index) => {
             return (
-              <div
-                key={index}
-                style={{
-                  background: "black",
-                }}
-              >
-                <h3
-                  className='promotion'
-                  style={{ color: "#fff", margin: "10px" }}
-                >
-                  {item}
-                </h3>
+              <div className='promotion-container' key={index}>
+                <h3 className='promotion'>{item}</h3>
               </div>
             )
           })}

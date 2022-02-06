@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const WrapperSearch = styled.div`
   width: 100%;
@@ -6,10 +6,11 @@ export const WrapperSearch = styled.div`
   justify-content: end;
   margin-right: 20px;
   align-content: flex-start;
+
   @media (max-width: 1200px) {
     margin-right: 0;
   }
-`
+`;
 export const WrapperInput = styled.div`
   display: flex;
   padding: 5px;
@@ -32,4 +33,4 @@ export const WrapperInput = styled.div`
       max-width: 210px;
     }
   }
-`
+`;

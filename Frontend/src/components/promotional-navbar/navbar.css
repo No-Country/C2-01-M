@@ -1,15 +1,30 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
-@media only screen and (max-width: 991px) {
-  .promotion {
-    font-size: 16px;
-    min-width: max-content;
-  }
+.slick-slide {
+  height: min-content;
 }
-@media only screen and (max-width: 991px) {
+.slider {
+  background-color: black;
+  height: 50px;
+}
+.promotion {
+  padding: 10px;
+  color: white;
+}
+
+@media only screen and (max-width: 990px) {
+  .promotion-container {
+    width: 100%;
+    text-align: center;
+  }
   .promotion {
     font-size: 14px;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+    min-width: max-content;
   }
 }
 @media only screen and (max-width: 450px) {

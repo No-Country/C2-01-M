@@ -1,1 +1,20 @@
-
+.sort-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  color: #333;
+}
+.sort-container .select {
+  width: 200px;
+  margin: 1rem 0.5rem 0 0;
+  border-radius: 0.5rem;
+}
+@media (max-width: 1000px) {
+  .sort-container {
+    justify-content: center;
+  }
+  .sort-container .select {
+    width: 40%;
+  }
+}

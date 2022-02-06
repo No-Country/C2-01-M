@@ -6,11 +6,11 @@ import FormControl from "../form/FormControl"
 import axiosHttp from "../../helpers/axiosHTTP"
 import { Link, useNavigate } from "react-router-dom"
 import { useGetInfoUser } from "../../context/ProductContext"
-import Loader from "../loader/loader"
 
 // styles
 import { WrapperSignin, WrapperButton } from "./Login.Styles"
 import TextError from "../form/text-error/TextError"
+import Loading from "../loading"
 
 const Login = ({ buy }) => {
   const navigate = useNavigate()
@@ -30,7 +30,7 @@ const Login = ({ buy }) => {
       const info = await api.post(url, options)
       if (info.user.state) {
         getInfoUser(info)
-        return !buy && navigate("/home")
+        return !buy && navigate("/")
       }
     } catch (error) {
       if (error) {
@@ -52,7 +52,7 @@ const Login = ({ buy }) => {
         return (
           <>
             {formik.isSubmitting ? (
-              <Loader />
+              <Loading />
             ) : (
               <WrapperSignin buy={buy}>
                 <Form className='form'>
@@ -90,7 +90,7 @@ const Login = ({ buy }) => {
                     <Link to={"/register"} style={{ display: buy && "none" }}>
                       You do not have an account? Sign up
                     </Link>
-                    <Link to={"/home"} style={{ display: buy && "none" }}>
+                    <Link to={"/"} style={{ display: buy && "none" }}>
                       Sign in as a guest
                     </Link>
                   </WrapperButton>

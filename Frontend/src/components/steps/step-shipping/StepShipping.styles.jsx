@@ -33,6 +33,7 @@ export const WrapperRadio = styled.div`
   display: flex;
   border-bottom: 1px solid #cac8c8;
   margin-bottom: 10px;
+  text-align: inherit !important;
 `
 export const WrapperSubtitle = styled.div`
   h3 {

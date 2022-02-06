@@ -1,13 +1,7 @@
 import React from "react"
-import { useNavigate } from "react-router-dom"
+import welcome from "../../assets/welcome.webp"
 
 const Welcome = () => {
-  const navigate = useNavigate()
-
-  setTimeout(() => {
-    navigate("/home")
-  }, 4000)
-
   return (
     <div
       style={{
@@ -15,10 +9,12 @@ const Welcome = () => {
         justifyContent: "center",
         alignItems: "center",
         minHeight: "100vh",
-        backgroundImage:
-          "url(https://cdn.pixabay.com/photo/2016/11/18/18/45/surfer-1836366_960_720.jpg",
+        backgroundImage: `url(${welcome})`,
         backgroundRepeat: "no-repeat",
-        backgroundSize: "100% auto, cover",
+        backgroundSize: "100vw 100vh, cover",
+        backgroundPosition: "center center",
+        overflow: "hidden",
+        textAlign: "center",
       }}
     >
       <h1 style={{ color: "#915454", fontSize: "80px" }}>

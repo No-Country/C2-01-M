@@ -7,6 +7,7 @@ import { WrapperSteps, WrapperButtons } from "./StepRegister.styles"
 
 const StepRegister = () => {
   const [showRegister, setShowRegister] = useState(false)
+
   return (
     <WrapperSteps>
       <WrapperButtons>
@@ -29,7 +30,11 @@ const StepRegister = () => {
           REGISTER
         </button>
       </WrapperButtons>
-      {!showRegister ? <Login buy={true} /> : <Register buy={true} />}
+      {!showRegister ? (
+        <Login buy={true} />
+      ) : (
+        <Register buy={true} setShowRegister={setShowRegister} />
+      )}
     </WrapperSteps>
   )
 }

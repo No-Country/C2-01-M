@@ -1,9 +1,15 @@
-import React from "react"
+import React, { useState } from "react"
+import { useGetDataBuy } from "../../../context/ProductContext"
+import paypal from "../../../assets/paypal.webp"
 
 // styles
 import { WrapperSteps } from "./StepBuy.styles"
+import PayPal from "../../paypal"
 
 const StepBuy = ({ setStep }) => {
+  const [checkout, setCheckout] = useState(false)
+  const getDataBuy = useGetDataBuy()
+
   return (
     <WrapperSteps>
       <div className='pay'>
@@ -20,26 +26,45 @@ const StepBuy = ({ setStep }) => {
       <div>
         <h2>IS YOUR REQUEST FOR A GIFT? </h2>
         <div className='gift'>
-          <input type='radio' name='gift' id='gift' value={"gift"} />
+          <input
+            type='radio'
+            name='gift'
+            id='gift'
+            value={"gift"}
+            onChange={(e) => getDataBuy(e.target.value)}
+          />
           <label htmlFor='gift'>Yes</label>
         </div>
         <div className='gift'>
-          <input type='radio' name='someone' id='someone' value={"someone"} />
+          <input
+            type='radio'
+            name='someone'
+            id='someone'
+            value={"someone"}
+            onChange={(e) => getDataBuy(e.target.value)}
+          />
           <label htmlFor='someone'>
-            Is someone else going to pick up the order?{" "}
+            Is someone else going to pick up the order?
           </label>
         </div>
       </div>
       <div>
         <h2>SELECT THE PAYMENT METHOD </h2>
         <div className='pay-pal'>
-          <img
-            src='https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png'
-            alt='pay-pal'
-            width={300}
-            height={"auto"}
-          />
-          <button onClick={() => setStep(3)}>CONTINUE</button>
+          <img src={paypal} alt='pay-pal' width={300} height={"auto"} />
+          {checkout ? (
+            <PayPal setStep={setStep} />
+          ) : (
+            <button
+              onClick={() => {
+                setCheckout(true)
+                return getDataBuy("payPal")
+              }}
+              className='button-paypal'
+            >
+              CONTINUE
+            </button>
+          )}
         </div>
       </div>
     </WrapperSteps>

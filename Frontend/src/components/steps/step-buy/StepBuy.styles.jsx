@@ -40,5 +40,15 @@ export const WrapperSteps = styled.div`
   }
   @media (max-width: 660px) {
     width: 90%;
+    .pay-pal {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  @media (max-width: 430px) {
+    .pay-pal {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 `

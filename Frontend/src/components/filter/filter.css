@@ -2,37 +2,81 @@
   box-sizing: border-box;
 }
 .filter-container {
-  width: 40vw;
+  width: 20vw;
   display: flex;
   flex-direction: column;
   padding-left: 20px;
+  grid-column: 1;
+}
+@media (max-width: 1000px) {
+  .filter-container {
+    display: none;
+  }
+}
+
+.filter-container .img-filter {
+  width: 20vw;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+  transition: 1s ease;
 }
 .filter-container .filter-cat,
 .filter-container .filter-price,
 .filter-container .filter-val {
-  padding: 1rem 0;
+  padding: 0.5rem 0;
+  margin: 0.5rem 0;
 }
 fieldset {
   text-align: left;
   border: none;
   padding: 0.5rem 0;
 }
+
+input[type="number"] {
+  width: 130px;
+  margin-left: 5px;
+  text-align: center;
+  border: 0.5px solid rgba(0, 0, 0, 0.4);
+  color: grey;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 label {
   display: block;
   padding: 0.5rem 0;
 }
 
-@media (max-width:533px){
-  .filter-container{
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: space-between;
-    padding: 0;
-  }
-  .filter-val,.filter-price,.filter-cat{
-    margin-left: 12px;
-    margin-right: 12px;
-  }
+.filter-val fieldset label,
+.filter-price fieldset label,
+.filter-cat fieldset label {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: bolder;
+  margin: 0.2rem 1rem;
+}
+.filter-val fieldset label input,
+.filter-price fieldset label input,
+.filter-cat fieldset label input {
+  margin: 0.2rem 1rem;
+}
+.filter-val fieldset img {
+  width: 18px;
+  height: 18px;
+  margin: 0 0.3rem;
+}
+hr {
+  padding: 0;
+  margin: 0;
+  border: 0.5px solid black;
+  color: black;
+  background-color: black;
+}
+legend {
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  font-weight: bold;
 }

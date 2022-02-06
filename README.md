@@ -1,12 +1,14 @@
 # Wild Waves Surf - Ecommerce
 _______________________________
 
-## Importante
+## Tecnologías utilizadas
 
-Estimado, dentro de cada carpeta (Frontend, Backend), veras un README referente a como levantar dicho proyecto de manera optima, por favor, siga a pie de letra las instrucciones que alli aparecen.
+Hemos decidido trabajar sobre el stack de tecnologías MERN (MongoDB, Express, React y NodeJS) llevando a cabo las mejores prácticas posibles en el tiempo dado, y consultando quasi diariamente de forma interna que cosas podría cada uno mejorar con fin de obtener un resultado (proyecto) sólido y escalable.
+
+Visite nuestro [eCommerce](https://nifty-torvalds-71aefb.netlify.app/) 🏄‍♂️🌴
 
 _______________________________
-## Presentacion del MVP: 
+## Presentacion del MVP
 
 (WWS) Surf Ecommerce, por parte del Equipo C2-01-M de NO COUNTRY! [⚡](https://emojis.wiki/es/rayo/) 
 
@@ -22,8 +24,6 @@ Nuestra organizacion se ve reflejada en [Trello](https://trello.com/b/2ikhLP8K/n
 ## Integrantes del Equipo:
 
 Luis Miguel Urbina (Team Leader) 
-
-[Alejandra Dib-Ashur](https://www.linkedin.com/in/alejandra-dib-ashur/) *(Frontend Developer)* 
 
 [Fernando Romero](https://www.linkedin.com/in/fernando-romero-1bb3a0198/) *(Frontend Developer)*
 
